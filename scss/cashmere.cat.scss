@@ -1,0 +1,1992 @@
+// Colors, day-mode ////////////////////////////////////////////////////////////////////////////////
+
+// Base
+$text-color: #111;
+$link-color: hsl(205, 50%, 30%);
+$link-color-hover: saturate(lighten($link-color, 10%), 20%);
+$link-color-visited: #666;
+$link-color-visited-hover: lighten($link-color-visited, 10%);
+$body-background: hsl(210, 20%, 80%);
+$text-input-border: 1px solid $body-background;
+
+$upvoat-color: hsl(205, 70%, 53%);
+$downvoat-color: hsl(290, 82%, 39%);
+$unvoated-color: #aaa;
+
+$submit-button-text-color: #fff;
+$submit-button-background: hsl(17, 90%, 40%);
+$submit-button-background-hover: darken($submit-button-background, 10%);
+
+// Header
+$header-link-color: #fff;
+$header-background: hsl(205, 50%, 40%);
+$header-background-alt: darken($header-background, 5%);
+$mailbox-alert-background: hsl(40,100%,45%);
+
+$dropdown-menu-background: darken($header-background-alt, 5%);
+$dropdown-menu-item-hover: darken($dropdown-menu-background, 5%);
+
+// Content
+$submission-background: #fff;
+$thumbnail-icon-color: $submission-background;
+$thumbnail-background: darken($body-background, 25%);
+
+$comment-background: $submission-background;
+$comment-background-alt: lighten($body-background, 14%);
+
+$code-background: #222;
+$code-text-color: salmon;
+$spoiler-background: #222;
+$spoiler-text-color: #eee;
+
+// Sidebar
+$sidebar-text-color: $text-color;
+$sidebar-background: $submission-background;
+$sidebar-title-text-color: $sidebar-background;
+$sidebar-title-background: lighten(desaturate($header-background, 15%), 5%);
+
+// Footer
+$footer-text-color: #000;
+$footer-link-color: lighten($link-color, 10%);
+$footer-link-color-hover: transparentize($footer-link-color, .25);
+$footer-background: darken($body-background, 10%);
+
+
+// Colors, night-mode //////////////////////////////////////////////////////////////////////////////
+
+// Base
+$dark-text-color: #ccc;
+$dark-link-color: hsl(17, 90%, 35%);
+$dark-link-color-hover: saturate(lighten($dark-link-color, 10%), 20%);
+$dark-link-color-visited: #999;
+$dark-link-color-visited-hover: lighten($dark-link-color-visited, 10%);
+$dark-body-background: #000;
+$dark-text-input-border: 1px solid #333;
+
+$dark-upvoat-color: hsl(205, 70%, 53%);
+$dark-downvoat-color: hsl(291, 82%, 39%);
+$dark-unvoated-color: #555;
+
+$dark-submit-button-text-color: #fff;
+$dark-submit-button-background: hsl(17, 90%, 30%);
+$dark-submit-button-background-hover: darken($dark-submit-button-background, 10%);
+
+// Header
+$dark-header-link-color: #ddd;
+$dark-header-background: hsl(205, 0%, 10%);
+$dark-header-background-alt: darken($dark-header-background, 5%);
+$dark-mailbox-alert-background: hsl(35,100%,40%);
+
+$dark-dropdown-menu-background: darken($dark-header-background-alt, 5%);
+$dark-dropdown-menu-item-hover: darken($dark-dropdown-menu-background, 5%);
+
+// Content
+$dark-submission-background: #111;
+$dark-thumbnail-icon-color: #555;
+$dark-thumbnail-background: #000;
+
+$dark-comment-background: $dark-submission-background;
+$dark-comment-background-alt: lighten($dark-comment-background, 4%);
+
+$dark-code-background: #000;
+$dark-code-text-color: salmon;
+$dark-spoiler-background: #444;
+$dark-spoiler-text-color: #eee;
+
+// Sidebar
+$dark-sidebar-text-color: $dark-text-color;
+$dark-sidebar-background: $dark-submission-background;
+$dark-sidebar-title-text-color: $dark-text-color;
+$dark-sidebar-title-background: lighten($dark-header-background, 5%);
+
+// Footer
+$dark-footer-text-color: $dark-text-color;
+$dark-footer-link-color: darken($dark-link-color, 10%);
+$dark-footer-link-color-hover: transparentize($dark-footer-link-color, .25);
+$dark-footer-background: lighten($dark-body-background, 10%);
+
+
+// Other settings //////////////////////////////////////////////////////////////////////////////////
+
+$color-transition: ease .2s;
+$border-radius: 2px;
+
+// Set this to false if you don't want any thumbnails.
+$display-thumbnails: true;
+
+// Set the number of columns in the sidebar "MODERATORS" box.
+// This can reduce white space, but may not work well if any 
+// mods have long usernames and/or flairs.
+$mod-column-count: 1;
+
+
+// Fonts ///////////////////////////////////////////////////////////////////////////////////////////
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,700,700italic');
+
+@font-face {
+	font-family: 'Cashmere icons';
+	src:url('https://dl.dropboxusercontent.com/s/b8e755s4n5hae4j/Cashmere-icons.eot');
+		src:url('https://dl.dropboxusercontent.com/s/b8e755s4n5hae4j/Cashmere-icons.eot?#iefix')
+			format('embedded-opentype'),
+		url('https://dl.dropboxusercontent.com/s/5qprhtkuoa9alu7/Cashmere-icons.ttf')
+			format('truetype'),
+		url('https://dl.dropboxusercontent.com/s/k4uz6hzoyow69wi/Cashmere-icons.woff')
+			format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+// Resets //////////////////////////////////////////////////////////////////////////////////////////
+
+* {
+	border: 0 !important;
+	border-radius: 0 !important;
+	box-shadow: none !important;
+	background-image: none !important;
+}
+
+.btn-whoaverse-paging:active {
+	top: 0 !important;
+}
+
+// Layout //////////////////////////////////////////////////////////////////////////////////////////
+
+#container {
+	padding: 0;
+	min-height: calc(100vh - 120px); // Force footer to the bottom of short pages
+	background: transparent !important;
+	
+	> div {
+		margin-top: 76px !important; // Height of header + 10px
+		margin-bottom: 20px;
+	}
+}
+
+// Cookie notice
+.eppnotice {
+	position: fixed;
+	bottom: -20px;
+	z-index: 2;
+	padding: 8px;
+	width: 100%;
+	background: $footer-background;
+	color: $footer-text-color;
+	text-align: center;
+	
+	button {
+		background: transparent !important;
+		color: $link-color !important;
+	}
+}
+
+// Dialogs (e.g. login)
+.modal-content {
+	border-radius: $border-radius !important;
+
+	* {
+		text-shadow: none !important;
+	}
+
+	.modal-header {
+		background: $header-background;
+		color: $header-link-color;
+		
+		.dark & {
+			background: $dark-header-background;
+			color: $dark-header-link-color;
+		}
+	}
+		
+	button {
+		color: $link-color;
+		opacity: 1;
+		
+		&:hover {
+			color: $link-color-hover;
+		}
+		
+		.dark & {
+			color: $dark-link-color;
+		
+			&:hover {
+				color: $dark-link-color-hover;
+			}
+		}
+	}
+	
+	input {
+		border: $text-input-border !important;
+		
+		.dark &	{
+			border: $dark-text-input-border !important;
+		}
+	}
+	
+	.control-label {
+		background: $header-background !important;
+		
+		.dark & {
+			background: $dark-header-background !important;
+		}
+		
+	}
+}
+
+// Submit page
+input#MessageContent,
+input#Linkdescription,
+input#Subverse,
+textarea#Title,
+textarea#MessageContent {
+	border: $text-input-border !important;
+}
+
+// Typography //////////////////////////////////////////////////////////////////////////////////////
+
+body {
+	background: $body-background;
+	font: 11px/1.5 "Roboto", Arial, sans-serif !important;
+	color: $text-color;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	
+	&.dark {
+		background: $dark-body-background;
+		color: $dark-text-color !important;
+	}
+}
+
+// Link styles
+a {
+	color: $link-color !important;
+	
+	.dark & {
+		color: $dark-link-color !important;
+	}
+	
+	&:visited {
+		color: $link-color-visited !important;
+	
+		.dark & {
+			color: $dark-link-color-visited !important;
+		}
+		
+		&:hover {
+			color: $link-color-visited-hover !important;
+	
+			.dark & {
+				color: $dark-link-color-visited-hover !important;
+			}
+		}
+	}
+	
+	&:hover {
+		color: $link-color-hover !important;
+	
+		.dark & {
+			color: $dark-link-color-hover !important;
+		}
+	}
+	
+}
+
+a.btn-tour,
+#submitbutton,
+#previewButton,
+form[id^="commentreplyform"] > button, // reply "cancel" button
+.accordion-inner button, // chat "send" button
+.side .titlebox button, // "subscribe" and "block"
+div.usertext-buttons > * {
+	font-size: 14px;
+	font-weight: 500;
+	color: $link-color;
+	background: transparent !important;
+	
+	&:hover {
+		color: $link-color-hover;
+	}
+	
+	&:first-letter {
+		text-transform: capitalize;
+	}
+
+	.dark & {
+		color: $dark-link-color;
+		
+		&:hover {
+			color: $dark-link-color-hover;
+		}
+	}	
+}
+
+
+// Markdown
+.md {
+
+	h1,
+	h2,
+	th,
+	b,
+	strong {
+		font-weight: 500 !important;
+	}
+
+	hr {
+		border-bottom: 1px solid transparentize($text-color, .7) !important;
+		
+		.dark & {
+			border-bottom: 1px solid transparentize($dark-text-color, .7) !important;
+		}
+	}
+
+	blockquote {
+		padding: 0 0 0 10px;
+		margin: 0 0 0 10px;
+		border-left: 5px solid $body-background !important;
+		background: none !important;
+		color: transparentize($text-color, 0.3);
+	
+		.dark & {
+			border-left: 5px solid transparentize($dark-link-color, 0.5) !important;
+			color: transparentize($dark-text-color, 0.3);
+		}
+	}
+
+	pre,
+	code {
+		background: $code-background !important;
+		color: $code-text-color;
+	
+		.dark & {
+			background: $dark-code-background !important;
+			color: $dark-code-text-color;
+		}
+	}
+
+	table {
+		background: transparent;
+	}
+
+	//Spoiler tag
+	a[href="#s"] {
+		text-decoration: none;
+
+		&:after {
+			margin: 0;
+			border: 0;
+			background: $spoiler-background;
+			color: $spoiler-background;
+	
+			.dark & {
+				background: $dark-spoiler-background;
+				color: $dark-spoiler-background;
+			}
+		}
+	
+		&:hover:after {
+			background: $spoiler-background;
+			color: $spoiler-text-color;
+		
+			.dark & {
+				background: $dark-spoiler-background;
+				color: $dark-spoiler-text-color;
+			}
+		}
+	}
+}
+
+// Misc. ///////////////////////////////////////////////////////////////////////////////////////////
+.tooltipster-base {
+	margin-top: 6px;
+}
+
+// Header //////////////////////////////////////////////////////////////////////////////////////////
+
+#header {
+	position: fixed;
+	width: 100%;
+	height: 66px;
+	background: $header-background;
+	
+	.dark & {
+		background: $dark-header-background;
+	}
+	
+	a,
+	a:visited {
+		color: $header-link-color !important;
+	
+		.dark & {
+			color: $dark-header-link-color !important;
+		}
+	}
+}
+
+// Top section of header
+#sr-header-area {
+	display: inline-block;
+	height: 22px;
+
+	.sr-list {
+		margin-left: 0 !important;
+		background: $header-background-alt;
+		text-transform: lowercase;
+	
+		.dark & {
+			background: $dark-header-background-alt;
+		}
+	
+		a {
+			color: transparentize($header-link-color, 0.4) !important;
+			transition: color $color-transition !important;
+			
+			.dark & {
+				color: transparentize($dark-header-link-color, 0.4) !important;
+			}
+		}
+		
+		&:hover a {
+			color: transparentize($header-link-color, 0.0) !important;
+			
+			.dark & {
+				color: transparentize($dark-header-link-color, 0.0) !important;
+			}
+		}
+	}
+
+	#sr-more-link {
+		top: 0;
+		padding: 0 10px;
+		height: 22px;
+		line-height: 22px;
+		font-size: 12px;
+		color: transparentize($header-link-color, 0.4) !important;
+		letter-spacing: 0;
+		background: $header-background-alt;
+	
+		.dark & {
+			background: $dark-header-background-alt;
+		}
+	
+		&:hover {
+			color: $header-link-color !important;
+		}
+	}
+}
+
+// "My Subverses" dropdown /////////////////////////////////////////////////////////////////////////
+
+.whoaSubscriptionMenu > li {
+
+	a {
+		padding-left: 5px;
+	}	
+
+	&:hover {
+		background: $header-background-alt;
+	
+		.dark & {
+			background: $dark-header-background-alt;
+		}
+	}
+
+	&:hover > ul,
+	> ul:hover {
+		background: $header-background-alt;
+		
+		.dark & {
+			background: $dark-header-background-alt;
+		}
+	}
+
+	> ul {
+		top: 22px;
+		left: 0;
+		padding: 5px;
+		max-height: 80vh;
+		overflow-y: auto; // adds scrollbar if necessary
+		border-radius: 0 0 $border-radius $border-radius !important;
+		
+		> li > a {
+			padding: 3px 18px 3px 6px !important; // extra padding on right is for scrollbar
+			font-size: 12px;
+			border-radius: $border-radius !important;
+			transition: none;
+			background: transparent !important;
+
+			&:hover {
+				background: darken( $header-background-alt, 10% ) !important;
+				
+				.dark & {
+					background: lighten( $dark-header-background-alt, 10% ) !important;
+				}
+			}
+		}
+	}
+}
+
+// Main header section /////////////////////////////////////////////////////////////////////////////
+
+#header-container {
+	bottom: 0;
+	height: 44px !important;
+	background: transparent;
+}
+	
+#header-banner {
+	height: 44px;
+}
+
+#header-img-a {
+	float: left;
+	padding-left: 10px;
+	width: 110px;
+
+	&:before {
+		content:"\e600";
+		font: 40px/44px "Cashmere icons";
+	}
+
+	img {
+		display: none;
+	}
+}
+
+#header-banner .pagename {
+	float: left;
+	line-height: 44px;
+	margin: 0;
+
+	> a	{
+		padding: 0 12px 0 6px;
+	}
+
+	&:before {
+		content: "\e603";
+		font-family: "Cashmere icons";
+		color: $header-link-color;
+
+		.dark & {
+			color: $dark-header-link-color;
+		}
+	}
+}
+	
+#header-banner > .tabmenu {
+	line-height: 44px;
+
+	a {
+		transition: background $color-transition;
+		border-radius: $border-radius !important;
+	}
+
+	a:hover,
+	.selected > a {
+		background: $header-background-alt !important;
+	
+		.dark & {
+			background: $dark-header-background-alt !important;
+		}
+	}
+	
+	.submit-link,
+	.submit-text {
+		display: none;
+	}
+	
+}
+
+#header-account {
+	
+	// .logged-out and .logged-in
+	> div {
+		margin: 0;
+		padding: 0;
+		background: transparent;
+
+		> .separator {
+			display: none;
+		}
+
+		> .user:first-child {
+			float: left;
+			margin-right: 10px;
+		}
+	}
+
+	> .logged-out {
+		font-size: 12px;
+		color: transparentize($header-link-color, 0.4);
+	
+		a {
+			font-weight: 500;
+		}
+	}
+
+	#scp,
+	#ccp,
+	#upvoatsGiven {
+		font-weight: 700 !important;
+	}
+
+	// This span contains the username and vote counts
+	.user:first-child {
+		visibility: hidden; // hide the spacer bars
+		font-size: 1px;
+	
+		> .userkarma {
+			margin: 0;
+		}
+
+		// just the username
+		> a { 
+			line-height: 44px !important;
+		}
+
+		// username and vote counts
+		> a,
+		> span > a { 
+			visibility: visible;
+			margin: 0 5px;
+			font-size: 12px;
+		}
+
+		// just the vote counts
+		> span > a { 
+			padding: 6px;
+			text-align: center;
+			background: $header-background-alt;
+			border-radius: $border-radius !important;
+		
+			.dark & {
+				background: $dark-header-background-alt;
+			}
+		}	
+	}
+}
+
+// Icon buttons
+#manage,
+#nightmodetoggle,
+.notification-container,
+.notification-container *,
+#mail,
+#header-account > div > a:last-child { // logout button
+	top: 0;
+	float: left;
+	height: 44px !important;
+	width: 44px !important;
+	text-align: center;
+	text-indent: 0;
+
+	&:before {
+		display: inline-block;
+		width: 44px;
+		font: 20px/44px "Cashmere icons";
+		transition: background $color-transition;
+	}
+
+	&:hover:before {
+		background: $header-background-alt;
+		
+		.dark & {
+			background: $dark-header-background-alt;
+		}
+	}
+}
+
+#manage:before {
+	content: "\e604";
+}
+
+#nightmodetoggle:before {
+	content: "\e605";
+}
+
+#mail {
+
+	&:before {
+		content: "\e606";
+		transition: background $color-transition, color $color-transition;
+	}
+
+	&.havemail:before {
+		background: $mailbox-alert-background !important;
+
+		.dark & {
+			background: $dark-mailbox-alert-background !important;
+		}
+	}
+}
+
+#mailcounter {
+	left: 0;
+	line-height: 44px;
+	font-size: 11px;
+	font-weight: 700;
+	background: transparent;
+	color: invert($header-link-color);
+	transition: background $color-transition;
+	
+	.dark &  {
+		color: invert($dark-header-link-color);
+	}
+}
+
+#header-account > div > a:last-child {
+	visibility: hidden; // hide "log out" text
+		
+	&:before {
+		visibility: visible;
+		content: "\e607";
+	}
+}
+
+// Submissions /////////////////////////////////////////////////////////////////////////////////////
+
+.submission {
+	position: relative;
+	margin-bottom: 10px;
+	padding: 15px 0;
+	background: $submission-background;
+	border-radius: $border-radius !important;
+	
+	.dark & {
+		background: $dark-submission-background;
+	}
+
+	a.thumbnail {
+
+		@if $display-thumbnails == true {
+		
+			position: absolute;
+			z-index: 2;
+			top: 15px;
+			left: 62px;
+			height: 70px;
+
+		} @else {
+		
+			display: none;
+		
+		} //endif
+	}
+
+	.entry {
+		padding: 0 15px 0 0;
+		min-height: 70px;
+		
+		> p.title,
+		> p.tagline,
+		> ul.flat-list {
+
+			@if $display-thumbnails == true {		
+			
+				padding-left: 78px;
+			
+			} @else {
+		
+				padding-left: 0px;
+		
+			}
+		}
+
+		> p.title {
+			padding-right: 28px; // make space for expando button
+			
+			// Sticky label
+			span.promoted {
+				display: none;
+				
+				// The title of a sticky post
+				+ a.title:after {
+					content: "sticky";
+					float: left;
+					margin-right: 5px;
+					background: $thumbnail-background;
+					color: $thumbnail-icon-color;
+					padding: 0 8px;
+					font-size: 11px;
+					
+					.dark & {
+						background: $dark-thumbnail-background;
+						color: $dark-thumbnail-icon-color;
+					}
+				}
+			}
+		}
+
+		a.title,
+		a.subverse {
+			font-weight: 500;
+		}
+
+		p.tagline,
+		span.domain {
+			color: transparentize($text-color, .4);
+		
+			.dark & {
+				color: transparentize($dark-text-color, .4);
+			}
+		}
+
+		div.expando {
+			margin-top: 15px;
+		}
+	}
+}
+
+// Targets entry only on comments page
+#firsttimevisitorwelcomemessage ~ #siteTable .entry {
+	> p.title,
+	> p.tagline,
+	> ul.flat-list {
+		padding-left: 0;
+	}
+	
+	// don't show icon thumbnails on comments page
+	a.title:before {
+		display: none !important;
+	}
+}
+
+@if $display-thumbnails == true {
+
+	#firsttimevisitorwelcomemessage ~ #siteTable .thumbnail + .entry {
+		> p.title,
+		> p.tagline,
+		> ul.flat-list {
+			padding-left: 78px;
+		}
+	}
+	
+} //endif
+
+// Voting //////////////////////////////////////////////////////////////////////////////////////////
+.midcol {
+	margin: 0;
+	width: 46px;
+	overflow: visible;
+
+	.score {
+		height: 14px;
+		line-height: 16px;
+		font-size: 12px;
+		color: $unvoated-color;
+		
+		.dark & {
+			color: $dark-unvoated-color;
+		}
+	}
+}
+
+.arrow-downvote,
+.arrow-downvoted,
+.arrow-upvote,
+.arrow-upvoted {
+	width: 20px;
+	height: 18px;
+	font: normal 20px/1 "Cashmere icons";
+	background: none;
+	color: $unvoated-color;
+	transition: color $color-transition;
+
+	.dark & {
+		color: $dark-unvoated-color;
+	}
+}
+
+.arrow-upvote:before,
+.arrow-upvoted:before {
+	content: "\e601";
+}
+
+.arrow-downvote:before,
+.arrow-downvoted:before {
+	content: "\e602";
+}
+
+div.arrow-upvote:hover,
+div.arrow-upvoted,
+div.score.likes,
+span.post_upvotes {
+	color: $upvoat-color !important;
+
+	.dark & {
+		color: $dark-upvoat-color !important;
+	}
+}
+
+div.arrow-downvote:hover,
+div.arrow-downvoted,
+div.score.dislikes,
+span.post_downvotes {
+	color: $downvoat-color !important;
+
+	.dark & {
+		color: $dark-downvoat-color !important;
+	}
+}
+
+.scorebar {
+	height: 70px;
+	width: 4px;
+	
+	.scorebar-likes {
+		background: $upvoat-color;
+
+		.dark & {
+			background: $dark-upvoat-color;
+		}
+	}
+		
+	.scorebar-dislikes {
+		background: $downvoat-color;
+		border-top: 1px solid $submission-background !important;
+		
+		.dark & {
+			background: $dark-downvoat-color;
+			border-top: 1px solid $dark-submission-background !important;
+		}
+	}
+}
+
+// Expando icons ///////////////////////////////////////////////////////////////////////////////////
+.expando-button {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	margin: 0;
+	width: 20px !important;
+	height: 20px !important;
+	text-align: center;
+
+	&:before {
+		content: "\e60c";
+		font: 20px/1 "Cashmere icons";
+		color: $link-color;
+		transition: color $color-transition;
+
+		.dark & {
+			color: $dark-link-color;
+		}
+	}
+	
+	&:hover:before {
+		color: $link-color-hover;
+		
+		.dark & {
+			color: $dark-link-color-hover;
+		}
+	}
+
+	&.loading {
+		-webkit-animation: spin 3s linear infinite;
+		   -moz-animation: spin 3s linear infinite;
+		        animation: spin 3s linear infinite;
+		
+		&:before {
+			content: "\e60d";
+			font-weight: 700;
+		}
+	}
+
+	&.expanded:before {
+		content: "\e60e";
+	}
+}
+
+@-moz-keyframes spin { 
+	0%   { -moz-transform: rotate(0deg); }
+	100% { -moz-transform: rotate(359deg); }
+}
+
+@-webkit-keyframes spin {
+	0%   { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(359deg); }
+}
+
+@-o-keyframes spin {
+	0%   { -o-transform: rotate(0deg); }
+	100% { -o-transform: rotate(359deg); }
+}
+
+@-ms-keyframes spin {
+	0%   { -ms-transform: rotate(0deg); }
+	100% { -ms-transform: rotate(359deg); }
+}
+
+@keyframes spin {
+	0%   { transform: rotate(0deg); }
+	100% { transform: rotate(359deg); }
+}
+
+// Sort posts on "top" page ////////////////////////////////////////////////////////////////////////
+
+#sortingThingy {
+	margin-bottom: 10px;
+	padding: 0 15px;
+	height: 36px;
+	line-height: 36px;
+	font-size: 12px;
+	background: $submission-background;
+	border-radius: $border-radius !important;
+	
+	.dark & {
+		background: $dark-submission-background;
+	}
+	
+	&:before {
+		content:"Sort by:";
+		margin-right: 5px;
+		font-weight: 500;
+	}
+	
+	a:visited {
+		color: $link-color !important;
+		
+		.dark & {
+			color: $dark-link-color !important;
+		}
+	}
+}
+
+// Pagination controls /////////////////////////////////////////////////////////////////////////////
+
+.pagination-container > ul {
+	height: 36px;
+
+	li {
+		margin: 0 7px 0 0 !important;
+		height: 36px;
+		line-height: 36px;
+		background: $submission-background;
+		border-radius: $border-radius !important;
+
+		&:hover {
+			background: $submission-background;
+		}
+		
+		.dark & {
+			background: $dark-submission-background;
+			
+			&:hover {
+				background: $dark-submission-background;
+			}
+		}
+		
+		a {
+			display: block !important;
+			height: 100% !important;
+			line-height: 36px !important;
+			font-size: 12px;
+			font-weight: 500;
+			color: $text-color !important;
+			
+			.dark &	{
+				color: $dark-text-color !important;
+			}
+		}
+	}
+}
+
+// Icons ///////////////////////////////////////////////////////////////////////////////////////////
+
+@if $display-thumbnails == true {
+
+// Icon thumbnails
+a.title:before {
+	content: "\e611"; // Globe icon. For anything not covered below.
+	position: absolute;
+	top: 15px;
+	left: 62px; 
+	width: 70px;
+	height: 70px;
+	font: 46px/70px "Cashmere icons";
+	background: $thumbnail-background;
+	color: $thumbnail-icon-color;
+	text-align: center;
+	
+	.dark & {
+		background: $dark-thumbnail-background;
+		color: $dark-thumbnail-icon-color;
+	}
+}
+
+// Self-post
+a.title[href^="/v/"]:before { 
+	content:"\e610";
+}
+
+// Another page on Voat (not self-posts)
+a.title[href*="voat.co"]:before { 
+	content:"\e615";
+}
+
+// Image (in case regular thumbnail fails to generate)
+a.title[href*="imgur.com/"]:before,
+a.title[href*="veuwer.com/"]:before,
+a.title[href*="slimgur.com/"]:before,
+a.title[href*="flickr.com/"]:before,
+a.title[href*="500px.com/"]:before,
+a.title[href$=".jpg"]:before,
+a.title[href*=".jpg?"]:before,
+a.title[href$=".jpeg"]:before,
+a.title[href*=".jpeg?"]:before,
+a.title[href$=".png"]:before,
+a.title[href*=".png?"]:before,
+a.title[href$=".svg"]:before,
+a.title[href*=".svg?"]:before {
+	content:"\e612";
+}
+
+// Video (in case regular thumbnail fails to generate)
+a.title[href*="youtube.com/"]:before,
+a.title[href*="youtu.be/"]:before,
+a.title[href*="vimeo.com/"]:before,
+a.title[href*="vid.me/"]:before,
+a.title[href*="liveleak.com/"]:before {
+	content:"\e614";
+}
+
+// Prevent icon thumbnail if submission has regular thumbnail
+a.thumbnail + .entry a.title:before { 
+	display: none;
+}
+
+} //endif
+
+// Comments page ///////////////////////////////////////////////////////////////////////////////////
+
+#firsttimevisitorwelcomemessage {
+	background: $comment-background;
+	
+	.dark & {
+		background: $dark-comment-background;
+	}
+}
+
+.horizontal-line {
+	display: none;
+}
+
+// Submit comment //////////////////////////////////////////////////////////////////////////////////
+
+form[action="/submitcomment"] {
+	margin-bottom: 10px;
+	padding: 15px 15px 0;
+	background: $comment-background;
+	border-radius: $border-radius !important;
+	
+	.dark & {
+		background: $dark-comment-background;
+	}
+}
+
+#CommentContent {
+	background: transparent;
+	border: $text-input-border !important;
+	border-radius: $border-radius !important;
+	
+	.dark & {
+		border: $dark-text-input-border !important;
+	}
+}
+	
+.menuarea {
+	margin: 0px;
+	padding: 0 15px;
+	background: $comment-background;
+	
+	.dark & {
+		background: $dark-comment-background;
+	}
+	
+	&:nth-child(8) {
+		padding: 15px 15px 5px;
+		border-radius: $border-radius $border-radius 0 0 !important;
+	}
+
+	&:nth-child(9) {
+		padding: 5px 15px 15px;
+		border-radius: 0 0 $border-radius $border-radius !important;
+	}
+}
+
+// Comments ////////////////////////////////////////////////////////////////////////////////////////
+
+.commentarea > .sitetable {
+	margin-top: 10px;
+	background: transparent;
+
+	.midcol {
+		width: 30px;
+	}
+
+	.arrow-upvote,
+	.arrow-upvoted, 
+	.arrow-downvote,
+	.arrow-downvoted {
+		width: 20px;
+		height: 20px;
+		font-size: 16px;
+		text-align: center;
+	}
+	
+	.child {
+		margin-top: 10px;
+		padding: 8px 8px 5px;
+		background: $comment-background;
+		border-radius: $border-radius !important;
+		
+		.dark & {
+			background: $dark-comment-background;
+		}
+		
+		> .entry {
+			margin-right: 10px;
+		}
+	}
+
+	> .child > .child ,
+	> .child > .child > .child > .child,
+	> .child > .child > .child > .child > .child > .child,
+	> .child > .child > .child > .child > .child > .child > .child > .child {
+		background: $comment-background-alt;
+		
+		.dark &	{
+			background: $dark-comment-background-alt;
+		}
+	}
+}
+// Markdown editor /////////////////////////////////////////////////////////////////////////////////
+
+.markdownEditorMainMenu {
+	margin: 0;
+	border-radius: $border-radius $border-radius 0 0 !important;
+}
+
+.markdownEditorImgButton{
+	margin: 0;
+	width: 24px;
+	height: 24px;
+	background: transparent !important;
+	text-align: center;
+
+	&:before {
+		font: 16px/24px "Cashmere icons";
+		color: $link-color !important;
+		
+		.dark & {
+			color: $dark-link-color !important;
+		}
+	}
+	
+	&:hover:before {
+		color: $link-color-hover !important;
+		
+		.dark & {
+			color: $dark-link-color-hover !important;
+		}
+	}
+}
+
+.markdownEditorImgButton[title="Bold"]:before {
+	content: "\e616";
+}
+
+.markdownEditorImgButton[title="Italic"]:before {
+	content: "\e617";
+}
+
+.markdownEditorImgButton[title="Link"]:before {
+	content: "\e618";
+}
+
+#linkSubMenu,
+#tableCreatorSubMenu {
+	padding: 0;
+	min-width: 50px;
+
+	// Enter url
+	input {
+		height: 20px;
+		line-height: 20px;
+		background: transparent !important;
+		border: $text-input-border !important;
+		color: $text-color !important;
+		
+		.dark & {
+			border: $dark-text-input-border !important;
+			color: $dark-text-color !important;
+		}
+	}
+
+	// Create link
+	a {
+		padding: 0 5px;
+		height: 20px;
+		line-height: 20px;
+		font-weight: 500;
+		background: transparent !important;
+		color: $link-color !important;
+		border-radius: 2px !important;
+		
+		.dark & {
+			color: $dark-link-color !important;
+		}
+	}
+}
+
+.markdownEditorImgButton[title="Quote"]:before {
+	content: "\e619";
+}
+
+.markdownEditorImgButton[title="Code"]:before {
+	content: "\e61a";
+}
+
+.markdownEditorImgButton[title="Bullet List"]:before {
+	content: "\e61b";
+}
+
+.markdownEditorImgButton[title="Number List"]:before {
+	content: "\e61c";
+}
+
+.markdownEditorImgButton[title="Large Paragraph Spacing"]:before {  //
+	content: "\e61d";
+}
+
+.markdownEditorImgButton[title="Horizontal Rule"]:before {  //
+	content: "\2014";
+	line-height: 20px;
+	font-weight: 700;
+}
+
+.markdownEditorImgButton[title="Headings"]:before { 
+	content: "H";
+	font-family: "Roboto", sans-serif !important;
+	font-weight: 700;
+}
+
+.markdownEditorImgButton[title^="Heading Level"] {
+	font-size: 14px;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	
+	&:before {
+		font-family: "Roboto", sans-serif !important;
+		font-weight: 700;
+	}
+}
+
+.markdownEditorImgButton[title="Heading Level 1"]:before {
+	content: "H1";
+}
+
+.markdownEditorImgButton[title="Heading Level 2"]:before {
+	content: "H2";
+}
+
+.markdownEditorImgButton[title="Heading Level 3"]:before {
+	content: "H3";
+}
+
+.markdownEditorImgButton[title="Heading Level 4"]:before {
+	content: "H4";
+}
+
+.markdownEditorImgButton[title="Heading Level 5"]:before {
+	content: "H5";
+}
+
+.markdownEditorImgButton[title="Heading Level 6"]:before {
+	content: "H6";
+}
+
+.markdownEditorImgButton[title="Table"]:before {
+	content: "\e61f";
+}
+
+.markdownEditorImgButton[title="More Columns"]:before {
+	content: "\e624";
+}
+
+.markdownEditorImgButton[title="Less Columns"]:before {
+	content: "\e625";
+}
+
+.markdownEditorImgButton[title="More Rows"]:before {
+	content: "\e626";
+}
+
+.markdownEditorImgButton[title="Less Rows"]:before {
+	content: "\e627";
+}
+
+.markdownEditorTextButton[title="Create Table"]:before {
+	
+}
+
+.markdownEditorImgButton[title="Spoiler"]:before {
+	content: "\e620";
+}
+
+.markdownEditorImgButton[title="Strikethrough"]:before {
+	content: "\e621";
+}
+
+.markdownEditorImgButton[title="Superscript"]:before {
+	content: "\e622";
+}
+
+.markdownEditorImgButton[title="Subscript"]:before {
+	content: "\e623";
+}
+
+// Base sidebar styles /////////////////////////////////////////////////////////////////////////////
+
+div.side {
+	position: relative;
+	padding: 46px 0 0 !important;
+
+	> div {
+		margin: 0 0 10px 0 !important;
+		padding: 0 !important;
+		background: $sidebar-background !important;
+		border-radius: $border-radius !important;
+		
+		.dark & {
+			background: $dark-sidebar-background !important;
+		}
+	}
+
+	// Sidebar titles
+	h1:first-child,
+	h2:first-child,
+	.submissioninfo > .alert-h2 {
+		margin: 0;
+		padding: 0 15px;
+		height: 36px;
+		font: 500 15px/38px "Roboto", Arial, sans-serif;
+		text-transform: uppercase;
+		background: $sidebar-title-background;
+		color: $sidebar-title-text-color;
+		border-radius: $border-radius $border-radius 0 0 !important;
+		
+		.dark & {
+			background: $dark-sidebar-title-background;
+			color: $dark-sidebar-title-text-color !important;
+		}
+		
+		a {
+			color: $sidebar-title-text-color !important;
+			
+			.dark & {
+				color: $dark-sidebar-title-text-color !important;
+			}
+		}
+	}
+
+	// Content
+	#accordion2,
+	.content {
+		padding: 15px;
+		background: $sidebar-background;
+		border-radius: $border-radius !important;
+		
+		.dark & {
+			background: $dark-sidebar-background;
+		}
+	}
+	
+	.accordion .content {
+		padding: 0;
+	}
+
+
+// Submit Buttons //////////////////////////////////////////////////////////////////////////////////
+	.submit-link,
+	.submit-text {
+		position: absolute;
+		top: 0px;
+		padding: 0 15px;
+		width: 145px;
+		height: 36px;
+		line-height: 36px;
+		font-size: 12px;
+		font-weight: 500;
+		background: $submit-button-background !important;
+		transition: background $color-transition;
+		color: $submit-button-text-color !important;
+		text-transform: uppercase;
+		text-align: center;
+		border-radius: $border-radius !important;
+		
+		.dark & {
+			background: $dark-submit-button-background !important;
+			color: $dark-submit-button-text-color !important;
+		}
+		
+		&:hover {
+			background: darken( $submit-button-background, 10% ) !important;
+			
+			.dark & {
+				background: darken( $dark-submit-button-background, 10% ) !important;
+			}
+		}
+	}
+
+	.submit-text {
+		right: 0;
+	}
+
+// Search //////////////////////////////////////////////////////////////////////////////////////////
+	.form-horizontal {
+		position: relative;
+		
+		h2:before {
+			content: "Search";
+		}
+	}
+
+	input#q {
+		margin: 15px 15px 10px 15px;
+		width: 270px;
+		background: $sidebar-background;
+		color: $text-color;
+		border: $text-input-border !important;
+		border-radius: $border-radius !important;
+		
+		.dark & {
+			background: $dark-sidebar-background;
+			color: $dark-text-color;
+			border: $dark-text-input-border !important;
+		}
+	}
+	
+	// Hide the placeholder text since it now has a title above it
+	.form-control::-moz-placeholder {
+		opacity: 0;
+	}
+
+	.form-control:-ms-input-placeholder {
+		opacity: 0;
+	}
+
+	.form-control::-webkit-input-placeholder {
+		opacity: 0;
+	}
+	
+	// Reduce padding to search field so text isn't cut off
+	.form-control {
+		padding: 4px 8px;
+	}
+
+	// checkbox
+	input#l {
+		margin: 0 5px 15px 16px;
+	}
+
+	// checkbox label
+	label {
+		position: absolute;
+		margin-bottom: 13px;
+		bottom: 0;
+	}
+
+// Subverse Section ////////////////////////////////////////////////////////////////////////////////
+	
+	.titlebox {
+		position: relative;
+	}
+	
+	// RSS icon
+	h1.whoaversename a:last-child { 
+
+		> img {
+			display: none !important;
+		}
+	
+		&:before {
+			content: "\e60a";
+			float: right;
+			font: 18px/36px "Cashmere icons" !important;
+			color: $sidebar-title-text-color;
+			
+			.dark & {
+				color: $dark-sidebar-title-text-color;
+			}
+		}
+	}
+	
+	// Subscribe and Block buttons
+	.btn-whoaverse-paging:nth-child(2),
+	.btn-whoaverse-paging:nth-child(3) {
+		position: absolute;
+		top: 45px;
+		transition: none;
+		
+		&:active {
+			top: 45px !important;
+		}
+	}
+	
+	// Subscribe button
+	.btn-whoaverse-paging:nth-child(2) { 
+		left: 10px;
+		text-align: left;
+	}
+	
+	// Block button
+	.btn-whoaverse-paging:nth-child(3) {
+		right: 10px;
+		text-align: right;
+	}
+
+
+	.titlebox > .bottom,
+	.titlebox > .usertext {
+		margin: 0 15px !important;
+		padding-bottom: 15px !important;
+	}
+
+	span.subscribers,
+	p.users-online {
+		position: relative;
+		margin: 0 15px !important;
+		height: 20px;
+		line-height: 20px;
+		font-size: 13px;		
+		font-weight: 500;
+		text-transform: capitalize;
+		background: transparent;
+
+		> .number {
+			position: absolute;
+			right: 0;
+			font-weight: 700;
+			text-align: right;
+		}
+	}
+	
+	span.subscribers {
+		display: inline-block;
+		margin-top: 40px !important;
+		width: 270px;
+	}
+
+// Submission Info (on the comments page only) /////////////////////////////////////////////////////
+
+	.submissioninfo {
+		padding-bottom: 5px !important;
+
+		// Remove the subsection titles
+		.alert-h2 {
+			display: none;
+			
+			&:first-child {
+				display: block;
+				margin-bottom: 15px !important;
+			}
+		}
+		
+		> div {
+			padding: 0px 15px !important;
+		}
+	}
+
+// Moderators //////////////////////////////////////////////////////////////////////////////////////
+
+	.message-moderators-temporary-class {
+		visibility: hidden;
+		width: 0;
+	
+		&:before {
+			content: "\e60b";
+			float: right;
+			visibility: visible;
+			margin-right: 15px;
+			height: 36px;
+			font: 20px/36px "Cashmere icons";
+			text-align: right;
+			color: $sidebar-title-text-color;
+			
+			.dark & {
+				color: $dark-sidebar-title-text-color;
+			}
+		}
+	}
+	
+	ul.content:not(#moderation_tools li) {
+		-webkit-column-count: $mod-column-count;
+		   -moz-column-count: $mod-column-count;
+		        column-count: $mod-column-count;
+	}
+
+// Subverse Chat ///////////////////////////////////////////////////////////////////////////////////
+
+	#chatInputBox {
+		background: $sidebar-background;
+		border: $text-input-border !important;
+		border-radius: $border-radius !important;
+		
+		.dark & {
+			background: $dark-sidebar-background;
+			border: $dark-text-input-border !important;
+		}
+	}
+
+// Announcements ///////////////////////////////////////////////////////////////////////////////////
+
+	.spacer:last-child .sidecontentbox.content {
+		padding: 15px !important;
+	}
+}
+
+// Footer //////////////////////////////////////////////////////////////////////////////////////////
+
+.footer-container {
+	background: $footer-background;
+	
+	.dark & {
+		background: $dark-footer-background;
+	}
+}
+
+.footer {
+	margin: 15px auto;
+	height: 80px;
+
+	p {
+		color: $footer-text-color !important;
+	
+		.dark & {
+			color: $dark-footer-text-color !important;
+		}
+	}
+
+	a {
+		font-weight: bold;
+		color: $footer-link-color !important;
+
+		.dark & {
+			color: $dark-footer-link-color !important;
+		}
+	}
+
+	&:after {
+		content: "theme: /v/Cashmere";
+		display: block;
+		padding: 8px 0;
+		width: 100%;
+		color: $footer-text-color;
+		
+		.dark & {
+			color: $dark-footer-text-color;
+		}
+	}
+}
+
+// Media queries ///////////////////////////////////////////////////////////////////////////////////
+
+@media(max-width: 950px) {
+	
+	#sr-header-area {
+		height: 24px;
+		line-height: 22px;
+		font-size: 12px;
+	}
+
+	ul.tabmenu li {
+		font-size: 13px;			
+
+		> a {
+			padding: 4px 8px;
+		}
+	}
+
+	#header-account {
+		top: 0;
+		padding: 0;
+	}
+}
+
+@media(max-width: 870px) {
+	
+	#modal-background.show-mobile-sidebar {
+		top: 0;
+		height: 100vh;
+	}
+	
+	#header {
+		top: 0;
+		
+		span.userkarma,
+		span.upvoatsGiven {
+			display: none !important;
+		}
+	}
+	
+	#show-menu-button {
+		position: absolute;
+		left: 10px;
+		margin: 0;
+		
+		&:before {
+			content: "\e608";
+			width: 44px !important;
+			height: 44px !important;
+			font: 28px/44px "Cashmere icons" !important;
+			color: $header-link-color !important;
+			border: 0;
+			
+			.dark &	{
+				color: $dark-header-link-color !important;
+			}
+		}
+	}
+	
+	#header-img-a {
+		margin-left: 30px;
+	}
+
+	.markdownEditor {
+		display: block;
+	}
+
+	#container > .side {
+		position: absolute !important;
+		z-index: 5;
+		left: -320px;
+		margin-top: 0px !important;
+		width: 320px;
+		height: calc(100vh - 66px);
+		background: $body-background;
+		
+		.dark & {
+			background: $dark-body-background;
+		}
+
+		&.show-mobile-sidebar {
+			left: 0; 
+		}
+		
+		> .spacer {
+			margin: 10px !important;
+		}
+		
+		.submit-text {
+			right: 10px !important;
+		}
+
+		.submit-link,
+		.submit-text {
+			top: 10px;
+		}
+
+		h1.whoaversename {
+			display: block !important;
+		}
+		
+		// Subscribe button
+		div.side .btn-whoaverse-paging:nth-child(2) {
+			margin: 10px !important;
+		}
+		
+		// Block button
+		div.side .btn-whoaverse-paging:nth-child(3) {
+			right: 10px !important;
+		}
+		
+		.titlebox > button {
+			margin: 10px 15px !important;
+		}
+	}
+}
+
+@media(max-width: 700px) {
+	
+	ul.tabmenu {
+		margin-left: 44px;
+		text-align: left;
+		
+		> li:not(.selected) a {
+			background: $header-background !important;
+			
+			.dark & {
+				background: $dark-header-background !important;
+			}
+		}
+	}
+}
+
+@media(max-width: 550px) {
+
+	ul.tabmenu {
+		margin-left: 38px;
+	}
+
+	ul.tabmenu > li {
+		margin: 0;
+		
+		> a {
+			padding: 4px 5px;
+		}
+	}
+
+	.logged-in > span.user {
+		margin: 0 !important;
+		width: 44px;
+		height: 44px;
+		text-align: center;
+		
+		
+		> a {
+			display: inline-block;
+			margin: 0 !important;
+			width: 44px;
+			height: 44px;
+			overflow: hidden;
+		
+			&:before {
+				content: "\e609";
+				display: inline-block;
+				width: 44px !important;
+				height: 44px !important;
+				font: 23px/44px "Cashmere icons" !important;
+			}
+		
+			&:hover:before {
+				background: $header-background-alt !important;
+				
+				.dark &	{
+					background: $dark-header-background-alt !important;
+				}
+			}
+		}
+	}
+
+	.link .flat-list.buttons {
+		padding: 0;
+		
+		li a {
+			background: transparent;
+		}
+	}
+	
+	// Hide some of the less important markdown buttons
+	.markdownEditorImgButton[title="Large Paragraph Spacing"],
+	.markdownEditorImgButton[title="Horizontal Rule"],
+	.markdownEditorImgButton[title="Table"],
+	.markdownEditorImgButton[title="Strikethrough"],
+	.markdownEditorImgButton[title="Superscript"],
+	.markdownEditorImgButton[title="Subscript"] {
+		display: none;
+	}
+	
+}
+

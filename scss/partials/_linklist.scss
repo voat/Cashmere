@@ -1,0 +1,348 @@
+// Submissions /////////////////////////////////////////////////////////////////////////////////////
+
+.submission {
+	position: relative;
+	margin-bottom: 10px;
+	padding: 15px 0;
+	background: $submission-background;
+	border-radius: $border-radius !important;
+	
+	.dark & {
+		background: $dark-submission-background;
+	}
+
+	a.thumbnail {
+
+		@if $display-thumbnails == true {
+		
+			position: absolute;
+			z-index: 2;
+			top: 15px;
+			left: 62px;
+			height: 70px;
+
+		} @else {
+		
+			display: none;
+		
+		} //endif
+	}
+
+	.entry {
+		padding: 0 15px 0 0;
+		min-height: 70px;
+		
+		> p.title,
+		> p.tagline,
+		> ul.flat-list {
+
+			@if $display-thumbnails == true {		
+			
+				padding-left: 78px;
+			
+			} @else {
+		
+				padding-left: 0px;
+		
+			}
+		}
+
+		> p.title {
+			padding-right: 28px; // make space for expando button
+			
+			// Sticky label
+			span.promoted {
+				display: none;
+				
+				// The title of a sticky post
+				+ a.title:after {
+					content: "sticky";
+					float: left;
+					margin-right: 5px;
+					background: $thumbnail-background;
+					color: $thumbnail-icon-color;
+					padding: 0 8px;
+					font-size: 11px;
+					
+					.dark & {
+						background: $dark-thumbnail-background;
+						color: $dark-thumbnail-icon-color;
+					}
+				}
+			}
+		}
+
+		a.title,
+		a.subverse {
+			font-weight: 500;
+		}
+
+		p.tagline,
+		span.domain {
+			color: transparentize($text-color, .4);
+		
+			.dark & {
+				color: transparentize($dark-text-color, .4);
+			}
+		}
+
+		div.expando {
+			margin-top: 15px;
+		}
+	}
+}
+
+// Targets entry only on comments page
+#firsttimevisitorwelcomemessage ~ #siteTable .entry {
+	> p.title,
+	> p.tagline,
+	> ul.flat-list {
+		padding-left: 0;
+	}
+	
+	// don't show icon thumbnails on comments page
+	a.title:before {
+		display: none !important;
+	}
+}
+
+@if $display-thumbnails == true {
+
+	#firsttimevisitorwelcomemessage ~ #siteTable .thumbnail + .entry {
+		> p.title,
+		> p.tagline,
+		> ul.flat-list {
+			padding-left: 78px;
+		}
+	}
+	
+} //endif
+
+// Voting //////////////////////////////////////////////////////////////////////////////////////////
+.midcol {
+	margin: 0;
+	width: 46px;
+	overflow: visible;
+
+	.score {
+		height: 14px;
+		line-height: 16px;
+		font-size: 12px;
+		color: $unvoated-color;
+		
+		.dark & {
+			color: $dark-unvoated-color;
+		}
+	}
+}
+
+.arrow-downvote,
+.arrow-downvoted,
+.arrow-upvote,
+.arrow-upvoted {
+	width: 20px;
+	height: 18px;
+	font: normal 20px/1 "Cashmere icons";
+	background: none;
+	color: $unvoated-color;
+	transition: color $color-transition;
+
+	.dark & {
+		color: $dark-unvoated-color;
+	}
+}
+
+.arrow-upvote:before,
+.arrow-upvoted:before {
+	content: "\e601";
+}
+
+.arrow-downvote:before,
+.arrow-downvoted:before {
+	content: "\e602";
+}
+
+div.arrow-upvote:hover,
+div.arrow-upvoted,
+div.score.likes,
+span.post_upvotes {
+	color: $upvoat-color !important;
+
+	.dark & {
+		color: $dark-upvoat-color !important;
+	}
+}
+
+div.arrow-downvote:hover,
+div.arrow-downvoted,
+div.score.dislikes,
+span.post_downvotes {
+	color: $downvoat-color !important;
+
+	.dark & {
+		color: $dark-downvoat-color !important;
+	}
+}
+
+.scorebar {
+	height: 70px;
+	width: 4px;
+	
+	.scorebar-likes {
+		background: $upvoat-color;
+
+		.dark & {
+			background: $dark-upvoat-color;
+		}
+	}
+		
+	.scorebar-dislikes {
+		background: $downvoat-color;
+		border-top: 1px solid $submission-background !important;
+		
+		.dark & {
+			background: $dark-downvoat-color;
+			border-top: 1px solid $dark-submission-background !important;
+		}
+	}
+}
+
+// Expando icons ///////////////////////////////////////////////////////////////////////////////////
+.expando-button {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	margin: 0;
+	width: 20px !important;
+	height: 20px !important;
+	text-align: center;
+
+	&:before {
+		content: "\e60c";
+		font: 20px/1 "Cashmere icons";
+		color: $link-color;
+		transition: color $color-transition;
+
+		.dark & {
+			color: $dark-link-color;
+		}
+	}
+	
+	&:hover:before {
+		color: $link-color-hover;
+		
+		.dark & {
+			color: $dark-link-color-hover;
+		}
+	}
+
+	&.loading {
+		-webkit-animation: spin 3s linear infinite;
+		   -moz-animation: spin 3s linear infinite;
+		        animation: spin 3s linear infinite;
+		
+		&:before {
+			content: "\e60d";
+			font-weight: 700;
+		}
+	}
+
+	&.expanded:before {
+		content: "\e60e";
+	}
+}
+
+@-moz-keyframes spin { 
+	0%   { -moz-transform: rotate(0deg); }
+	100% { -moz-transform: rotate(359deg); }
+}
+
+@-webkit-keyframes spin {
+	0%   { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(359deg); }
+}
+
+@-o-keyframes spin {
+	0%   { -o-transform: rotate(0deg); }
+	100% { -o-transform: rotate(359deg); }
+}
+
+@-ms-keyframes spin {
+	0%   { -ms-transform: rotate(0deg); }
+	100% { -ms-transform: rotate(359deg); }
+}
+
+@keyframes spin {
+	0%   { transform: rotate(0deg); }
+	100% { transform: rotate(359deg); }
+}
+
+// Sort posts on "top" page ////////////////////////////////////////////////////////////////////////
+
+#sortingThingy {
+	margin-bottom: 10px;
+	padding: 0 15px;
+	height: 36px;
+	line-height: 36px;
+	font-size: 12px;
+	background: $submission-background;
+	border-radius: $border-radius !important;
+	
+	.dark & {
+		background: $dark-submission-background;
+	}
+	
+	&:before {
+		content:"Sort by:";
+		margin-right: 5px;
+		font-weight: 500;
+	}
+	
+	a:visited {
+		color: $link-color !important;
+		
+		.dark & {
+			color: $dark-link-color !important;
+		}
+	}
+}
+
+// Pagination controls /////////////////////////////////////////////////////////////////////////////
+
+.pagination-container > ul {
+	height: 36px;
+
+	li {
+		margin: 0 7px 0 0 !important;
+		height: 36px;
+		line-height: 36px;
+		background: $submission-background;
+		border-radius: $border-radius !important;
+
+		&:hover {
+			background: $submission-background;
+		}
+		
+		.dark & {
+			background: $dark-submission-background;
+			
+			&:hover {
+				background: $dark-submission-background;
+			}
+		}
+		
+		a {
+			display: block !important;
+			height: 100% !important;
+			line-height: 36px !important;
+			font-size: 12px;
+			font-weight: 500;
+			color: $text-color !important;
+			
+			.dark &	{
+				color: $dark-text-color !important;
+			}
+		}
+	}
+}
+

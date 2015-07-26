@@ -1,0 +1,300 @@
+// Base sidebar styles /////////////////////////////////////////////////////////////////////////////
+
+div.side {
+	position: relative;
+	padding: 46px 0 0 !important;
+
+	> div {
+		margin: 0 0 10px 0 !important;
+		padding: 0 !important;
+		background: $sidebar-background !important;
+		border-radius: $border-radius !important;
+		
+		.dark & {
+			background: $dark-sidebar-background !important;
+		}
+	}
+
+	// Sidebar titles
+	h1:first-child,
+	h2:first-child,
+	.submissioninfo > .alert-h2 {
+		margin: 0;
+		padding: 0 15px;
+		height: 36px;
+		font: 500 15px/38px "Roboto", Arial, sans-serif;
+		text-transform: uppercase;
+		background: $sidebar-title-background;
+		color: $sidebar-title-text-color;
+		border-radius: $border-radius $border-radius 0 0 !important;
+		
+		.dark & {
+			background: $dark-sidebar-title-background;
+			color: $dark-sidebar-title-text-color !important;
+		}
+		
+		a {
+			color: $sidebar-title-text-color !important;
+			
+			.dark & {
+				color: $dark-sidebar-title-text-color !important;
+			}
+		}
+	}
+
+	// Content
+	#accordion2,
+	.content {
+		padding: 15px;
+		background: $sidebar-background;
+		border-radius: $border-radius !important;
+		
+		.dark & {
+			background: $dark-sidebar-background;
+		}
+	}
+	
+	.accordion .content {
+		padding: 0;
+	}
+
+
+// Submit Buttons //////////////////////////////////////////////////////////////////////////////////
+	.submit-link,
+	.submit-text {
+		position: absolute;
+		top: 0px;
+		padding: 0 15px;
+		width: 145px;
+		height: 36px;
+		line-height: 36px;
+		font-size: 12px;
+		font-weight: 500;
+		background: $submit-button-background !important;
+		transition: background $color-transition;
+		color: $submit-button-text-color !important;
+		text-transform: uppercase;
+		text-align: center;
+		border-radius: $border-radius !important;
+		
+		.dark & {
+			background: $dark-submit-button-background !important;
+			color: $dark-submit-button-text-color !important;
+		}
+		
+		&:hover {
+			background: darken( $submit-button-background, 10% ) !important;
+			
+			.dark & {
+				background: darken( $dark-submit-button-background, 10% ) !important;
+			}
+		}
+	}
+
+	.submit-text {
+		right: 0;
+	}
+
+// Search //////////////////////////////////////////////////////////////////////////////////////////
+	.form-horizontal {
+		position: relative;
+		
+		h2:before {
+			content: "Search";
+		}
+	}
+
+	input#q {
+		margin: 15px 15px 10px 15px;
+		width: 270px;
+		background: $sidebar-background;
+		color: $text-color;
+		border: $text-input-border !important;
+		border-radius: $border-radius !important;
+		
+		.dark & {
+			background: $dark-sidebar-background;
+			color: $dark-text-color;
+			border: $dark-text-input-border !important;
+		}
+	}
+	
+	// Hide the placeholder text since it now has a title above it
+	.form-control::-moz-placeholder {
+		opacity: 0;
+	}
+
+	.form-control:-ms-input-placeholder {
+		opacity: 0;
+	}
+
+	.form-control::-webkit-input-placeholder {
+		opacity: 0;
+	}
+	
+	// Reduce padding to search field so text isn't cut off
+	.form-control {
+		padding: 4px 8px;
+	}
+
+	// checkbox
+	input#l {
+		margin: 0 5px 15px 16px;
+	}
+
+	// checkbox label
+	label {
+		position: absolute;
+		margin-bottom: 13px;
+		bottom: 0;
+	}
+
+// Subverse Section ////////////////////////////////////////////////////////////////////////////////
+	
+	.titlebox {
+		position: relative;
+	}
+	
+	// RSS icon
+	h1.whoaversename a:last-child { 
+
+		> img {
+			display: none !important;
+		}
+	
+		&:before {
+			content: "\e60a";
+			float: right;
+			font: 18px/36px "Cashmere icons" !important;
+			color: $sidebar-title-text-color;
+			
+			.dark & {
+				color: $dark-sidebar-title-text-color;
+			}
+		}
+	}
+	
+	// Subscribe and Block buttons
+	.btn-whoaverse-paging:nth-child(2),
+	.btn-whoaverse-paging:nth-child(3) {
+		position: absolute;
+		top: 45px;
+		transition: none;
+		
+		&:active {
+			top: 45px !important;
+		}
+	}
+	
+	// Subscribe button
+	.btn-whoaverse-paging:nth-child(2) { 
+		left: 10px;
+		text-align: left;
+	}
+	
+	// Block button
+	.btn-whoaverse-paging:nth-child(3) {
+		right: 10px;
+		text-align: right;
+	}
+
+
+	.titlebox > .bottom,
+	.titlebox > .usertext {
+		margin: 0 15px !important;
+		padding-bottom: 15px !important;
+	}
+
+	span.subscribers,
+	p.users-online {
+		position: relative;
+		margin: 0 15px !important;
+		height: 20px;
+		line-height: 20px;
+		font-size: 13px;		
+		font-weight: 500;
+		text-transform: capitalize;
+		background: transparent;
+
+		> .number {
+			position: absolute;
+			right: 0;
+			font-weight: 700;
+			text-align: right;
+		}
+	}
+	
+	span.subscribers {
+		display: inline-block;
+		margin-top: 40px !important;
+		width: 270px;
+	}
+
+// Submission Info (on the comments page only) /////////////////////////////////////////////////////
+
+	.submissioninfo {
+		padding-bottom: 5px !important;
+
+		// Remove the subsection titles
+		.alert-h2 {
+			display: none;
+			
+			&:first-child {
+				display: block;
+				margin-bottom: 15px !important;
+			}
+		}
+		
+		> div {
+			padding: 0px 15px !important;
+		}
+	}
+
+// Moderators //////////////////////////////////////////////////////////////////////////////////////
+
+	.message-moderators-temporary-class {
+		visibility: hidden;
+		width: 0;
+	
+		&:before {
+			content: "\e60b";
+			float: right;
+			visibility: visible;
+			margin-right: 15px;
+			height: 36px;
+			font: 20px/36px "Cashmere icons";
+			text-align: right;
+			color: $sidebar-title-text-color;
+			
+			.dark & {
+				color: $dark-sidebar-title-text-color;
+			}
+		}
+	}
+	
+	ul.content:not(#moderation_tools li) {
+		-webkit-column-count: $mod-column-count;
+		   -moz-column-count: $mod-column-count;
+		        column-count: $mod-column-count;
+	}
+
+// Subverse Chat ///////////////////////////////////////////////////////////////////////////////////
+
+	#chatInputBox {
+		background: $sidebar-background;
+		border: $text-input-border !important;
+		border-radius: $border-radius !important;
+		
+		.dark & {
+			background: $dark-sidebar-background;
+			border: $dark-text-input-border !important;
+		}
+	}
+
+// Announcements ///////////////////////////////////////////////////////////////////////////////////
+
+	.spacer:last-child .sidecontentbox.content {
+		padding: 15px !important;
+	}
+}
+

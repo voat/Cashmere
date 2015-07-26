@@ -1,0 +1,199 @@
+// Media queries ///////////////////////////////////////////////////////////////////////////////////
+
+@media(max-width: 950px) {
+	
+	#sr-header-area {
+		height: 24px;
+		line-height: 22px;
+		font-size: 12px;
+	}
+
+	ul.tabmenu li {
+		font-size: 13px;			
+
+		> a {
+			padding: 4px 8px;
+		}
+	}
+
+	#header-account {
+		top: 0;
+		padding: 0;
+	}
+}
+
+@media(max-width: 870px) {
+	
+	#modal-background.show-mobile-sidebar {
+		top: 0;
+		height: 100vh;
+	}
+	
+	#header {
+		top: 0;
+		
+		span.userkarma,
+		span.upvoatsGiven {
+			display: none !important;
+		}
+	}
+	
+	#show-menu-button {
+		position: absolute;
+		left: 10px;
+		margin: 0;
+		
+		&:before {
+			content: "\e608";
+			width: 44px !important;
+			height: 44px !important;
+			font: 28px/44px "Cashmere icons" !important;
+			color: $header-link-color !important;
+			border: 0;
+			
+			.dark &	{
+				color: $dark-header-link-color !important;
+			}
+		}
+	}
+	
+	#header-img-a {
+		margin-left: 30px;
+	}
+
+	.markdownEditor {
+		display: block;
+	}
+
+	#container > .side {
+		position: absolute !important;
+		z-index: 5;
+		left: -320px;
+		margin-top: 0px !important;
+		width: 320px;
+		height: calc(100vh - 66px);
+		background: $body-background;
+		
+		.dark & {
+			background: $dark-body-background;
+		}
+
+		&.show-mobile-sidebar {
+			left: 0; 
+		}
+		
+		> .spacer {
+			margin: 10px !important;
+		}
+		
+		.submit-text {
+			right: 10px !important;
+		}
+
+		.submit-link,
+		.submit-text {
+			top: 10px;
+		}
+
+		h1.whoaversename {
+			display: block !important;
+		}
+		
+		// Subscribe button
+		div.side .btn-whoaverse-paging:nth-child(2) {
+			margin: 10px !important;
+		}
+		
+		// Block button
+		div.side .btn-whoaverse-paging:nth-child(3) {
+			right: 10px !important;
+		}
+		
+		.titlebox > button {
+			margin: 10px 15px !important;
+		}
+	}
+}
+
+@media(max-width: 700px) {
+	
+	ul.tabmenu {
+		margin-left: 44px;
+		text-align: left;
+		
+		> li:not(.selected) a {
+			background: $header-background !important;
+			
+			.dark & {
+				background: $dark-header-background !important;
+			}
+		}
+	}
+}
+
+@media(max-width: 550px) {
+
+	ul.tabmenu {
+		margin-left: 38px;
+	}
+
+	ul.tabmenu > li {
+		margin: 0;
+		
+		> a {
+			padding: 4px 5px;
+		}
+	}
+
+	.logged-in > span.user {
+		margin: 0 !important;
+		width: 44px;
+		height: 44px;
+		text-align: center;
+		
+		
+		> a {
+			display: inline-block;
+			margin: 0 !important;
+			width: 44px;
+			height: 44px;
+			overflow: hidden;
+		
+			&:before {
+				content: "\e609";
+				display: inline-block;
+				width: 44px !important;
+				height: 44px !important;
+				font: 23px/44px "Cashmere icons" !important;
+			}
+		
+			&:hover:before {
+				background: $header-background-alt !important;
+				
+				.dark &	{
+					background: $dark-header-background-alt !important;
+				}
+			}
+		}
+	}
+
+	.link .flat-list.buttons {
+		padding: 0;
+		
+		li a {
+			background: transparent;
+		}
+	}
+	
+	// Hide some of the less important markdown buttons
+	.markdownEditorImgButton[title="Large Paragraph Spacing"],
+	.markdownEditorImgButton[title="Horizontal Rule"],
+	.markdownEditorImgButton[title="Table"],
+	.markdownEditorImgButton[title="Strikethrough"],
+	.markdownEditorImgButton[title="Superscript"],
+	.markdownEditorImgButton[title="Subscript"] {
+		display: none;
+	}
+	
+}
+

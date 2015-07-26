@@ -1,0 +1,44 @@
+// Footer //////////////////////////////////////////////////////////////////////////////////////////
+
+.footer-container {
+	background: $footer-background;
+	
+	.dark & {
+		background: $dark-footer-background;
+	}
+}
+
+.footer {
+	margin: 15px auto;
+	height: 80px;
+
+	p {
+		color: $footer-text-color !important;
+	
+		.dark & {
+			color: $dark-footer-text-color !important;
+		}
+	}
+
+	a {
+		font-weight: bold;
+		color: $footer-link-color !important;
+
+		.dark & {
+			color: $dark-footer-link-color !important;
+		}
+	}
+
+	&:after {
+		content: "theme: /v/Cashmere";
+		display: block;
+		padding: 8px 0;
+		width: 100%;
+		color: $footer-text-color;
+		
+		.dark & {
+			color: $dark-footer-text-color;
+		}
+	}
+}
+

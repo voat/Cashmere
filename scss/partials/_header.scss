@@ -1,0 +1,342 @@
+// Header //////////////////////////////////////////////////////////////////////////////////////////
+
+#header {
+	position: fixed;
+	width: 100%;
+	height: 66px;
+	background: $header-background;
+	
+	.dark & {
+		background: $dark-header-background;
+	}
+	
+	a,
+	a:visited {
+		color: $header-link-color !important;
+	
+		.dark & {
+			color: $dark-header-link-color !important;
+		}
+	}
+}
+
+// Top section of header
+#sr-header-area {
+	display: inline-block;
+	height: 22px;
+
+	.sr-list {
+		margin-left: 0 !important;
+		background: $header-background-alt;
+		text-transform: lowercase;
+	
+		.dark & {
+			background: $dark-header-background-alt;
+		}
+	
+		a {
+			color: transparentize($header-link-color, 0.4) !important;
+			transition: color $color-transition !important;
+			
+			.dark & {
+				color: transparentize($dark-header-link-color, 0.4) !important;
+			}
+		}
+		
+		&:hover a {
+			color: transparentize($header-link-color, 0.0) !important;
+			
+			.dark & {
+				color: transparentize($dark-header-link-color, 0.0) !important;
+			}
+		}
+	}
+
+	#sr-more-link {
+		top: 0;
+		padding: 0 10px;
+		height: 22px;
+		line-height: 22px;
+		font-size: 12px;
+		color: transparentize($header-link-color, 0.4) !important;
+		letter-spacing: 0;
+		background: $header-background-alt;
+	
+		.dark & {
+			background: $dark-header-background-alt;
+		}
+	
+		&:hover {
+			color: $header-link-color !important;
+		}
+	}
+}
+
+// "My Subverses" dropdown /////////////////////////////////////////////////////////////////////////
+
+.whoaSubscriptionMenu > li {
+
+	a {
+		padding-left: 5px;
+	}	
+
+	&:hover {
+		background: $header-background-alt;
+	
+		.dark & {
+			background: $dark-header-background-alt;
+		}
+	}
+
+	&:hover > ul,
+	> ul:hover {
+		background: $header-background-alt;
+		
+		.dark & {
+			background: $dark-header-background-alt;
+		}
+	}
+
+	> ul {
+		top: 22px;
+		left: 0;
+		padding: 5px;
+		max-height: 80vh;
+		overflow-y: auto; // adds scrollbar if necessary
+		border-radius: 0 0 $border-radius $border-radius !important;
+		
+		> li > a {
+			padding: 3px 18px 3px 6px !important; // extra padding on right is for scrollbar
+			font-size: 12px;
+			border-radius: $border-radius !important;
+			transition: none;
+			background: transparent !important;
+
+			&:hover {
+				background: darken( $header-background-alt, 10% ) !important;
+				
+				.dark & {
+					background: lighten( $dark-header-background-alt, 10% ) !important;
+				}
+			}
+		}
+	}
+}
+
+// Main header section /////////////////////////////////////////////////////////////////////////////
+
+#header-container {
+	bottom: 0;
+	height: 44px !important;
+	background: transparent;
+}
+	
+#header-banner {
+	height: 44px;
+}
+
+#header-img-a {
+	float: left;
+	padding-left: 10px;
+	width: 110px;
+
+	&:before {
+		content:"\e600";
+		font: 40px/44px "Cashmere icons";
+	}
+
+	img {
+		display: none;
+	}
+}
+
+#header-banner .pagename {
+	float: left;
+	line-height: 44px;
+	margin: 0;
+
+	> a	{
+		padding: 0 12px 0 6px;
+	}
+
+	&:before {
+		content: "\e603";
+		font-family: "Cashmere icons";
+		color: $header-link-color;
+
+		.dark & {
+			color: $dark-header-link-color;
+		}
+	}
+}
+	
+#header-banner > .tabmenu {
+	line-height: 44px;
+
+	a {
+		transition: background $color-transition;
+		border-radius: $border-radius !important;
+	}
+
+	a:hover,
+	.selected > a {
+		background: $header-background-alt !important;
+	
+		.dark & {
+			background: $dark-header-background-alt !important;
+		}
+	}
+	
+	.submit-link,
+	.submit-text {
+		display: none;
+	}
+	
+}
+
+#header-account {
+	
+	// .logged-out and .logged-in
+	> div {
+		margin: 0;
+		padding: 0;
+		background: transparent;
+
+		> .separator {
+			display: none;
+		}
+
+		> .user:first-child {
+			float: left;
+			margin-right: 10px;
+		}
+	}
+
+	> .logged-out {
+		font-size: 12px;
+		color: transparentize($header-link-color, 0.4);
+	
+		a {
+			font-weight: 500;
+		}
+	}
+
+	#scp,
+	#ccp,
+	#upvoatsGiven {
+		font-weight: 700 !important;
+	}
+
+	// This span contains the username and vote counts
+	.user:first-child {
+		visibility: hidden; // hide the spacer bars
+		font-size: 1px;
+	
+		> .userkarma {
+			margin: 0;
+		}
+
+		// just the username
+		> a { 
+			line-height: 44px !important;
+		}
+
+		// username and vote counts
+		> a,
+		> span > a { 
+			visibility: visible;
+			margin: 0 5px;
+			font-size: 12px;
+		}
+
+		// just the vote counts
+		> span > a { 
+			padding: 6px;
+			text-align: center;
+			background: $header-background-alt;
+			border-radius: $border-radius !important;
+		
+			.dark & {
+				background: $dark-header-background-alt;
+			}
+		}	
+	}
+}
+
+// Icon buttons
+#manage,
+#nightmodetoggle,
+.notification-container,
+.notification-container *,
+#mail,
+#header-account > div > a:last-child { // logout button
+	top: 0;
+	float: left;
+	height: 44px !important;
+	width: 44px !important;
+	text-align: center;
+	text-indent: 0;
+
+	&:before {
+		display: inline-block;
+		width: 44px;
+		font: 20px/44px "Cashmere icons";
+		transition: background $color-transition;
+	}
+
+	&:hover:before {
+		background: $header-background-alt;
+		
+		.dark & {
+			background: $dark-header-background-alt;
+		}
+	}
+}
+
+#manage:before {
+	content: "\e604";
+}
+
+#nightmodetoggle:before {
+	content: "\e605";
+}
+
+#mail {
+
+	&:before {
+		content: "\e606";
+		transition: background $color-transition, color $color-transition;
+	}
+
+	&.havemail:before {
+		background: $mailbox-alert-background !important;
+
+		.dark & {
+			background: $dark-mailbox-alert-background !important;
+		}
+	}
+}
+
+#mailcounter {
+	left: 0;
+	line-height: 44px;
+	font-size: 11px;
+	font-weight: 700;
+	background: transparent;
+	color: invert($header-link-color);
+	transition: background $color-transition;
+	
+	.dark &  {
+		color: invert($dark-header-link-color);
+	}
+}
+
+#header-account > div > a:last-child {
+	visibility: hidden; // hide "log out" text
+		
+	&:before {
+		visibility: visible;
+		content: "\e607";
+	}
+}
+

@@ -1,0 +1,66 @@
+// Icons ///////////////////////////////////////////////////////////////////////////////////////////
+
+@if $display-thumbnails == true {
+
+// Icon thumbnails
+a.title:before {
+	content: "\e611"; // Globe icon. For anything not covered below.
+	position: absolute;
+	top: 15px;
+	left: 62px; 
+	width: 70px;
+	height: 70px;
+	font: 46px/70px "Cashmere icons";
+	background: $thumbnail-background;
+	color: $thumbnail-icon-color;
+	text-align: center;
+	
+	.dark & {
+		background: $dark-thumbnail-background;
+		color: $dark-thumbnail-icon-color;
+	}
+}
+
+// Self-post
+a.title[href^="/v/"]:before { 
+	content:"\e610";
+}
+
+// Another page on Voat (not self-posts)
+a.title[href*="voat.co"]:before { 
+	content:"\e615";
+}
+
+// Image (in case regular thumbnail fails to generate)
+a.title[href*="imgur.com/"]:before,
+a.title[href*="veuwer.com/"]:before,
+a.title[href*="slimgur.com/"]:before,
+a.title[href*="flickr.com/"]:before,
+a.title[href*="500px.com/"]:before,
+a.title[href$=".jpg"]:before,
+a.title[href*=".jpg?"]:before,
+a.title[href$=".jpeg"]:before,
+a.title[href*=".jpeg?"]:before,
+a.title[href$=".png"]:before,
+a.title[href*=".png?"]:before,
+a.title[href$=".svg"]:before,
+a.title[href*=".svg?"]:before {
+	content:"\e612";
+}
+
+// Video (in case regular thumbnail fails to generate)
+a.title[href*="youtube.com/"]:before,
+a.title[href*="youtu.be/"]:before,
+a.title[href*="vimeo.com/"]:before,
+a.title[href*="vid.me/"]:before,
+a.title[href*="liveleak.com/"]:before {
+	content:"\e614";
+}
+
+// Prevent icon thumbnail if submission has regular thumbnail
+a.thumbnail + .entry a.title:before { 
+	display: none;
+}
+
+} //endif
+

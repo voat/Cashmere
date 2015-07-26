@@ -1,0 +1,122 @@
+// Colors, day-mode ////////////////////////////////////////////////////////////////////////////////
+
+// Base
+$text-color: #111;
+$link-color: hsl(205, 50%, 30%);
+$link-color-hover: saturate(lighten($link-color, 10%), 20%);
+$link-color-visited: #666;
+$link-color-visited-hover: lighten($link-color-visited, 10%);
+$body-background: hsl(210, 20%, 80%);
+$text-input-border: 1px solid $body-background;
+
+$upvoat-color: hsl(205, 70%, 53%);
+$downvoat-color: hsl(290, 82%, 39%);
+$unvoated-color: #aaa;
+
+$submit-button-text-color: #fff;
+$submit-button-background: hsl(17, 90%, 40%);
+$submit-button-background-hover: darken($submit-button-background, 10%);
+
+// Header
+$header-link-color: #fff;
+$header-background: hsl(205, 50%, 40%);
+$header-background-alt: darken($header-background, 5%);
+$mailbox-alert-background: hsl(40,100%,45%);
+
+$dropdown-menu-background: darken($header-background-alt, 5%);
+$dropdown-menu-item-hover: darken($dropdown-menu-background, 5%);
+
+// Content
+$submission-background: #fff;
+$thumbnail-icon-color: $submission-background;
+$thumbnail-background: darken($body-background, 25%);
+
+$comment-background: $submission-background;
+$comment-background-alt: lighten($body-background, 14%);
+
+$code-background: #222;
+$code-text-color: salmon;
+$spoiler-background: #222;
+$spoiler-text-color: #eee;
+
+// Sidebar
+$sidebar-text-color: $text-color;
+$sidebar-background: $submission-background;
+$sidebar-title-text-color: $sidebar-background;
+$sidebar-title-background: lighten(desaturate($header-background, 15%), 5%);
+
+// Footer
+$footer-text-color: #000;
+$footer-link-color: lighten($link-color, 10%);
+$footer-link-color-hover: transparentize($footer-link-color, .25);
+$footer-background: darken($body-background, 10%);
+
+
+// Colors, night-mode //////////////////////////////////////////////////////////////////////////////
+
+// Base
+$dark-text-color: #ccc;
+$dark-link-color: hsl(17, 90%, 35%);
+$dark-link-color-hover: saturate(lighten($dark-link-color, 10%), 20%);
+$dark-link-color-visited: #999;
+$dark-link-color-visited-hover: lighten($dark-link-color-visited, 10%);
+$dark-body-background: #000;
+$dark-text-input-border: 1px solid #333;
+
+$dark-upvoat-color: hsl(205, 70%, 53%);
+$dark-downvoat-color: hsl(291, 82%, 39%);
+$dark-unvoated-color: #555;
+
+$dark-submit-button-text-color: #fff;
+$dark-submit-button-background: hsl(17, 90%, 30%);
+$dark-submit-button-background-hover: darken($dark-submit-button-background, 10%);
+
+// Header
+$dark-header-link-color: #ddd;
+$dark-header-background: hsl(205, 0%, 10%);
+$dark-header-background-alt: darken($dark-header-background, 5%);
+$dark-mailbox-alert-background: hsl(35,100%,40%);
+
+$dark-dropdown-menu-background: darken($dark-header-background-alt, 5%);
+$dark-dropdown-menu-item-hover: darken($dark-dropdown-menu-background, 5%);
+
+// Content
+$dark-submission-background: #111;
+$dark-thumbnail-icon-color: #555;
+$dark-thumbnail-background: #000;
+
+$dark-comment-background: $dark-submission-background;
+$dark-comment-background-alt: lighten($dark-comment-background, 4%);
+
+$dark-code-background: #000;
+$dark-code-text-color: salmon;
+$dark-spoiler-background: #444;
+$dark-spoiler-text-color: #eee;
+
+// Sidebar
+$dark-sidebar-text-color: $dark-text-color;
+$dark-sidebar-background: $dark-submission-background;
+$dark-sidebar-title-text-color: $dark-text-color;
+$dark-sidebar-title-background: lighten($dark-header-background, 5%);
+
+// Footer
+$dark-footer-text-color: $dark-text-color;
+$dark-footer-link-color: darken($dark-link-color, 10%);
+$dark-footer-link-color-hover: transparentize($dark-footer-link-color, .25);
+$dark-footer-background: lighten($dark-body-background, 10%);
+
+
+// Other settings //////////////////////////////////////////////////////////////////////////////////
+
+$color-transition: ease .2s;
+$border-radius: 2px;
+
+// Set this to false if you don't want any thumbnails.
+$display-thumbnails: true;
+
+// Set the number of columns in the sidebar "MODERATORS" box.
+// This can reduce white space, but may not work well if any 
+// mods have long usernames and/or flairs.
+$mod-column-count: 1;
+
+
