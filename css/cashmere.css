@@ -248,6 +248,9 @@ div.usertext-buttons > *:hover {
 .dark #header {
   background: #1a1a1a;
 }
+#header:focus {
+  outline: none;
+}
 #header a,
 #header a:visited {
   color: #fff !important;

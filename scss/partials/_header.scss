@@ -10,6 +10,10 @@
 		background: $dark-header-background;
 	}
 	
+	&:focus {
+		outline: none;
+	}
+	
 	a,
 	a:visited {
 		color: $header-link-color !important;
