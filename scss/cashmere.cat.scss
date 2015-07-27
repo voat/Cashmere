@@ -549,7 +549,7 @@ div.usertext-buttons > * {
 
 	&:before {
 		content:"\e600";
-		font: 40px/44px "Cashmere icons";
+		font: 40px/42px "Cashmere icons";
 	}
 
 	img {
@@ -560,20 +560,10 @@ div.usertext-buttons > * {
 #header-banner .pagename {
 	float: left;
 	line-height: 44px;
-	margin: 0;
+	margin: 0 10px 0 15px;
 
 	> a	{
-		padding: 0 12px 0 6px;
-	}
-
-	&:before {
-		content: "\e603";
-		font-family: "Cashmere icons";
-		color: $header-link-color;
-
-		.dark & {
-			color: $dark-header-link-color;
-		}
+		padding: 0;
 	}
 }
 	
@@ -1700,6 +1690,11 @@ div.side {
 		
 		> div {
 			padding: 0px 15px !important;
+		}
+		
+		p.h6,
+		b {
+			font-weight: 400;
 		}
 	}
 

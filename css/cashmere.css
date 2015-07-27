@@ -358,7 +358,7 @@ div.usertext-buttons > *:hover {
 }
 #header-img-a:before {
   content: "\e600";
-  font: 40px/44px "Cashmere icons";
+  font: 40px/42px "Cashmere icons";
 }
 #header-img-a img {
   display: none;
@@ -367,18 +367,10 @@ div.usertext-buttons > *:hover {
 #header-banner .pagename {
   float: left;
   line-height: 44px;
-  margin: 0;
+  margin: 0 10px 0 15px;
 }
 #header-banner .pagename > a {
-  padding: 0 12px 0 6px;
-}
-#header-banner .pagename:before {
-  content: "\e603";
-  font-family: "Cashmere icons";
-  color: #fff;
-}
-.dark #header-banner .pagename:before {
-  color: #ddd;
+  padding: 0;
 }
 
 #header-banner > .tabmenu {
@@ -1342,6 +1334,10 @@ div.side .submissioninfo .alert-h2:first-child {
 }
 div.side .submissioninfo > div {
   padding: 0px 15px !important;
+}
+div.side .submissioninfo p.h6,
+div.side .submissioninfo b {
+  font-weight: 400;
 }
 div.side .message-moderators-temporary-class {
   visibility: hidden;
