@@ -81,23 +81,16 @@
 .whoaSubscriptionMenu > li {
 
 	a {
-		padding-left: 5px;
+		padding: 0 5px;
 	}	
 
-	&:hover {
-		background: $header-background-alt;
-	
-		.dark & {
-			background: $dark-header-background-alt;
-		}
-	}
-
+	&:hover,
 	&:hover > ul,
 	> ul:hover {
-		background: $header-background-alt;
+		background: $dropdown-menu-background;
 		
 		.dark & {
-			background: $dark-header-background-alt;
+			background: $dark-dropdown-menu-background;
 		}
 	}
 
@@ -117,10 +110,10 @@
 			background: transparent !important;
 
 			&:hover {
-				background: darken( $header-background-alt, 10% ) !important;
+				background: $dropdown-menu-item-hover !important;
 				
 				.dark & {
-					background: lighten( $dark-header-background-alt, 10% ) !important;
+					background: $dark-dropdown-menu-item-hover !important;
 				}
 			}
 		}

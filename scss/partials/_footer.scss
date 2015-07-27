@@ -27,6 +27,14 @@
 		.dark & {
 			color: $dark-footer-link-color !important;
 		}
+		
+		&:hover {
+			color: $footer-link-color-hover !important;
+			
+			.dark & {
+				color: $dark-footer-link-color-hover !important;
+			}
+		}
 	}
 
 	&:after {
