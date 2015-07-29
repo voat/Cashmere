@@ -108,8 +108,18 @@ $dark-footer-background: darken($dark-body-background, 2.5%);
 
 // Other settings //////////////////////////////////////////////////////////////////////////////////
 
-$color-transition: ease .2s;
-$border-radius: 2px;
+
+// Only display submit button for one post type
+// Options: "link" / "self" / "all"
+$submission-type: all;
+
+// Labels for submit buttons
+$link-post-label: "Share a link";
+$self-post-label: "Discuss";
+
+// Labels for "subscribers" and "users here now"
+$subscribers: "Subscribers:";
+$users-here-now: "Visiting now:";
 
 // Set this to false if you don't want any thumbnails.
 $display-thumbnails: true;
@@ -119,7 +129,8 @@ $display-thumbnails: true;
 // mods have long usernames and/or flairs.
 $mod-column-count: 1;
 
-
+$color-transition: ease .2s;
+$border-radius: 2px;
 // Fonts ///////////////////////////////////////////////////////////////////////////////////////////
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,700,700italic');
@@ -1504,8 +1515,9 @@ div.side {
 		width: 145px;
 		height: 36px;
 		line-height: 36px;
-		font-size: 12px;
+		font-size: 0.0001px;
 		font-weight: 500;
+		overflow: hidden;
 		background: $submit-button-background !important;
 		transition: background $color-transition;
 		color: $submit-button-text-color !important;
@@ -1529,7 +1541,43 @@ div.side {
 
 	.submit-text {
 		right: 0;
+		
+		&:before {
+			content: $self-post-label;
+			font-size: 12px;
+		}
+		
 	}
+	
+	.submit-link:before {
+		content: $link-post-label;
+		font-size: 12px;
+	}
+
+	@if $submission-type == link {
+		
+		.submit-link {
+			width: 300px;
+		}
+		
+		.submit-text {
+			display: none;
+		}
+		
+	} @else if $submission-type == self {
+		
+		.submit-text {
+			width: 300px;
+		}
+		
+		.submit-link {
+			display: none;
+		}
+
+	} //endif
+	
+	
+	
 
 // Search //////////////////////////////////////////////////////////////////////////////////////////
 	.form-horizontal {
@@ -1664,6 +1712,28 @@ div.side {
 		display: inline-block;
 		margin-top: 40px !important;
 		width: 270px;
+		
+		.word {
+			visibility: hidden;
+			
+			&:before {
+				content: $subscribers;
+				visibility: visible;
+			}
+		}
+	}
+	
+	p.users-online {
+		margin-bottom: 15px !important;
+	}
+	
+	p.users-online > .word {
+		visibility: hidden;
+		
+		&:before {
+			content: $users-here-now;
+			visibility: visible;
+		}
 	}
 
 // Submission Info (on the comments page only) /////////////////////////////////////////////////////
@@ -1900,10 +1970,6 @@ div.side {
 		// Block button
 		div.side .btn-whoaverse-paging:nth-child(3) {
 			right: 10px !important;
-		}
-		
-		.titlebox > button {
-			margin: 10px 15px !important;
 		}
 	}
 }

@@ -1191,8 +1191,9 @@ div.side .submit-text {
   width: 145px;
   height: 36px;
   line-height: 36px;
-  font-size: 12px;
+  font-size: 0.0001px;
   font-weight: 500;
+  overflow: hidden;
   background: #c23e0a !important;
   transition: background ease 0.2s;
   color: #fff !important;
@@ -1215,6 +1216,14 @@ div.side .submit-text:hover {
 }
 div.side .submit-text {
   right: 0;
+}
+div.side .submit-text:before {
+  content: "Discuss";
+  font-size: 12px;
+}
+div.side .submit-link:before {
+  content: "Share a link";
+  font-size: 12px;
 }
 div.side .form-horizontal {
   position: relative;
@@ -1315,6 +1324,23 @@ div.side span.subscribers {
   display: inline-block;
   margin-top: 40px !important;
   width: 270px;
+}
+div.side span.subscribers .word {
+  visibility: hidden;
+}
+div.side span.subscribers .word:before {
+  content: "Subscribers:";
+  visibility: visible;
+}
+div.side p.users-online {
+  margin-bottom: 15px !important;
+}
+div.side p.users-online > .word {
+  visibility: hidden;
+}
+div.side p.users-online > .word:before {
+  content: "Visiting now:";
+  visibility: visible;
 }
 div.side .submissioninfo {
   padding-bottom: 5px !important;
@@ -1500,9 +1526,6 @@ div.side .spacer:last-child .sidecontentbox.content {
   }
   #container > .side div.side .btn-whoaverse-paging:nth-child(3) {
     right: 10px !important;
-  }
-  #container > .side .titlebox > button {
-    margin: 10px 15px !important;
   }
 }
 @media (max-width: 700px) {

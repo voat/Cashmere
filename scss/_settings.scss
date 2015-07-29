@@ -108,8 +108,18 @@ $dark-footer-background: darken($dark-body-background, 2.5%);
 
 // Other settings //////////////////////////////////////////////////////////////////////////////////
 
-$color-transition: ease .2s;
-$border-radius: 2px;
+
+// Only display submit button for one post type
+// Options: "link" / "self" / "all"
+$submission-type: all;
+
+// Labels for submit buttons
+$link-post-label: "Share a link";
+$self-post-label: "Discuss";
+
+// Labels for "subscribers" and "users here now"
+$subscribers: "Subscribers:";
+$users-here-now: "Visiting now:";
 
 // Set this to false if you don't want any thumbnails.
 $display-thumbnails: true;
@@ -119,4 +129,5 @@ $display-thumbnails: true;
 // mods have long usernames and/or flairs.
 $mod-column-count: 1;
 
-
+$color-transition: ease .2s;
+$border-radius: 2px;
