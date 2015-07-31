@@ -95,14 +95,14 @@ div.side {
 	.submit-text {
 		right: 0;
 		
-		&:before {
+		&::before {
 			content: $self-post-label;
 			font-size: 12px;
 		}
 		
 	}
 	
-	.submit-link:before {
+	.submit-link::before {
 		content: $link-post-label;
 		font-size: 12px;
 	}
@@ -136,7 +136,7 @@ div.side {
 	.form-horizontal {
 		position: relative;
 		
-		h2:before {
+		h2::before {
 			content: "Search";
 		}
 	}
@@ -199,7 +199,7 @@ div.side {
 			display: none !important;
 		}
 	
-		&:before {
+		&::before {
 			content: "\e60a";
 			float: right;
 			font: 18px/36px "Cashmere icons" !important;
@@ -269,7 +269,7 @@ div.side {
 		.word {
 			visibility: hidden;
 			
-			&:before {
+			&::before {
 				content: $subscribers;
 				visibility: visible;
 			}
@@ -283,7 +283,7 @@ div.side {
 	p.users-online > .word {
 		visibility: hidden;
 		
-		&:before {
+		&::before {
 			content: $users-here-now;
 			visibility: visible;
 		}
@@ -320,7 +320,7 @@ div.side {
 		visibility: hidden;
 		width: 0;
 	
-		&:before {
+		&::before {
 			content: "\e60b";
 			float: right;
 			visibility: visible;

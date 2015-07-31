@@ -12,7 +12,7 @@
 	background: transparent !important;
 	text-align: center;
 
-	&:before {
+	&::before {
 		font: 16px/24px "Cashmere icons";
 		color: $link-color !important;
 		
@@ -21,7 +21,7 @@
 		}
 	}
 	
-	&:hover:before {
+	&:hover::before {
 		color: $link-color-hover !important;
 		
 		.dark & {
@@ -30,15 +30,15 @@
 	}
 }
 
-.markdownEditorImgButton[title="Bold"]:before {
+.markdownEditorImgButton[title="Bold"]::before {
 	content: "\e616";
 }
 
-.markdownEditorImgButton[title="Italic"]:before {
+.markdownEditorImgButton[title="Italic"]::before {
 	content: "\e617";
 }
 
-.markdownEditorImgButton[title="Link"]:before {
+.markdownEditorImgButton[title="Link"]::before {
 	content: "\e618";
 }
 
@@ -77,33 +77,33 @@
 	}
 }
 
-.markdownEditorImgButton[title="Quote"]:before {
+.markdownEditorImgButton[title="Quote"]::before {
 	content: "\e619";
 }
 
-.markdownEditorImgButton[title="Code"]:before {
+.markdownEditorImgButton[title="Code"]::before {
 	content: "\e61a";
 }
 
-.markdownEditorImgButton[title="Bullet List"]:before {
+.markdownEditorImgButton[title="Bullet List"]::before {
 	content: "\e61b";
 }
 
-.markdownEditorImgButton[title="Number List"]:before {
+.markdownEditorImgButton[title="Number List"]::before {
 	content: "\e61c";
 }
 
-.markdownEditorImgButton[title="Large Paragraph Spacing"]:before {  //
+.markdownEditorImgButton[title="Large Paragraph Spacing"]::before {  //
 	content: "\e61d";
 }
 
-.markdownEditorImgButton[title="Horizontal Rule"]:before {  //
+.markdownEditorImgButton[title="Horizontal Rule"]::before {  //
 	content: "\2014";
 	line-height: 20px;
 	font-weight: 700;
 }
 
-.markdownEditorImgButton[title="Headings"]:before { 
+.markdownEditorImgButton[title="Headings"]::before { 
 	content: "H";
 	font-family: "Roboto", sans-serif !important;
 	font-weight: 700;
@@ -115,73 +115,73 @@
 	height: 20px;
 	line-height: 20px;
 	
-	&:before {
+	&::before {
 		font-family: "Roboto", sans-serif !important;
 		font-weight: 700;
 	}
 }
 
-.markdownEditorImgButton[title="Heading Level 1"]:before {
+.markdownEditorImgButton[title="Heading Level 1"]::before {
 	content: "H1";
 }
 
-.markdownEditorImgButton[title="Heading Level 2"]:before {
+.markdownEditorImgButton[title="Heading Level 2"]::before {
 	content: "H2";
 }
 
-.markdownEditorImgButton[title="Heading Level 3"]:before {
+.markdownEditorImgButton[title="Heading Level 3"]::before {
 	content: "H3";
 }
 
-.markdownEditorImgButton[title="Heading Level 4"]:before {
+.markdownEditorImgButton[title="Heading Level 4"]::before {
 	content: "H4";
 }
 
-.markdownEditorImgButton[title="Heading Level 5"]:before {
+.markdownEditorImgButton[title="Heading Level 5"]::before {
 	content: "H5";
 }
 
-.markdownEditorImgButton[title="Heading Level 6"]:before {
+.markdownEditorImgButton[title="Heading Level 6"]::before {
 	content: "H6";
 }
 
-.markdownEditorImgButton[title="Table"]:before {
+.markdownEditorImgButton[title="Table"]::before {
 	content: "\e61f";
 }
 
-.markdownEditorImgButton[title="More Columns"]:before {
+.markdownEditorImgButton[title="More Columns"]::before {
 	content: "\e624";
 }
 
-.markdownEditorImgButton[title="Less Columns"]:before {
+.markdownEditorImgButton[title="Less Columns"]::before {
 	content: "\e625";
 }
 
-.markdownEditorImgButton[title="More Rows"]:before {
+.markdownEditorImgButton[title="More Rows"]::before {
 	content: "\e626";
 }
 
-.markdownEditorImgButton[title="Less Rows"]:before {
+.markdownEditorImgButton[title="Less Rows"]::before {
 	content: "\e627";
 }
 
-.markdownEditorTextButton[title="Create Table"]:before {
+.markdownEditorTextButton[title="Create Table"]::before {
 	
 }
 
-.markdownEditorImgButton[title="Spoiler"]:before {
+.markdownEditorImgButton[title="Spoiler"]::before {
 	content: "\e620";
 }
 
-.markdownEditorImgButton[title="Strikethrough"]:before {
+.markdownEditorImgButton[title="Strikethrough"]::before {
 	content: "\e621";
 }
 
-.markdownEditorImgButton[title="Superscript"]:before {
+.markdownEditorImgButton[title="Superscript"]::before {
 	content: "\e622";
 }
 
-.markdownEditorImgButton[title="Subscript"]:before {
+.markdownEditorImgButton[title="Subscript"]::before {
 	content: "\e623";
 }
 

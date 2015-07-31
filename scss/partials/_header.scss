@@ -137,7 +137,7 @@
 	padding-left: 10px;
 	width: 110px;
 
-	&:before {
+	&::before {
 		content:"\e600";
 		font: 40px/42px "Cashmere icons";
 	}
@@ -264,14 +264,14 @@
 	text-align: center;
 	text-indent: 0;
 
-	&:before {
+	&::before {
 		display: inline-block;
 		width: 44px;
 		font: 20px/44px "Cashmere icons";
 		transition: background $color-transition;
 	}
 
-	&:hover:before {
+	&:hover::before {
 		background: $header-background-alt;
 		
 		.dark & {
@@ -280,22 +280,22 @@
 	}
 }
 
-#manage:before {
+#manage::before {
 	content: "\e604";
 }
 
-#nightmodetoggle:before {
+#nightmodetoggle::before {
 	content: "\e605";
 }
 
 #mail {
 
-	&:before {
+	&::before {
 		content: "\e606";
 		transition: background $color-transition, color $color-transition;
 	}
 
-	&.havemail:before {
+	&.havemail::before {
 		background: $mailbox-alert-background !important;
 
 		.dark & {
@@ -321,7 +321,7 @@
 #header-account > div > a:last-child {
 	visibility: hidden; // hide "log out" text
 		
-	&:before {
+	&::before {
 		visibility: visible;
 		content: "\e607";
 	}

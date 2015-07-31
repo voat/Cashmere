@@ -106,8 +106,7 @@
 		
 		.dark & {
 			background: $dark-header-background !important;
-		}
-		
+		}	
 	}
 }
 
@@ -145,7 +144,6 @@ body {
 	color: $text-selection-color;
 }
 
-
 // Link styles
 a {
 	color: $link-color !important;
@@ -177,7 +175,6 @@ a {
 			color: $dark-link-color-hover !important;
 		}
 	}
-	
 }
 
 a.btn-tour,
@@ -208,7 +205,6 @@ div.usertext-buttons > * {
 		}
 	}	
 }
-
 
 // Markdown
 .md {
@@ -286,6 +282,7 @@ div.usertext-buttons > * {
 }
 
 // Misc. ///////////////////////////////////////////////////////////////////////////////////////////
+
 .tooltipster-base {
 	margin-top: 6px;
 }

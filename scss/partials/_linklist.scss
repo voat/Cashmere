@@ -101,7 +101,7 @@
 	}
 	
 	// don't show icon thumbnails on comments page
-	a.title:before {
+	a.title::before {
 		display: none !important;
 	}
 }
@@ -152,13 +152,13 @@
 	}
 }
 
-.arrow-upvote:before,
-.arrow-upvoted:before {
+.arrow-upvote::before,
+.arrow-upvoted::before {
 	content: "\e601";
 }
 
-.arrow-downvote:before,
-.arrow-downvoted:before {
+.arrow-downvote::before,
+.arrow-downvoted::before {
 	content: "\e602";
 }
 
@@ -217,7 +217,7 @@ span.post_downvotes {
 	height: 20px !important;
 	text-align: center;
 
-	&:before {
+	&::before {
 		content: "\e60c";
 		font: 20px/1 "Cashmere icons";
 		color: $link-color;
@@ -228,7 +228,7 @@ span.post_downvotes {
 		}
 	}
 	
-	&:hover:before {
+	&:hover::before {
 		color: $link-color-hover;
 		
 		.dark & {
@@ -241,13 +241,13 @@ span.post_downvotes {
 		   -moz-animation: spin 3s linear infinite;
 		        animation: spin 3s linear infinite;
 		
-		&:before {
+		&::before {
 			content: "\e60d";
 			font-weight: 700;
 		}
 	}
 
-	&.expanded:before {
+	&.expanded::before {
 		content: "\e60e";
 	}
 }
@@ -292,7 +292,7 @@ span.post_downvotes {
 		background: $dark-submission-background;
 	}
 	
-	&:before {
+	&::before {
 		content:"Sort by:";
 		margin-right: 5px;
 		font-weight: 500;
