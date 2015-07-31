@@ -135,6 +135,17 @@ body {
 	}
 }
 
+::-moz-selection {
+	background: $text-selection-background;
+	color: $text-selection-color;
+}
+
+::selection {
+	background: $text-selection-background;
+	color: $text-selection-color;
+}
+
+
 // Link styles
 a {
 	color: $link-color !important;

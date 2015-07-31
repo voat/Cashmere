@@ -71,6 +71,9 @@ $dark-submit-button-text-color: #fff;
 $dark-submit-button-background: hsl(210, 30%, 35%);
 $dark-submit-button-background-hover: darken($dark-submit-button-background, 10%);
 
+$text-selection-background: hsla(0, 0%, 0%, 0.2);
+$text-selection-color: inherit;
+
 // Header
 $dark-header-link-color: #eee;
 $dark-header-background: hsl(0, 0%, 18%);
