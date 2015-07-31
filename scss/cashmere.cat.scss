@@ -71,6 +71,9 @@ $dark-submit-button-text-color: #fff;
 $dark-submit-button-background: hsl(210, 30%, 35%);
 $dark-submit-button-background-hover: darken($dark-submit-button-background, 10%);
 
+$text-selection-background: hsla(0, 0%, 0%, 0.2);
+$text-selection-color: inherit;
+
 // Header
 $dark-header-link-color: #eee;
 $dark-header-background: hsl(0, 0%, 18%);
@@ -239,8 +242,7 @@ $border-radius: 2px;
 		
 		.dark & {
 			background: $dark-header-background !important;
-		}
-		
+		}	
 	}
 }
 
@@ -266,6 +268,16 @@ body {
 		background: $dark-body-background;
 		color: $dark-text-color !important;
 	}
+}
+
+::-moz-selection {
+	background: $text-selection-background;
+	color: $text-selection-color;
+}
+
+::selection {
+	background: $text-selection-background;
+	color: $text-selection-color;
 }
 
 // Link styles
@@ -299,7 +311,6 @@ a {
 			color: $dark-link-color-hover !important;
 		}
 	}
-	
 }
 
 a.btn-tour,
@@ -330,7 +341,6 @@ div.usertext-buttons > * {
 		}
 	}	
 }
-
 
 // Markdown
 .md {
@@ -408,6 +418,7 @@ div.usertext-buttons > * {
 }
 
 // Misc. ///////////////////////////////////////////////////////////////////////////////////////////
+
 .tooltipster-base {
 	margin-top: 6px;
 }
@@ -551,7 +562,7 @@ div.usertext-buttons > * {
 	padding-left: 10px;
 	width: 110px;
 
-	&:before {
+	&::before {
 		content:"\e600";
 		font: 40px/42px "Cashmere icons";
 	}
@@ -678,14 +689,14 @@ div.usertext-buttons > * {
 	text-align: center;
 	text-indent: 0;
 
-	&:before {
+	&::before {
 		display: inline-block;
 		width: 44px;
 		font: 20px/44px "Cashmere icons";
 		transition: background $color-transition;
 	}
 
-	&:hover:before {
+	&:hover::before {
 		background: $header-background-alt;
 		
 		.dark & {
@@ -694,22 +705,22 @@ div.usertext-buttons > * {
 	}
 }
 
-#manage:before {
+#manage::before {
 	content: "\e604";
 }
 
-#nightmodetoggle:before {
+#nightmodetoggle::before {
 	content: "\e605";
 }
 
 #mail {
 
-	&:before {
+	&::before {
 		content: "\e606";
 		transition: background $color-transition, color $color-transition;
 	}
 
-	&.havemail:before {
+	&.havemail::before {
 		background: $mailbox-alert-background !important;
 
 		.dark & {
@@ -735,7 +746,7 @@ div.usertext-buttons > * {
 #header-account > div > a:last-child {
 	visibility: hidden; // hide "log out" text
 		
-	&:before {
+	&::before {
 		visibility: visible;
 		content: "\e607";
 	}
@@ -844,7 +855,7 @@ div.usertext-buttons > * {
 	}
 	
 	// don't show icon thumbnails on comments page
-	a.title:before {
+	a.title::before {
 		display: none !important;
 	}
 }
@@ -895,13 +906,13 @@ div.usertext-buttons > * {
 	}
 }
 
-.arrow-upvote:before,
-.arrow-upvoted:before {
+.arrow-upvote::before,
+.arrow-upvoted::before {
 	content: "\e601";
 }
 
-.arrow-downvote:before,
-.arrow-downvoted:before {
+.arrow-downvote::before,
+.arrow-downvoted::before {
 	content: "\e602";
 }
 
@@ -960,7 +971,7 @@ span.post_downvotes {
 	height: 20px !important;
 	text-align: center;
 
-	&:before {
+	&::before {
 		content: "\e60c";
 		font: 20px/1 "Cashmere icons";
 		color: $link-color;
@@ -971,7 +982,7 @@ span.post_downvotes {
 		}
 	}
 	
-	&:hover:before {
+	&:hover::before {
 		color: $link-color-hover;
 		
 		.dark & {
@@ -984,13 +995,13 @@ span.post_downvotes {
 		   -moz-animation: spin 3s linear infinite;
 		        animation: spin 3s linear infinite;
 		
-		&:before {
+		&::before {
 			content: "\e60d";
 			font-weight: 700;
 		}
 	}
 
-	&.expanded:before {
+	&.expanded::before {
 		content: "\e60e";
 	}
 }
@@ -1035,7 +1046,7 @@ span.post_downvotes {
 		background: $dark-submission-background;
 	}
 	
-	&:before {
+	&::before {
 		content:"Sort by:";
 		margin-right: 5px;
 		font-weight: 500;
@@ -1094,7 +1105,7 @@ span.post_downvotes {
 @if $display-thumbnails == true {
 
 // Icon thumbnails
-a.title:before {
+a.title::before {
 	content: "\e611"; // Globe icon. For anything not covered below.
 	position: absolute;
 	top: 15px;
@@ -1113,43 +1124,43 @@ a.title:before {
 }
 
 // Self-post
-a.title[href^="/v/"]:before { 
+a.title[href^="/v/"]::before { 
 	content:"\e610";
 }
 
 // Another page on Voat (not self-posts)
-a.title[href*="voat.co"]:before { 
+a.title[href*="voat.co"]::before { 
 	content:"\e615";
 }
 
 // Image (in case regular thumbnail fails to generate)
-a.title[href*="imgur.com/"]:before,
-a.title[href*="veuwer.com/"]:before,
-a.title[href*="slimgur.com/"]:before,
-a.title[href*="flickr.com/"]:before,
-a.title[href*="500px.com/"]:before,
-a.title[href$=".jpg"]:before,
-a.title[href*=".jpg?"]:before,
-a.title[href$=".jpeg"]:before,
-a.title[href*=".jpeg?"]:before,
-a.title[href$=".png"]:before,
-a.title[href*=".png?"]:before,
-a.title[href$=".svg"]:before,
-a.title[href*=".svg?"]:before {
+a.title[href*="imgur.com/"]::before,
+a.title[href*="veuwer.com/"]::before,
+a.title[href*="slimgur.com/"]::before,
+a.title[href*="flickr.com/"]::before,
+a.title[href*="500px.com/"]::before,
+a.title[href$=".jpg"]::before,
+a.title[href*=".jpg?"]::before,
+a.title[href$=".jpeg"]::before,
+a.title[href*=".jpeg?"]::before,
+a.title[href$=".png"]::before,
+a.title[href*=".png?"]::before,
+a.title[href$=".svg"]::before,
+a.title[href*=".svg?"]::before {
 	content:"\e612";
 }
 
 // Video (in case regular thumbnail fails to generate)
-a.title[href*="youtube.com/"]:before,
-a.title[href*="youtu.be/"]:before,
-a.title[href*="vimeo.com/"]:before,
-a.title[href*="vid.me/"]:before,
-a.title[href*="liveleak.com/"]:before {
+a.title[href*="youtube.com/"]::before,
+a.title[href*="youtu.be/"]::before,
+a.title[href*="vimeo.com/"]::before,
+a.title[href*="vid.me/"]::before,
+a.title[href*="liveleak.com/"]::before {
 	content:"\e614";
 }
 
 // Prevent icon thumbnail if submission has regular thumbnail
-a.thumbnail + .entry a.title:before { 
+a.thumbnail + .entry a.title::before { 
 	display: none;
 }
 
@@ -1272,7 +1283,7 @@ form[action="/submitcomment"] {
 	background: transparent !important;
 	text-align: center;
 
-	&:before {
+	&::before {
 		font: 16px/24px "Cashmere icons";
 		color: $link-color !important;
 		
@@ -1281,7 +1292,7 @@ form[action="/submitcomment"] {
 		}
 	}
 	
-	&:hover:before {
+	&:hover::before {
 		color: $link-color-hover !important;
 		
 		.dark & {
@@ -1290,15 +1301,15 @@ form[action="/submitcomment"] {
 	}
 }
 
-.markdownEditorImgButton[title="Bold"]:before {
+.markdownEditorImgButton[title="Bold"]::before {
 	content: "\e616";
 }
 
-.markdownEditorImgButton[title="Italic"]:before {
+.markdownEditorImgButton[title="Italic"]::before {
 	content: "\e617";
 }
 
-.markdownEditorImgButton[title="Link"]:before {
+.markdownEditorImgButton[title="Link"]::before {
 	content: "\e618";
 }
 
@@ -1337,33 +1348,33 @@ form[action="/submitcomment"] {
 	}
 }
 
-.markdownEditorImgButton[title="Quote"]:before {
+.markdownEditorImgButton[title="Quote"]::before {
 	content: "\e619";
 }
 
-.markdownEditorImgButton[title="Code"]:before {
+.markdownEditorImgButton[title="Code"]::before {
 	content: "\e61a";
 }
 
-.markdownEditorImgButton[title="Bullet List"]:before {
+.markdownEditorImgButton[title="Bullet List"]::before {
 	content: "\e61b";
 }
 
-.markdownEditorImgButton[title="Number List"]:before {
+.markdownEditorImgButton[title="Number List"]::before {
 	content: "\e61c";
 }
 
-.markdownEditorImgButton[title="Large Paragraph Spacing"]:before {  //
+.markdownEditorImgButton[title="Large Paragraph Spacing"]::before {  //
 	content: "\e61d";
 }
 
-.markdownEditorImgButton[title="Horizontal Rule"]:before {  //
+.markdownEditorImgButton[title="Horizontal Rule"]::before {  //
 	content: "\2014";
 	line-height: 20px;
 	font-weight: 700;
 }
 
-.markdownEditorImgButton[title="Headings"]:before { 
+.markdownEditorImgButton[title="Headings"]::before { 
 	content: "H";
 	font-family: "Roboto", sans-serif !important;
 	font-weight: 700;
@@ -1375,73 +1386,73 @@ form[action="/submitcomment"] {
 	height: 20px;
 	line-height: 20px;
 	
-	&:before {
+	&::before {
 		font-family: "Roboto", sans-serif !important;
 		font-weight: 700;
 	}
 }
 
-.markdownEditorImgButton[title="Heading Level 1"]:before {
+.markdownEditorImgButton[title="Heading Level 1"]::before {
 	content: "H1";
 }
 
-.markdownEditorImgButton[title="Heading Level 2"]:before {
+.markdownEditorImgButton[title="Heading Level 2"]::before {
 	content: "H2";
 }
 
-.markdownEditorImgButton[title="Heading Level 3"]:before {
+.markdownEditorImgButton[title="Heading Level 3"]::before {
 	content: "H3";
 }
 
-.markdownEditorImgButton[title="Heading Level 4"]:before {
+.markdownEditorImgButton[title="Heading Level 4"]::before {
 	content: "H4";
 }
 
-.markdownEditorImgButton[title="Heading Level 5"]:before {
+.markdownEditorImgButton[title="Heading Level 5"]::before {
 	content: "H5";
 }
 
-.markdownEditorImgButton[title="Heading Level 6"]:before {
+.markdownEditorImgButton[title="Heading Level 6"]::before {
 	content: "H6";
 }
 
-.markdownEditorImgButton[title="Table"]:before {
+.markdownEditorImgButton[title="Table"]::before {
 	content: "\e61f";
 }
 
-.markdownEditorImgButton[title="More Columns"]:before {
+.markdownEditorImgButton[title="More Columns"]::before {
 	content: "\e624";
 }
 
-.markdownEditorImgButton[title="Less Columns"]:before {
+.markdownEditorImgButton[title="Less Columns"]::before {
 	content: "\e625";
 }
 
-.markdownEditorImgButton[title="More Rows"]:before {
+.markdownEditorImgButton[title="More Rows"]::before {
 	content: "\e626";
 }
 
-.markdownEditorImgButton[title="Less Rows"]:before {
+.markdownEditorImgButton[title="Less Rows"]::before {
 	content: "\e627";
 }
 
-.markdownEditorTextButton[title="Create Table"]:before {
+.markdownEditorTextButton[title="Create Table"]::before {
 	
 }
 
-.markdownEditorImgButton[title="Spoiler"]:before {
+.markdownEditorImgButton[title="Spoiler"]::before {
 	content: "\e620";
 }
 
-.markdownEditorImgButton[title="Strikethrough"]:before {
+.markdownEditorImgButton[title="Strikethrough"]::before {
 	content: "\e621";
 }
 
-.markdownEditorImgButton[title="Superscript"]:before {
+.markdownEditorImgButton[title="Superscript"]::before {
 	content: "\e622";
 }
 
-.markdownEditorImgButton[title="Subscript"]:before {
+.markdownEditorImgButton[title="Subscript"]::before {
 	content: "\e623";
 }
 
@@ -1542,14 +1553,14 @@ div.side {
 	.submit-text {
 		right: 0;
 		
-		&:before {
+		&::before {
 			content: $self-post-label;
 			font-size: 12px;
 		}
 		
 	}
 	
-	.submit-link:before {
+	.submit-link::before {
 		content: $link-post-label;
 		font-size: 12px;
 	}
@@ -1583,7 +1594,7 @@ div.side {
 	.form-horizontal {
 		position: relative;
 		
-		h2:before {
+		h2::before {
 			content: "Search";
 		}
 	}
@@ -1646,7 +1657,7 @@ div.side {
 			display: none !important;
 		}
 	
-		&:before {
+		&::before {
 			content: "\e60a";
 			float: right;
 			font: 18px/36px "Cashmere icons" !important;
@@ -1716,7 +1727,7 @@ div.side {
 		.word {
 			visibility: hidden;
 			
-			&:before {
+			&::before {
 				content: $subscribers;
 				visibility: visible;
 			}
@@ -1730,7 +1741,7 @@ div.side {
 	p.users-online > .word {
 		visibility: hidden;
 		
-		&:before {
+		&::before {
 			content: $users-here-now;
 			visibility: visible;
 		}
@@ -1767,7 +1778,7 @@ div.side {
 		visibility: hidden;
 		width: 0;
 	
-		&:before {
+		&::before {
 			content: "\e60b";
 			float: right;
 			visibility: visible;
@@ -1906,7 +1917,7 @@ div.side {
 		left: 10px;
 		margin: 0;
 		
-		&:before {
+		&::before {
 			content: "\e608";
 			width: 44px !important;
 			height: 44px !important;
@@ -2018,7 +2029,7 @@ div.side {
 			height: 44px;
 			overflow: hidden;
 		
-			&:before {
+			&::before {
 				content: "\e609";
 				display: inline-block;
 				width: 44px !important;
@@ -2026,7 +2037,7 @@ div.side {
 				font: 23px/44px "Cashmere icons" !important;
 			}
 		
-			&:hover:before {
+			&:hover::before {
 				background: $header-background-alt !important;
 				
 				.dark &	{

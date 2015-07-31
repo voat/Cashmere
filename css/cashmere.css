@@ -102,6 +102,16 @@ body.dark {
   color: #ccc !important;
 }
 
+::-moz-selection {
+  background: rgba(0, 0, 0, 0.2);
+  color: inherit;
+}
+
+::selection {
+  background: rgba(0, 0, 0, 0.2);
+  color: inherit;
+}
+
 a {
   color: #265373 !important;
 }
@@ -350,7 +360,7 @@ div.usertext-buttons > *:hover {
   padding-left: 10px;
   width: 110px;
 }
-#header-img-a:before {
+#header-img-a::before {
   content: "\e600";
   font: 40px/42px "Cashmere icons";
 }
@@ -450,50 +460,50 @@ div.usertext-buttons > *:hover {
   text-align: center;
   text-indent: 0;
 }
-#manage:before,
-#nightmodetoggle:before,
-.notification-container:before,
-.notification-container *:before,
-#mail:before,
-#header-account > div > a:last-child:before {
+#manage::before,
+#nightmodetoggle::before,
+.notification-container::before,
+.notification-container *::before,
+#mail::before,
+#header-account > div > a:last-child::before {
   display: inline-block;
   width: 44px;
   font: 20px/44px "Cashmere icons";
   transition: background ease 0.2s;
 }
-#manage:hover:before,
-#nightmodetoggle:hover:before,
-.notification-container:hover:before,
-.notification-container *:hover:before,
-#mail:hover:before,
-#header-account > div > a:last-child:hover:before {
+#manage:hover::before,
+#nightmodetoggle:hover::before,
+.notification-container:hover::before,
+.notification-container *:hover::before,
+#mail:hover::before,
+#header-account > div > a:last-child:hover::before {
   background: #2d6186;
 }
-.dark #manage:hover:before, .dark
-#nightmodetoggle:hover:before, .dark
-.notification-container:hover:before, .dark
-.notification-container *:hover:before, .dark
-#mail:hover:before, .dark
-#header-account > div > a:last-child:hover:before {
+.dark #manage:hover::before, .dark
+#nightmodetoggle:hover::before, .dark
+.notification-container:hover::before, .dark
+.notification-container *:hover::before, .dark
+#mail:hover::before, .dark
+#header-account > div > a:last-child:hover::before {
   background: #212121;
 }
 
-#manage:before {
+#manage::before {
   content: "\e604";
 }
 
-#nightmodetoggle:before {
+#nightmodetoggle::before {
   content: "\e605";
 }
 
-#mail:before {
+#mail::before {
   content: "\e606";
   transition: background ease 0.2s, color ease 0.2s;
 }
-#mail.havemail:before {
+#mail.havemail::before {
   background: #e69900 !important;
 }
-.dark #mail.havemail:before {
+.dark #mail.havemail::before {
   background: #cc7700 !important;
 }
 
@@ -513,7 +523,7 @@ div.usertext-buttons > *:hover {
 #header-account > div > a:last-child {
   visibility: hidden;
 }
-#header-account > div > a:last-child:before {
+#header-account > div > a:last-child::before {
   visibility: visible;
   content: "\e607";
 }
@@ -584,7 +594,7 @@ div.usertext-buttons > *:hover {
 #firsttimevisitorwelcomemessage ~ #siteTable .entry > ul.flat-list {
   padding-left: 0;
 }
-#firsttimevisitorwelcomemessage ~ #siteTable .entry a.title:before {
+#firsttimevisitorwelcomemessage ~ #siteTable .entry a.title::before {
   display: none !important;
 }
 
@@ -627,13 +637,13 @@ div.usertext-buttons > *:hover {
   color: #555;
 }
 
-.arrow-upvote:before,
-.arrow-upvoted:before {
+.arrow-upvote::before,
+.arrow-upvoted::before {
   content: "\e601";
 }
 
-.arrow-downvote:before,
-.arrow-downvoted:before {
+.arrow-downvote::before,
+.arrow-downvoted::before {
   content: "\e602";
 }
 
@@ -691,19 +701,19 @@ span.post_downvotes {
   height: 20px !important;
   text-align: center;
 }
-.expando-button:before {
+.expando-button::before {
   content: "\e60c";
   font: 20px/1 "Cashmere icons";
   color: #265373;
   transition: color ease 0.2s;
 }
-.dark .expando-button:before {
+.dark .expando-button::before {
   color: #79a6d2;
 }
-.expando-button:hover:before {
+.expando-button:hover::before {
   color: #1f72ad;
 }
-.dark .expando-button:hover:before {
+.dark .expando-button:hover::before {
   color: #8cbff2;
 }
 .expando-button.loading {
@@ -711,11 +721,11 @@ span.post_downvotes {
   -moz-animation: spin 3s linear infinite;
   animation: spin 3s linear infinite;
 }
-.expando-button.loading:before {
+.expando-button.loading::before {
   content: "\e60d";
   font-weight: 700;
 }
-.expando-button.expanded:before {
+.expando-button.expanded::before {
   content: "\e60e";
 }
 
@@ -771,7 +781,7 @@ span.post_downvotes {
 .dark #sortingThingy {
   background: #212121;
 }
-#sortingThingy:before {
+#sortingThingy::before {
   content: "Sort by:";
   margin-right: 5px;
   font-weight: 500;
@@ -814,7 +824,7 @@ span.post_downvotes {
   color: #ccc !important;
 }
 
-a.title:before {
+a.title::before {
   content: "\e611";
   position: absolute;
   top: 15px;
@@ -826,44 +836,44 @@ a.title:before {
   color: #fff;
   text-align: center;
 }
-.dark a.title:before {
+.dark a.title::before {
   background: #111;
   color: #8d8d8d;
 }
 
-a.title[href^="/v/"]:before {
+a.title[href^="/v/"]::before {
   content: "\e610";
 }
 
-a.title[href*="voat.co"]:before {
+a.title[href*="voat.co"]::before {
   content: "\e615";
 }
 
-a.title[href*="imgur.com/"]:before,
-a.title[href*="veuwer.com/"]:before,
-a.title[href*="slimgur.com/"]:before,
-a.title[href*="flickr.com/"]:before,
-a.title[href*="500px.com/"]:before,
-a.title[href$=".jpg"]:before,
-a.title[href*=".jpg?"]:before,
-a.title[href$=".jpeg"]:before,
-a.title[href*=".jpeg?"]:before,
-a.title[href$=".png"]:before,
-a.title[href*=".png?"]:before,
-a.title[href$=".svg"]:before,
-a.title[href*=".svg?"]:before {
+a.title[href*="imgur.com/"]::before,
+a.title[href*="veuwer.com/"]::before,
+a.title[href*="slimgur.com/"]::before,
+a.title[href*="flickr.com/"]::before,
+a.title[href*="500px.com/"]::before,
+a.title[href$=".jpg"]::before,
+a.title[href*=".jpg?"]::before,
+a.title[href$=".jpeg"]::before,
+a.title[href*=".jpeg?"]::before,
+a.title[href$=".png"]::before,
+a.title[href*=".png?"]::before,
+a.title[href$=".svg"]::before,
+a.title[href*=".svg?"]::before {
   content: "\e612";
 }
 
-a.title[href*="youtube.com/"]:before,
-a.title[href*="youtu.be/"]:before,
-a.title[href*="vimeo.com/"]:before,
-a.title[href*="vid.me/"]:before,
-a.title[href*="liveleak.com/"]:before {
+a.title[href*="youtube.com/"]::before,
+a.title[href*="youtu.be/"]::before,
+a.title[href*="vimeo.com/"]::before,
+a.title[href*="vid.me/"]::before,
+a.title[href*="liveleak.com/"]::before {
   content: "\e614";
 }
 
-a.thumbnail + .entry a.title:before {
+a.thumbnail + .entry a.title::before {
   display: none;
 }
 
@@ -967,29 +977,29 @@ form[action="/submitcomment"] {
   background: transparent !important;
   text-align: center;
 }
-.markdownEditorImgButton:before {
+.markdownEditorImgButton::before {
   font: 16px/24px "Cashmere icons";
   color: #265373 !important;
 }
-.dark .markdownEditorImgButton:before {
+.dark .markdownEditorImgButton::before {
   color: #79a6d2 !important;
 }
-.markdownEditorImgButton:hover:before {
+.markdownEditorImgButton:hover::before {
   color: #1f72ad !important;
 }
-.dark .markdownEditorImgButton:hover:before {
+.dark .markdownEditorImgButton:hover::before {
   color: #8cbff2 !important;
 }
 
-.markdownEditorImgButton[title="Bold"]:before {
+.markdownEditorImgButton[title="Bold"]::before {
   content: "\e616";
 }
 
-.markdownEditorImgButton[title="Italic"]:before {
+.markdownEditorImgButton[title="Italic"]::before {
   content: "\e617";
 }
 
-.markdownEditorImgButton[title="Link"]:before {
+.markdownEditorImgButton[title="Link"]::before {
   content: "\e618";
 }
 
@@ -1026,33 +1036,33 @@ form[action="/submitcomment"] {
   color: #79a6d2 !important;
 }
 
-.markdownEditorImgButton[title="Quote"]:before {
+.markdownEditorImgButton[title="Quote"]::before {
   content: "\e619";
 }
 
-.markdownEditorImgButton[title="Code"]:before {
+.markdownEditorImgButton[title="Code"]::before {
   content: "\e61a";
 }
 
-.markdownEditorImgButton[title="Bullet List"]:before {
+.markdownEditorImgButton[title="Bullet List"]::before {
   content: "\e61b";
 }
 
-.markdownEditorImgButton[title="Number List"]:before {
+.markdownEditorImgButton[title="Number List"]::before {
   content: "\e61c";
 }
 
-.markdownEditorImgButton[title="Large Paragraph Spacing"]:before {
+.markdownEditorImgButton[title="Large Paragraph Spacing"]::before {
   content: "\e61d";
 }
 
-.markdownEditorImgButton[title="Horizontal Rule"]:before {
+.markdownEditorImgButton[title="Horizontal Rule"]::before {
   content: "\2014";
   line-height: 20px;
   font-weight: 700;
 }
 
-.markdownEditorImgButton[title="Headings"]:before {
+.markdownEditorImgButton[title="Headings"]::before {
   content: "H";
   font-family: "Roboto", sans-serif !important;
   font-weight: 700;
@@ -1064,68 +1074,68 @@ form[action="/submitcomment"] {
   height: 20px;
   line-height: 20px;
 }
-.markdownEditorImgButton[title^="Heading Level"]:before {
+.markdownEditorImgButton[title^="Heading Level"]::before {
   font-family: "Roboto", sans-serif !important;
   font-weight: 700;
 }
 
-.markdownEditorImgButton[title="Heading Level 1"]:before {
+.markdownEditorImgButton[title="Heading Level 1"]::before {
   content: "H1";
 }
 
-.markdownEditorImgButton[title="Heading Level 2"]:before {
+.markdownEditorImgButton[title="Heading Level 2"]::before {
   content: "H2";
 }
 
-.markdownEditorImgButton[title="Heading Level 3"]:before {
+.markdownEditorImgButton[title="Heading Level 3"]::before {
   content: "H3";
 }
 
-.markdownEditorImgButton[title="Heading Level 4"]:before {
+.markdownEditorImgButton[title="Heading Level 4"]::before {
   content: "H4";
 }
 
-.markdownEditorImgButton[title="Heading Level 5"]:before {
+.markdownEditorImgButton[title="Heading Level 5"]::before {
   content: "H5";
 }
 
-.markdownEditorImgButton[title="Heading Level 6"]:before {
+.markdownEditorImgButton[title="Heading Level 6"]::before {
   content: "H6";
 }
 
-.markdownEditorImgButton[title="Table"]:before {
+.markdownEditorImgButton[title="Table"]::before {
   content: "\e61f";
 }
 
-.markdownEditorImgButton[title="More Columns"]:before {
+.markdownEditorImgButton[title="More Columns"]::before {
   content: "\e624";
 }
 
-.markdownEditorImgButton[title="Less Columns"]:before {
+.markdownEditorImgButton[title="Less Columns"]::before {
   content: "\e625";
 }
 
-.markdownEditorImgButton[title="More Rows"]:before {
+.markdownEditorImgButton[title="More Rows"]::before {
   content: "\e626";
 }
 
-.markdownEditorImgButton[title="Less Rows"]:before {
+.markdownEditorImgButton[title="Less Rows"]::before {
   content: "\e627";
 }
 
-.markdownEditorImgButton[title="Spoiler"]:before {
+.markdownEditorImgButton[title="Spoiler"]::before {
   content: "\e620";
 }
 
-.markdownEditorImgButton[title="Strikethrough"]:before {
+.markdownEditorImgButton[title="Strikethrough"]::before {
   content: "\e621";
 }
 
-.markdownEditorImgButton[title="Superscript"]:before {
+.markdownEditorImgButton[title="Superscript"]::before {
   content: "\e622";
 }
 
-.markdownEditorImgButton[title="Subscript"]:before {
+.markdownEditorImgButton[title="Subscript"]::before {
   content: "\e623";
 }
 
@@ -1217,18 +1227,18 @@ div.side .submit-text:hover {
 div.side .submit-text {
   right: 0;
 }
-div.side .submit-text:before {
+div.side .submit-text::before {
   content: "Discuss";
   font-size: 12px;
 }
-div.side .submit-link:before {
+div.side .submit-link::before {
   content: "Share a link";
   font-size: 12px;
 }
 div.side .form-horizontal {
   position: relative;
 }
-div.side .form-horizontal h2:before {
+div.side .form-horizontal h2::before {
   content: "Search";
 }
 div.side input#q {
@@ -1270,13 +1280,13 @@ div.side .titlebox {
 div.side h1.whoaversename a:last-child > img {
   display: none !important;
 }
-div.side h1.whoaversename a:last-child:before {
+div.side h1.whoaversename a:last-child::before {
   content: "\e60a";
   float: right;
   font: 18px/36px "Cashmere icons" !important;
   color: #fff;
 }
-.dark div.side h1.whoaversename a:last-child:before {
+.dark div.side h1.whoaversename a:last-child::before {
   color: #ccc;
 }
 div.side .btn-whoaverse-paging:nth-child(2),
@@ -1328,7 +1338,7 @@ div.side span.subscribers {
 div.side span.subscribers .word {
   visibility: hidden;
 }
-div.side span.subscribers .word:before {
+div.side span.subscribers .word::before {
   content: "Subscribers:";
   visibility: visible;
 }
@@ -1338,7 +1348,7 @@ div.side p.users-online {
 div.side p.users-online > .word {
   visibility: hidden;
 }
-div.side p.users-online > .word:before {
+div.side p.users-online > .word::before {
   content: "Visiting now:";
   visibility: visible;
 }
@@ -1363,7 +1373,7 @@ div.side .message-moderators-temporary-class {
   visibility: hidden;
   width: 0;
 }
-div.side .message-moderators-temporary-class:before {
+div.side .message-moderators-temporary-class::before {
   content: "\e60b";
   float: right;
   visibility: visible;
@@ -1373,7 +1383,7 @@ div.side .message-moderators-temporary-class:before {
   text-align: right;
   color: #fff;
 }
-.dark div.side .message-moderators-temporary-class:before {
+.dark div.side .message-moderators-temporary-class::before {
   color: #ccc;
 }
 div.side ul.content:not(#moderation_tools li) {
@@ -1473,7 +1483,7 @@ div.side .spacer:last-child .sidecontentbox.content {
     left: 10px;
     margin: 0;
   }
-  #show-menu-button:before {
+  #show-menu-button::before {
     content: "\e608";
     width: 44px !important;
     height: 44px !important;
@@ -1481,7 +1491,7 @@ div.side .spacer:last-child .sidecontentbox.content {
     color: #fff !important;
     border: 0;
   }
-  .dark #show-menu-button:before {
+  .dark #show-menu-button::before {
     color: #eee !important;
   }
 
@@ -1565,17 +1575,17 @@ div.side .spacer:last-child .sidecontentbox.content {
     height: 44px;
     overflow: hidden;
   }
-  .logged-in > span.user > a:before {
+  .logged-in > span.user > a::before {
     content: "\e609";
     display: inline-block;
     width: 44px !important;
     height: 44px !important;
     font: 23px/44px "Cashmere icons" !important;
   }
-  .logged-in > span.user > a:hover:before {
+  .logged-in > span.user > a:hover::before {
     background: #2d6186 !important;
   }
-  .dark .logged-in > span.user > a:hover:before {
+  .dark .logged-in > span.user > a:hover::before {
     background: #212121 !important;
   }
 
