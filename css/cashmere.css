@@ -10,6 +10,7 @@
   border: 0 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
+  text-shadow: none !important;
   background-image: none !important;
 }
 
@@ -42,46 +43,6 @@
   color: #265373 !important;
 }
 
-.modal-content {
-  border-radius: 2px !important;
-}
-.modal-content * {
-  text-shadow: none !important;
-}
-.modal-content .modal-header {
-  background: #336f99;
-  color: #fff;
-}
-.dark .modal-content .modal-header {
-  background: #2e2e2e;
-  color: #eee;
-}
-.modal-content button {
-  color: #265373;
-  opacity: 1;
-}
-.modal-content button:hover {
-  color: #1f72ad;
-}
-.dark .modal-content button {
-  color: #79a6d2;
-}
-.dark .modal-content button:hover {
-  color: #8cbff2;
-}
-.modal-content input {
-  border: 1px solid #c2ccd6 !important;
-}
-.dark .modal-content input {
-  border: 1px solid #444 !important;
-}
-.modal-content .control-label {
-  background: #336f99 !important;
-}
-.dark .modal-content .control-label {
-  background: #2e2e2e !important;
-}
-
 input#MessageContent,
 input#Linkdescription,
 input#Subverse,
@@ -90,8 +51,139 @@ textarea#MessageContent {
   border: 1px solid #c2ccd6 !important;
 }
 
+.modal-backdrop {
+  background-color: #c2ccd6 !important;
+  opacity: .95 !important;
+}
+.dark .modal-backdrop {
+  background-color: #171717 !important;
+}
+
+.modal-dialog {
+  top: 90px !important;
+  transform: none !important;
+}
+
+.modal-content {
+  border-radius: 2px !important;
+}
+.modal-content a,
+.modal-content strong {
+  font-weight: 500;
+}
+.modal-content input {
+  border: 1px solid #c2ccd6 !important;
+}
+.dark .modal-content input {
+  border: 1px solid #444 !important;
+}
+
+.modal-header {
+  padding: 0 15px;
+  height: 44px;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background: #4b799b;
+  color: #fff;
+  border-radius: 2px 2px 0 0 !important;
+}
+.dark .modal-header {
+  background: #2a2a2a;
+  color: #ccc;
+}
+
+.modal-title {
+  font-weight: 500;
+  text-align: left;
+  height: 44px;
+  line-height: 44px;
+}
+
+button.close {
+  color: #fff !important;
+  opacity: 1 !important;
+  line-height: 44px !important;
+  margin: 0 !important;
+}
+.dark button.close {
+  color: #ccc !important;
+}
+
+.modal-body {
+  padding: 15px !important;
+}
+
+.control-label {
+  color: #111 !important;
+  font-weight: 500;
+  text-align: left !important;
+}
+.dark .control-label {
+  color: #ccc !important;
+}
+
+#loginForm input.form-control {
+  width: 100% !important;
+}
+
+input#Password {
+  margin-bottom: 10px;
+}
+
+.modal-footer {
+  font-size: 11px !important;
+}
+
+#loginForm div.checkbox {
+  padding-top: 4px;
+}
+#loginForm div.checkbox label {
+  line-height: 16px;
+}
+#loginForm .form-horizontal > :last-child {
+  position: relative;
+  float: right;
+  top: -45px;
+  width: auto;
+}
+#loginForm input.btn-whoaverse {
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  background: #336f99;
+  color: white;
+  border: 0 !important;
+  border-radius: 2px !important;
+}
+.dark #loginForm input.btn-whoaverse {
+  background: #2e2e2e;
+}
+
+#notenoughccp p:last-child {
+  margin-bottom: 0;
+}
+#notenoughccp .modal-footer {
+  display: none;
+}
+
+#linkFlairSelectModal #modalLabel {
+  visibility: hidden;
+}
+#linkFlairSelectModal #modalLabel::before {
+  content: "Select a flair for this submission";
+  visibility: visible;
+}
+#linkFlairSelectModal .modal-footer {
+  display: none;
+}
+
 body {
   background: #c2ccd6;
+  background-image: none !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  background-position: top center !important;
   font: 11px/1.5 "Roboto", Arial, sans-serif !important;
   color: #111;
   -webkit-font-smoothing: antialiased;
@@ -106,9 +198,17 @@ body.dark {
   background: rgba(0, 0, 0, 0.2);
   color: inherit;
 }
+.dark ::-moz-selection {
+  background: rgba(255, 255, 255, 0.2);
+  color: inherit;
+}
 
 ::selection {
   background: rgba(0, 0, 0, 0.2);
+  color: inherit;
+}
+.dark ::selection {
+  background: rgba(255, 255, 255, 0.2);
   color: inherit;
 }
 

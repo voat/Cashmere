@@ -17,6 +17,16 @@ $submit-button-text-color: #fff;
 $submit-button-background: hsl(17, 90%, 40%);
 $submit-button-background-hover: darken($submit-button-background, 10%);
 
+$text-selection-background: hsla(0, 0%, 0%, 0.2);
+$text-selection-color: inherit;
+
+// Background image (set to "none" by default).
+// Follows CSS syntax, e.g. $body-background-image: url("http://www.example.com/somepicture.jpg");
+$body-background-image: none;
+$body-background-repeat: no-repeat;
+$body-background-attachment: fixed;
+$body-background-position: top center;
+
 // Header
 $header-link-color: #fff;
 $header-background: hsl(205, 50%, 40%);
@@ -71,8 +81,15 @@ $dark-submit-button-text-color: #fff;
 $dark-submit-button-background: hsl(210, 30%, 35%);
 $dark-submit-button-background-hover: darken($dark-submit-button-background, 10%);
 
-$text-selection-background: hsla(0, 0%, 0%, 0.2);
-$text-selection-color: inherit;
+$dark-text-selection-background: hsla(0, 0%, 100%, 0.2);
+$dark-text-selection-color: inherit;
+
+// Background image
+// Copies day-mode by default
+$dark-body-background-image: $body-background-image;
+$dark-body-background-repeat: $body-background-repeat;
+$dark-body-background-attachment: $body-background-attachment;
+$dark-body-background-position: $body-background-position;
 
 // Header
 $dark-header-link-color: #eee;
@@ -128,7 +145,7 @@ $users-here-now: "Visiting now:";
 $display-thumbnails: true;
 
 // Set the number of columns in the sidebar "MODERATORS" box.
-// This can reduce white space, but may not work well if any 
+// This can reduce white space, but may not work well if any
 // mods have long usernames and/or flairs.
 $mod-column-count: 1;
 

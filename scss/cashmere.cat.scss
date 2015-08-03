@@ -17,6 +17,16 @@ $submit-button-text-color: #fff;
 $submit-button-background: hsl(17, 90%, 40%);
 $submit-button-background-hover: darken($submit-button-background, 10%);
 
+$text-selection-background: hsla(0, 0%, 0%, 0.2);
+$text-selection-color: inherit;
+
+// Background image (set to "none" by default).
+// Follows CSS syntax, e.g. $body-background-image: url("http://www.example.com/somepicture.jpg");
+$body-background-image: none;
+$body-background-repeat: no-repeat;
+$body-background-attachment: fixed;
+$body-background-position: top center;
+
 // Header
 $header-link-color: #fff;
 $header-background: hsl(205, 50%, 40%);
@@ -71,8 +81,15 @@ $dark-submit-button-text-color: #fff;
 $dark-submit-button-background: hsl(210, 30%, 35%);
 $dark-submit-button-background-hover: darken($dark-submit-button-background, 10%);
 
-$text-selection-background: hsla(0, 0%, 0%, 0.2);
-$text-selection-color: inherit;
+$dark-text-selection-background: hsla(0, 0%, 100%, 0.2);
+$dark-text-selection-color: inherit;
+
+// Background image
+// Copies day-mode by default
+$dark-body-background-image: $body-background-image;
+$dark-body-background-repeat: $body-background-repeat;
+$dark-body-background-attachment: $body-background-attachment;
+$dark-body-background-position: $body-background-position;
 
 // Header
 $dark-header-link-color: #eee;
@@ -128,7 +145,7 @@ $users-here-now: "Visiting now:";
 $display-thumbnails: true;
 
 // Set the number of columns in the sidebar "MODERATORS" box.
-// This can reduce white space, but may not work well if any 
+// This can reduce white space, but may not work well if any
 // mods have long usernames and/or flairs.
 $mod-column-count: 1;
 
@@ -141,7 +158,7 @@ $border-radius: 2px;
 @font-face {
 	font-family: 'Cashmere icons';
 	src:url('https://dl.dropboxusercontent.com/s/b8e755s4n5hae4j/Cashmere-icons.eot');
-		src:url('https://dl.dropboxusercontent.com/s/b8e755s4n5hae4j/Cashmere-icons.eot?#iefix')
+	src:url('https://dl.dropboxusercontent.com/s/b8e755s4n5hae4j/Cashmere-icons.eot?#iefix')
 			format('embedded-opentype'),
 		url('https://dl.dropboxusercontent.com/s/5qprhtkuoa9alu7/Cashmere-icons.ttf')
 			format('truetype'),
@@ -157,6 +174,7 @@ $border-radius: 2px;
 	border: 0 !important;
 	border-radius: 0 !important;
 	box-shadow: none !important;
+	text-shadow: none !important;
 	background-image: none !important;
 }
 
@@ -170,7 +188,7 @@ $border-radius: 2px;
 	padding: 0;
 	min-height: calc(100vh - 120px); // Force footer to the bottom of short pages
 	background: transparent !important;
-	
+
 	> div {
 		margin-top: 76px !important; // Height of header + 10px
 		margin-bottom: 20px;
@@ -187,62 +205,10 @@ $border-radius: 2px;
 	background: $footer-background;
 	color: $footer-text-color;
 	text-align: center;
-	
+
 	button {
 		background: transparent !important;
 		color: $link-color !important;
-	}
-}
-
-// Dialogs (e.g. login)
-.modal-content {
-	border-radius: $border-radius !important;
-
-	* {
-		text-shadow: none !important;
-	}
-
-	.modal-header {
-		background: $header-background;
-		color: $header-link-color;
-		
-		.dark & {
-			background: $dark-header-background;
-			color: $dark-header-link-color;
-		}
-	}
-		
-	button {
-		color: $link-color;
-		opacity: 1;
-		
-		&:hover {
-			color: $link-color-hover;
-		}
-		
-		.dark & {
-			color: $dark-link-color;
-		
-			&:hover {
-				color: $dark-link-color-hover;
-			}
-		}
-	}
-	
-	input {
-		border: $text-input-border !important;
-		
-		.dark &	{
-			border: $dark-text-input-border !important;
-		}
-	}
-	
-	.control-label {
-		background: $header-background !important;
-		
-		.dark & {
-			background: $dark-header-background !important;
-		}	
 	}
 }
 
@@ -255,15 +221,179 @@ textarea#MessageContent {
 	border: $text-input-border !important;
 }
 
+// Modal Dialogs (e.g. login) //////////////////////////////////////////////////////////////////////
+
+// Overlay
+.modal-backdrop {
+	background-color: $body-background !important;
+	opacity: .95 !important;
+
+	.dark & {
+		background-color: $dark-body-background !important;
+	}
+}
+
+// Container
+.modal-dialog {
+	top: 90px !important;
+	transform: none !important;
+}
+
+.modal-content {
+	border-radius: $border-radius !important;
+
+	a,
+	strong {
+		font-weight: 500;
+	}
+
+	input {
+		border: $text-input-border !important;
+
+		.dark & {
+			border: $dark-text-input-border !important;
+		}
+	}
+}
+
+.modal-header {
+	padding: 0 15px;
+	height: 44px;
+	font-size: 15px;
+	font-weight: 500;
+	text-transform: uppercase;
+	background: $sidebar-title-background;
+	color: $sidebar-title-text-color;
+	border-radius: $border-radius $border-radius 0 0 !important;
+
+	.dark & {
+		background: $dark-sidebar-title-background;
+		color: $dark-sidebar-title-text-color;
+	}
+}
+
+.modal-title {
+	font-weight: 500;
+	text-align: left;
+	height: 44px;
+	line-height: 44px;
+}
+
+button.close {
+	color: $sidebar-title-text-color !important;
+	opacity: 1 !important;
+	line-height: 44px !important;
+	margin: 0 !important;
+
+	.dark & {
+		color: $dark-sidebar-title-text-color !important;
+	}
+}
+
+.modal-body {
+	padding: 15px !important;
+}
+
+// "User name" and "Password" labels
+.control-label {
+	color: $text-color !important;
+	font-weight: 500;
+	text-align: left !important;
+
+	.dark & {
+		color: $dark-text-color !important;
+	}
+}
+
+// Username and password input fields
+#loginForm input.form-control {
+	width: 100% !important;
+}
+
+input#Password {
+	margin-bottom: 10px;
+}
+
+.modal-footer {
+	font-size: 11px !important;
+}
+
+#loginForm {
+
+	// div that contains checkbox
+	div.checkbox {
+		padding-top: 4px;
+
+		label {
+			line-height: 16px;
+		}
+	}
+
+	// div that contains "log in" button
+	.form-horizontal > :last-child {
+		position: relative;
+		float: right;
+		top: -45px;
+		width: auto;
+	}
+
+	// Log in button
+	input.btn-whoaverse {
+		padding: 5px 10px;
+		font-size: 14px;
+		font-weight: 500;
+		background: $header-background;
+		color: white;
+		border: 0 !important;
+		border-radius: $border-radius !important;
+
+		.dark & {
+			background: $dark-header-background;
+		}
+	}
+}
+
+#notenoughccp {
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+
+	.modal-footer {
+		display: none;
+	}
+}
+
+#linkFlairSelectModal {
+
+	// shorten h4 text
+	#modalLabel {
+		visibility: hidden;
+
+		&::before {
+			content: "Select a flair for this submission";
+			visibility: visible;
+		}
+	}
+
+	.modal-footer {
+		display: none;
+	}
+}
+
 // Typography //////////////////////////////////////////////////////////////////////////////////////
 
 body {
 	background: $body-background;
+	background-image: $body-background-image !important;
+	background-repeat: $body-background-repeat !important;
+	background-attachment: $body-background-attachment !important;
+	background-position: $body-background-position !important;
 	font: 11px/1.5 "Roboto", Arial, sans-serif !important;
 	color: $text-color;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	
+
 	&.dark {
 		background: $dark-body-background;
 		color: $dark-text-color !important;
@@ -273,40 +403,50 @@ body {
 ::-moz-selection {
 	background: $text-selection-background;
 	color: $text-selection-color;
+
+	.dark & {
+		background: $dark-text-selection-background;
+		color: $dark-text-selection-color;
+	}
 }
 
 ::selection {
 	background: $text-selection-background;
 	color: $text-selection-color;
+
+	.dark & {
+		background: $dark-text-selection-background;
+		color: $dark-text-selection-color;
+	}
 }
 
 // Link styles
 a {
 	color: $link-color !important;
-	
+
 	.dark & {
 		color: $dark-link-color !important;
 	}
-	
+
 	&:visited {
 		color: $link-color-visited !important;
-	
+
 		.dark & {
 			color: $dark-link-color-visited !important;
 		}
-		
+
 		&:hover {
 			color: $link-color-visited-hover !important;
-	
+
 			.dark & {
 				color: $dark-link-color-visited-hover !important;
 			}
 		}
 	}
-	
+
 	&:hover {
 		color: $link-color-hover !important;
-	
+
 		.dark & {
 			color: $dark-link-color-hover !important;
 		}
@@ -324,22 +464,22 @@ div.usertext-buttons > * {
 	font-weight: 500;
 	color: $link-color;
 	background: transparent !important;
-	
+
 	&:hover {
 		color: $link-color-hover;
 	}
-	
+
 	&:first-letter {
 		text-transform: capitalize;
 	}
 
 	.dark & {
 		color: $dark-link-color;
-		
+
 		&:hover {
 			color: $dark-link-color-hover;
 		}
-	}	
+	}
 }
 
 // Markdown
@@ -355,7 +495,7 @@ div.usertext-buttons > * {
 
 	hr {
 		border-bottom: 1px solid transparentize($text-color, .7) !important;
-		
+
 		.dark & {
 			border-bottom: 1px solid transparentize($dark-text-color, .7) !important;
 		}
@@ -367,7 +507,7 @@ div.usertext-buttons > * {
 		border-left: 5px solid $body-background !important;
 		background: none !important;
 		color: transparentize($text-color, 0.3);
-	
+
 		.dark & {
 			border-left: 5px solid transparentize($dark-link-color, 0.5) !important;
 			color: transparentize($dark-text-color, 0.3);
@@ -378,7 +518,7 @@ div.usertext-buttons > * {
 	code {
 		background: $code-background !important;
 		color: $code-text-color;
-	
+
 		.dark & {
 			background: $dark-code-background !important;
 			color: $dark-code-text-color;
@@ -398,17 +538,17 @@ div.usertext-buttons > * {
 			border: 0;
 			background: $spoiler-background;
 			color: $spoiler-background;
-	
+
 			.dark & {
 				background: $dark-spoiler-background;
 				color: $dark-spoiler-background;
 			}
 		}
-	
+
 		&:hover:after {
 			background: $spoiler-background;
 			color: $spoiler-text-color;
-		
+
 			.dark & {
 				background: $dark-spoiler-background;
 				color: $dark-spoiler-text-color;
@@ -422,7 +562,6 @@ div.usertext-buttons > * {
 .tooltipster-base {
 	margin-top: 6px;
 }
-
 // Header //////////////////////////////////////////////////////////////////////////////////////////
 
 #header {
