@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,700,700italic");
 @font-face {
   font-family: 'Cashmere icons';
-  src: url("https://dl.dropboxusercontent.com/s/b8e755s4n5hae4j/Cashmere-icons.eot");
-  src: url("https://dl.dropboxusercontent.com/s/b8e755s4n5hae4j/Cashmere-icons.eot?#iefix") format("embedded-opentype"), url("https://dl.dropboxusercontent.com/s/5qprhtkuoa9alu7/Cashmere-icons.ttf") format("truetype"), url("https://dl.dropboxusercontent.com/s/k4uz6hzoyow69wi/Cashmere-icons.woff") format("woff");
+  src: url("https://mijowa.github.io/Cashmere/fonts/Cashmere-icons.eot");
+  src: url("https://mijowa.github.io/Cashmere/fonts/Cashmere-icons.eot?#iefix") format("embedded-opentype"), url("https://mijowa.github.io/Cashmere/fonts/Cashmere-icons.ttf") format("truetype"), url("https://mijowa.github.io/Cashmere/fonts/Cashmere-icons.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
