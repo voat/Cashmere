@@ -1,2 +1,4 @@
-# Symlink to Dropbox
+.sass-cache
+
+# Symlink to Dropbox (used to deploy CSS during testing)
 test\ css
