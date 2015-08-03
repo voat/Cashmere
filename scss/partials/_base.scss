@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: $background-main;
+    font: 1.2rem/1.5 "Roboto", sans-serif;
+    font-weight: 400;
+    color: #fff;
+}
+
+b, h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    background: $background-accent;
+    text-align: center;
+    padding-top: 25vh;
+}
+
+h1,
+h2 {
+    line-height: 1.2;
+    margin: 0;
+}
+
+h1  {
+    font-size: 8vw;
+}
+
+h2 {
+    font-size: 2.55vw;
+}
+
+@media (min-width: 1200px) {
+        h1 {
+            font-size: 10rem;
+        }
+
+        h2 {
+            font-size: 3.2rem;
+        }
+}
