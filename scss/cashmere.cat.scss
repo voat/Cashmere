@@ -1606,7 +1606,7 @@ div.side {
 		padding: 0 !important;
 		background: $sidebar-background !important;
 		border-radius: $border-radius !important;
-		
+
 		.dark & {
 			background: $dark-sidebar-background !important;
 		}
@@ -1624,15 +1624,15 @@ div.side {
 		background: $sidebar-title-background;
 		color: $sidebar-title-text-color;
 		border-radius: $border-radius $border-radius 0 0 !important;
-		
+
 		.dark & {
 			background: $dark-sidebar-title-background;
 			color: $dark-sidebar-title-text-color !important;
 		}
-		
+
 		a {
 			color: $sidebar-title-text-color !important;
-			
+
 			.dark & {
 				color: $dark-sidebar-title-text-color !important;
 			}
@@ -1645,12 +1645,12 @@ div.side {
 		padding: 15px;
 		background: $sidebar-background;
 		border-radius: $border-radius !important;
-		
+
 		.dark & {
 			background: $dark-sidebar-background;
 		}
 	}
-	
+
 	.accordion .content {
 		padding: 0;
 	}
@@ -1674,15 +1674,15 @@ div.side {
 		text-transform: uppercase;
 		text-align: center;
 		border-radius: $border-radius !important;
-		
+
 		.dark & {
 			background: $dark-submit-button-background !important;
 			color: $dark-submit-button-text-color !important;
 		}
-		
+
 		&:hover {
 			background: darken( $submit-button-background, 10% ) !important;
-			
+
 			.dark & {
 				background: darken( $dark-submit-button-background, 10% ) !important;
 			}
@@ -1691,48 +1691,48 @@ div.side {
 
 	.submit-text {
 		right: 0;
-		
+
 		&::before {
 			content: $self-post-label;
 			font-size: 12px;
 		}
-		
+
 	}
-	
+
 	.submit-link::before {
 		content: $link-post-label;
 		font-size: 12px;
 	}
 
 	@if $submission-type == link {
-		
+
 		.submit-link {
 			width: 300px;
 		}
-		
+
 		.submit-text {
 			display: none;
 		}
-		
+
 	} @else if $submission-type == self {
-		
+
 		.submit-text {
 			width: 300px;
 		}
-		
+
 		.submit-link {
 			display: none;
 		}
 
 	} //endif
-	
-	
-	
+
+
+
 
 // Search //////////////////////////////////////////////////////////////////////////////////////////
 	.form-horizontal {
 		position: relative;
-		
+
 		h2::before {
 			content: "Search";
 		}
@@ -1745,14 +1745,14 @@ div.side {
 		color: $text-color;
 		border: $text-input-border !important;
 		border-radius: $border-radius !important;
-		
+
 		.dark & {
 			background: $dark-sidebar-background;
 			color: $dark-text-color;
 			border: $dark-text-input-border !important;
 		}
 	}
-	
+
 	// Hide the placeholder text since it now has a title above it
 	.form-control::-moz-placeholder {
 		opacity: 0;
@@ -1765,7 +1765,7 @@ div.side {
 	.form-control::-webkit-input-placeholder {
 		opacity: 0;
 	}
-	
+
 	// Reduce padding to search field so text isn't cut off
 	.form-control {
 		padding: 4px 8px;
@@ -1784,48 +1784,48 @@ div.side {
 	}
 
 // Subverse Section ////////////////////////////////////////////////////////////////////////////////
-	
+
 	.titlebox {
 		position: relative;
 	}
-	
+
 	// RSS icon
-	h1.whoaversename a:last-child { 
+	h1.whoaversename a:last-child {
 
 		> img {
 			display: none !important;
 		}
-	
+
 		&::before {
 			content: "\e60a";
 			float: right;
 			font: 18px/36px "Cashmere icons" !important;
 			color: $sidebar-title-text-color;
-			
+
 			.dark & {
 				color: $dark-sidebar-title-text-color;
 			}
 		}
 	}
-	
+
 	// Subscribe and Block buttons
 	.btn-whoaverse-paging:nth-child(2),
 	.btn-whoaverse-paging:nth-child(3) {
 		position: absolute;
 		top: 45px;
 		transition: none;
-		
+
 		&:active {
 			top: 45px !important;
 		}
 	}
-	
+
 	// Subscribe button
-	.btn-whoaverse-paging:nth-child(2) { 
+	.btn-whoaverse-paging:nth-child(2) {
 		left: 10px;
 		text-align: left;
 	}
-	
+
 	// Block button
 	.btn-whoaverse-paging:nth-child(3) {
 		right: 10px;
@@ -1845,7 +1845,7 @@ div.side {
 		margin: 0 15px !important;
 		height: 20px;
 		line-height: 20px;
-		font-size: 13px;		
+		font-size: 13px;
 		font-weight: 500;
 		text-transform: capitalize;
 		background: transparent;
@@ -1857,34 +1857,41 @@ div.side {
 			text-align: right;
 		}
 	}
-	
+
 	span.subscribers {
 		display: inline-block;
 		margin-top: 40px !important;
 		width: 270px;
-		
+
 		.word {
 			visibility: hidden;
-			
+
 			&::before {
 				content: $subscribers;
 				visibility: visible;
 			}
 		}
 	}
-	
+
 	p.users-online {
 		margin-bottom: 15px !important;
 	}
-	
+
 	p.users-online > .word {
 		visibility: hidden;
-		
+
 		&::before {
 			content: $users-here-now;
 			visibility: visible;
 		}
 	}
+
+	// This div only appears for level 2 mods
+	.leavemoderator {
+		margin: 0 15px;
+		background: transparent;
+	}
+
 
 // Submission Info (on the comments page only) /////////////////////////////////////////////////////
 
@@ -1894,17 +1901,17 @@ div.side {
 		// Remove the subsection titles
 		.alert-h2 {
 			display: none;
-			
+
 			&:first-child {
 				display: block;
 				margin-bottom: 15px !important;
 			}
 		}
-		
+
 		> div {
 			padding: 0px 15px !important;
 		}
-		
+
 		p.h6,
 		b {
 			font-weight: 400;
@@ -1916,7 +1923,7 @@ div.side {
 	.message-moderators-temporary-class {
 		visibility: hidden;
 		width: 0;
-	
+
 		&::before {
 			content: "\e60b";
 			float: right;
@@ -1926,13 +1933,13 @@ div.side {
 			font: 20px/36px "Cashmere icons";
 			text-align: right;
 			color: $sidebar-title-text-color;
-			
+
 			.dark & {
 				color: $dark-sidebar-title-text-color;
 			}
 		}
 	}
-	
+
 	ul.content:not(#moderation_tools li) {
 		-webkit-column-count: $mod-column-count;
 		   -moz-column-count: $mod-column-count;
@@ -1945,7 +1952,7 @@ div.side {
 		background: $sidebar-background;
 		border: $text-input-border !important;
 		border-radius: $border-radius !important;
-		
+
 		.dark & {
 			background: $dark-sidebar-background;
 			border: $dark-text-input-border !important;
@@ -1958,7 +1965,6 @@ div.side {
 		padding: 15px !important;
 	}
 }
-
 // Footer //////////////////////////////////////////////////////////////////////////////////////////
 
 .footer-container {

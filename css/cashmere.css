@@ -1452,6 +1452,10 @@ div.side p.users-online > .word::before {
   content: "Visiting now:";
   visibility: visible;
 }
+div.side .leavemoderator {
+  margin: 0 15px;
+  background: transparent;
+}
 div.side .submissioninfo {
   padding-bottom: 5px !important;
 }
