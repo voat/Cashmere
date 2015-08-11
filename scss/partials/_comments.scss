@@ -100,6 +100,32 @@ form[action="/submitcomment"] {
 			background: $dark-comment-background-alt;
 		}
 	}
+
+	span.userattrs {
+		visibility: hidden;
+
+		a {
+			display: inline-block;
+			visibility: visible;
+			width: 13px;
+			height: 12px;
+			line-height: 12px;
+			text-align: center;
+			font-weight: 500;
+			background: $link-color !important;
+			color: $comment-background !important;
+			border-radius: $border-radius !important;
+
+			&:hover {
+				text-decoration: none;
+			}
+
+			.dark & {
+				background: $dark-link-color !important;
+				color: $dark-comment-background !important;
+			}
+		}
+	}
 }
 
 // Permalink alert /////////////////////////////////////////////////////////////////////////////////
