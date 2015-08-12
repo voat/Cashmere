@@ -5,19 +5,19 @@
 	width: 100%;
 	height: 66px;
 	background: $header-background;
-	
+
 	.dark & {
 		background: $dark-header-background;
 	}
-	
+
 	&:focus {
 		outline: none;
 	}
-	
+
 	a,
 	a:visited {
 		color: $header-link-color !important;
-	
+
 		.dark & {
 			color: $dark-header-link-color !important;
 		}
@@ -33,23 +33,23 @@
 		margin-left: 0 !important;
 		background: $header-background-alt;
 		text-transform: lowercase;
-	
+
 		.dark & {
 			background: $dark-header-background-alt;
 		}
-	
+
 		a {
 			color: transparentize($header-link-color, 0.4) !important;
 			transition: color $color-transition !important;
-			
+
 			.dark & {
 				color: transparentize($dark-header-link-color, 0.4) !important;
 			}
 		}
-		
+
 		&:hover a {
 			color: transparentize($header-link-color, 0.0) !important;
-			
+
 			.dark & {
 				color: transparentize($dark-header-link-color, 0.0) !important;
 			}
@@ -65,11 +65,11 @@
 		color: transparentize($header-link-color, 0.4) !important;
 		letter-spacing: 0;
 		background: $header-background-alt;
-	
+
 		.dark & {
 			background: $dark-header-background-alt;
 		}
-	
+
 		&:hover {
 			color: $header-link-color !important;
 		}
@@ -82,13 +82,13 @@
 
 	a {
 		padding: 0 5px;
-	}	
+	}
 
 	&:hover,
 	&:hover > ul,
 	> ul:hover {
 		background: $dropdown-menu-background;
-		
+
 		.dark & {
 			background: $dark-dropdown-menu-background;
 		}
@@ -101,7 +101,7 @@
 		max-height: 80vh;
 		overflow-y: auto; // adds scrollbar if necessary
 		border-radius: 0 0 $border-radius $border-radius !important;
-		
+
 		> li > a {
 			padding: 3px 18px 3px 6px !important; // extra padding on right is for scrollbar
 			font-size: 12px;
@@ -111,7 +111,7 @@
 
 			&:hover {
 				background: $dropdown-menu-item-hover !important;
-				
+
 				.dark & {
 					background: $dark-dropdown-menu-item-hover !important;
 				}
@@ -127,7 +127,7 @@
 	height: 44px !important;
 	background: transparent;
 }
-	
+
 #header-banner {
 	height: 44px;
 }
@@ -156,7 +156,7 @@
 		padding: 0;
 	}
 }
-	
+
 #header-banner > .tabmenu {
 	line-height: 44px;
 
@@ -168,21 +168,21 @@
 	a:hover,
 	.selected > a {
 		background: $header-background-alt !important;
-	
+
 		.dark & {
 			background: $dark-header-background-alt !important;
 		}
 	}
-	
+
 	.submit-link,
 	.submit-text {
 		display: none;
 	}
-	
+
 }
 
 #header-account {
-	
+
 	// .logged-out and .logged-in
 	> div {
 		margin: 0;
@@ -202,7 +202,7 @@
 	> .logged-out {
 		font-size: 12px;
 		color: transparentize($header-link-color, 0.4);
-	
+
 		a {
 			font-weight: 500;
 		}
@@ -218,35 +218,35 @@
 	.user:first-child {
 		visibility: hidden; // hide the spacer bars
 		font-size: 1px;
-	
+
 		> .userkarma {
 			margin: 0;
 		}
 
 		// just the username
-		> a { 
+		> a {
 			line-height: 44px !important;
 		}
 
 		// username and vote counts
 		> a,
-		> span > a { 
+		> span > a {
 			visibility: visible;
 			margin: 0 5px;
 			font-size: 12px;
 		}
 
 		// just the vote counts
-		> span > a { 
+		> span > a {
 			padding: 6px;
 			text-align: center;
 			background: $header-background-alt;
 			border-radius: $border-radius !important;
-		
+
 			.dark & {
 				background: $dark-header-background-alt;
 			}
-		}	
+		}
 	}
 }
 
@@ -273,7 +273,7 @@
 
 	&:hover::before {
 		background: $header-background-alt;
-		
+
 		.dark & {
 			background: $dark-header-background-alt;
 		}
@@ -312,18 +312,17 @@
 	background: transparent;
 	color: invert($header-link-color);
 	transition: background $color-transition;
-	
+
 	.dark &  {
 		color: invert($dark-header-link-color);
 	}
 }
 
 #header-account > div > a:last-child {
-	visibility: hidden; // hide "log out" text
-		
+	font-size: 0.001px;
+
 	&::before {
 		visibility: visible;
 		content: "\e607";
 	}
 }
-
