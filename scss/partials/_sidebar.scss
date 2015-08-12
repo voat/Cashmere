@@ -214,27 +214,14 @@ div.side {
 	// Subscribe and Block buttons
 	.btn-whoaverse-paging:nth-child(2),
 	.btn-whoaverse-paging:nth-child(3) {
-		position: absolute;
-		top: 45px;
+		margin: 9px !important;
 		transition: none;
-
-		&:active {
-			top: 45px !important;
-		}
-	}
-
-	// Subscribe button
-	.btn-whoaverse-paging:nth-child(2) {
-		left: 10px;
-		text-align: left;
 	}
 
 	// Block button
 	.btn-whoaverse-paging:nth-child(3) {
-		right: 10px;
-		text-align: right;
+		float: right;
 	}
-
 
 	.titlebox > .bottom,
 	.titlebox > .usertext {
@@ -263,7 +250,6 @@ div.side {
 
 	span.subscribers {
 		display: inline-block;
-		margin-top: 40px !important;
 		width: 270px;
 
 		.word {
