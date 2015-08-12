@@ -372,11 +372,42 @@ div.usertext-buttons > * {
 		}
 	}
 
+	// Tables
 	table {
+		width: calc(100% - 10px);
 		background: transparent;
 	}
 
-	//Spoiler tag
+	td,
+	th {
+		padding: 3px 6px;
+	}
+
+	thead {
+		background: hsla(0, 0, 0, 0.2);
+
+		.dark & {
+			background: hsla(0, 0, 100%, 0.2);
+		}
+	}
+
+	tbody > tr {
+		background: hsla(0, 0, 0, 0.05);
+
+		.dark & {
+			background: hsla(0, 0, 100%, 0.05);
+		}
+	}
+
+	tbody > tr:nth-child(even) {
+		background: hsla(0, 0, 0, 0.1);
+
+		.dark & {
+			background: hsla(0, 0, 100%, 0.1);
+		}
+	}
+
+	// Spoiler tag
 	a[href="#s"] {
 		text-decoration: none;
 
@@ -408,4 +439,5 @@ div.usertext-buttons > * {
 
 .tooltipster-base {
 	margin-top: 6px;
+	border-radius: $border-radius !important;
 }

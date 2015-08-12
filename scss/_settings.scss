@@ -17,8 +17,8 @@ $submit-button-text-color: #fff;
 $submit-button-background: hsl(17, 90%, 40%);
 $submit-button-background-hover: darken($submit-button-background, 10%);
 
-$text-selection-background: hsla(0, 0%, 0%, 0.2);
-$text-selection-color: inherit;
+$text-selection-background: hsla(0, 0, 0, 0.6);
+$text-selection-color: #fff;
 
 // Background image (set to "none" by default).
 // Follows CSS syntax, e.g. $body-background-image: url("http://www.example.com/somepicture.jpg");
@@ -44,10 +44,10 @@ $thumbnail-background: darken($body-background, 25%);
 $comment-background: $submission-background;
 $comment-background-alt: lighten($body-background, 14%);
 
-$code-background: #222;
-$code-text-color: salmon;
-$spoiler-background: #222;
-$spoiler-text-color: #eee;
+$code-background: hsl(90, 80%, 20%);
+$code-text-color: #fff;
+$spoiler-background: hsl(35, 100%, 70%);
+$spoiler-text-color: $text-color;
 
 // Sidebar
 $sidebar-text-color: $text-color;
