@@ -157,15 +157,15 @@ div.side {
 	}
 
 	// Hide the placeholder text since it now has a title above it
-	.form-control::-moz-placeholder {
+	#q::-moz-placeholder {
 		opacity: 0;
 	}
 
-	.form-control:-ms-input-placeholder {
+	#q:-ms-input-placeholder {
 		opacity: 0;
 	}
 
-	.form-control::-webkit-input-placeholder {
+	#q::-webkit-input-placeholder {
 		opacity: 0;
 	}
 
@@ -338,6 +338,7 @@ div.side {
 // Subverse Chat ///////////////////////////////////////////////////////////////////////////////////
 
 	#chatInputBox {
+		margin-bottom: 0;
 		background: $sidebar-background;
 		border: $text-input-border !important;
 		border-radius: $border-radius !important;
@@ -346,6 +347,10 @@ div.side {
 			background: $dark-sidebar-background;
 			border: $dark-text-input-border !important;
 		}
+	}
+
+	#chatInputBox + button {
+		display: none;
 	}
 
 // Announcements ///////////////////////////////////////////////////////////////////////////////////
