@@ -50,29 +50,7 @@
 		> p.title {
 			padding-right: 28px; // make space for expando button
 
-			// Sticky label
-			span.promoted {
-				display: none;
 
-				// The title of a sticky post
-				+ a.title:after {
-					content: "sticky";
-					position: relative;
-					top: -1px;
-					margin-left: 6px;
-					padding: 2px 4px;
-					font-size: 12px;
-					word-wrap: normal;
-					background: $submit-button-background;
-					color: #fff;
-					border-radius: $border-radius !important;
-
-					.dark & {
-						background: $dark-submit-button-background;
-						color: #000;
-					}
-				}
-			}
 		}
 
 		a.title,
@@ -122,19 +100,32 @@
 } //endif
 
 // Link flairs /////////////////////////////////////////////////////////////////////////////////////
-.flair + a::after {
+
+.promoted,
+.flair {
+	display: inline-block;
 	position: relative;
 	top: -1px;
-	margin-left: 6px;
-	padding: 2px 4px;
-	font-size: 12px;
-	word-wrap: normal;
+	padding: 0px 5px;
+	height: 18px;
+	line-height: 18px;
+	font-size: 11px !important;
+	font-weight: 500;
+	background: #555;
 	color: #fff;
 	border-radius: $border-radius !important;
 
 	.dark & {
 		color: #000;
 	}
+}
+
+.promoted {
+	top: 2px;
+	min-width: 0;
+	background: purple;
+	text-transform: capitalize;
+	letter-spacing: 0;
 }
 
 // Voting //////////////////////////////////////////////////////////////////////////////////////////
