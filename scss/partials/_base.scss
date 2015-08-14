@@ -29,6 +29,11 @@
 	top: 0 !important;
 }
 
+// Prevent transitions from occuring on page load
+html:not([class*="js"]) * {
+	transition: none !important;
+}
+
 // Layout //////////////////////////////////////////////////////////////////////////////////////////
 
 #container {
