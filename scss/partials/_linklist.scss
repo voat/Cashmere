@@ -49,7 +49,7 @@
 
 		> p.title {
 			padding-right: 28px; // make space for expando button
-
+			margin-bottom: 2px;
 
 		}
 
@@ -65,6 +65,48 @@
 			.dark & {
 				color: transparentize($dark-text-color, .4);
 			}
+		}
+
+		p.tagline {
+		    visibility: hidden;
+		    font-size: 0.001px;
+		    margin: 0;
+
+		    * {
+		        visibility: visible;
+		        font-size: 12px;
+		    }
+
+		    > a.subverse {
+		        display: none;
+		    }
+
+		    time {
+		        font-weight: 500;
+
+		        &::before {
+		            content: "submitted ";
+		            font-weight: 400;
+		        }
+
+		        &::after {
+		            content: " ago by ";
+		            font-weight: 400;
+		        }
+		    }
+
+		    a.author {
+		        font-weight: 500;
+		    }
+
+		    span.commentvotesratio {
+		        margin-left: 5px;
+		    }
+
+		}
+
+		.entry ul.flat-list {
+		    margin: 0;
 		}
 
 		div.expando {
