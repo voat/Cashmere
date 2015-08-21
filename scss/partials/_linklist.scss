@@ -67,6 +67,14 @@
 			}
 		}
 
+		@if $submission-type == self {
+
+			span.domain {
+				display: none;
+			}
+
+		} //endif
+
 		p.tagline {
 		    visibility: hidden;
 		    font-size: 0.001px;
