@@ -1,137 +1,12 @@
-// Colors, day-mode ////////////////////////////////////////////////////////////////////////////////
-
-// Base
-$text-color: #111;
-$link-color: hsl(205, 50%, 30%);
-$link-color-hover: saturate(lighten($link-color, 10%), 20%);
-$link-color-visited: lighten(desaturate($link-color, 30%), 10%);
-$link-color-visited-hover: lighten($link-color-visited, 10%);
-$body-background: hsl(210, 20%, 80%);
-$text-input-border: 1px solid $body-background;
-
-$upvoat-color: hsl(205, 70%, 53%);
-$downvoat-color: hsl(290, 82%, 39%);
-$unvoated-color: #aaa;
-
-$submit-button-text-color: #fff;
-$submit-button-background: hsl(17, 90%, 40%);
-$submit-button-background-hover: darken($submit-button-background, 10%);
-
-$text-selection-background: hsla(0, 0%, 0%, 0.2);
-$text-selection-color: inherit;
-
-// Background image (set to "none" by default).
-// Follows CSS syntax, e.g. $body-background-image: url("http://www.example.com/somepicture.jpg");
-$body-background-image: none;
-$body-background-repeat: no-repeat;
-$body-background-attachment: fixed;
-$body-background-position: top center;
-
-// Header
-$header-link-color: #fff;
-$header-background: hsl(205, 50%, 40%);
-$header-background-alt: darken($header-background, 5%);
-$mailbox-alert-background: hsl(40,100%,45%);
-
-$dropdown-menu-background: darken($header-background-alt, 5%);
-$dropdown-menu-item-hover: darken($dropdown-menu-background, 5%);
-
-// Content
-$submission-background: #fff;
-$thumbnail-icon-color: $submission-background;
-$thumbnail-background: darken($body-background, 25%);
-
-$comment-background: $submission-background;
-$comment-background-alt: lighten($body-background, 14%);
-
-$code-background: #222;
-$code-text-color: salmon;
-$spoiler-background: #222;
-$spoiler-text-color: #eee;
-
-// Sidebar
-$sidebar-text-color: $text-color;
-$sidebar-background: $submission-background;
-$sidebar-title-text-color: $sidebar-background;
-$sidebar-title-background: lighten(desaturate($header-background, 15%), 5%);
-
-// Footer
-$footer-text-color: #000;
-$footer-link-color: lighten($link-color, 10%);
-$footer-link-color-hover: transparentize($footer-link-color, .25);
-$footer-background: darken($body-background, 10%);
-
-
-// Colors, night-mode //////////////////////////////////////////////////////////////////////////////
-
-// Base
-$dark-text-color: #ccc;
-$dark-link-color: hsl(210, 50%, 65%);
-$dark-link-color-hover: saturate(lighten($dark-link-color, 10%), 30%);
-$dark-link-color-visited: darken(desaturate($dark-link-color, 30%), 10%);
-$dark-link-color-visited-hover: lighten($dark-link-color-visited, 10%);
-$dark-body-background: hsl(0, 0%, 9%);
-$dark-text-input-border: 1px solid #444;
-
-$dark-upvoat-color: darken($dark-link-color, 10%);
-$dark-downvoat-color: hsl(210, 50%, 35%);
-$dark-unvoated-color: #555;
-
-$dark-submit-button-text-color: #fff;
-$dark-submit-button-background: hsl(210, 30%, 35%);
-$dark-submit-button-background-hover: darken($dark-submit-button-background, 10%);
-
-$dark-text-selection-background: hsla(0, 0%, 100%, 0.2);
-$dark-text-selection-color: inherit;
-
-// Background image
-// Copies day-mode by default
-$dark-body-background-image: $body-background-image;
-$dark-body-background-repeat: $body-background-repeat;
-$dark-body-background-attachment: $body-background-attachment;
-$dark-body-background-position: $body-background-position;
-
-// Header
-$dark-header-link-color: #eee;
-$dark-header-background: hsl(0, 0%, 18%);
-$dark-header-background-alt: darken($dark-header-background, 5%);
-$dark-mailbox-alert-background: hsl(35,100%,40%);
-
-$dark-dropdown-menu-background: darken($dark-header-background-alt, 5%);
-$dark-dropdown-menu-item-hover: lighten($dark-dropdown-menu-background, 5%);
-
-// Content
-$dark-submission-background: hsl(0, 0%, 13%);
-$dark-thumbnail-icon-color: #8d8d8d;
-$dark-thumbnail-background: #111;
-
-$dark-comment-background: $dark-submission-background;
-$dark-comment-background-alt: lighten($dark-comment-background, 4%);
-
-$dark-code-background: #000;
-$dark-code-text-color: salmon;
-$dark-spoiler-background: #444;
-$dark-spoiler-text-color: #eee;
-
-// Sidebar
-$dark-sidebar-text-color: $dark-text-color;
-$dark-sidebar-background: $dark-submission-background;
-$dark-sidebar-title-text-color: $dark-text-color;
-$dark-sidebar-title-background: hsl(0, 0%, 16.5%);
-
-// Footer
-$dark-footer-text-color: $dark-text-color;
-$dark-footer-link-color: $dark-link-color;
-$dark-footer-link-color-hover: transparentize($dark-footer-link-color, .25);
-$dark-footer-background: darken($dark-body-background, 2.5%);
-
-
-// Other settings //////////////////////////////////////////////////////////////////////////////////
-
+// Base settings //////////////////////////////////////////////////////////////////////////////////
 
 // Only display submit button for one post type
 // Options: "link" / "self" / "all"
 $submission-type: all;
+
+// Set this to false if you don't want any thumbnails.
+// This is a good option if you only have self-posts.
+$display-thumbnails: true;
 
 // Labels for submit buttons
 $link-post-label: "Share a link";
@@ -141,13 +16,181 @@ $self-post-label: "Discuss";
 $subscribers: "Subscribers:";
 $users-here-now: "Visiting now:";
 
-// Set this to false if you don't want any thumbnails.
-$display-thumbnails: true;
-
 // Set the number of columns in the sidebar "MODERATORS" box.
 // This can reduce white space, but may not work well if any
 // mods have long usernames and/or flairs.
-$mod-column-count: 1;
+$mod-column-count: 2;
+
+
+// Day-mode colors
+$base-main-color: #3C4D5D;
+$base-background-color: #ccd1d6;
+$base-content-background: #fff;
+
+$base-link-color: #2E5591;
+$base-link-visited-color: #717;
+
+$base-upvoat-color: #3395DB;
+$base-downvoat-color: #9A12B5;
+$base-submit-button-color: #B23F12;
+
+// Use CSS background shorthand property
+// e.g. url("http://example.com/foo.jpg") no-repeat center top fixed;
+$base-background-image: none;
+
+
+// Night-mode colors
+$base-dark-main-color: #333;
+$base-dark-background-color: #171717;
+$base-dark-content-background: #212121;
+
+$base-dark-link-color: #4A7AB1;
+$base-dark-link-visited-color: #715099;
+
+$base-dark-upvoat-color: #538CC6;
+$base-dark-downvoat-color: #715099;
+$base-dark-submit-button-color: #3E5974;
+
+// Use CSS background shorthand property
+// e.g. url("http://example.com/foo.jpg") no-repeat center top fixed;
+$base-dark-background-image: none;
+
+
+// Determine hue and saturation from above colors //////////////////////////////////////////////////
+
+$hue-m: hue($base-main-color);
+$sat-m: saturation($base-main-color);
+
+$hue-b: hue($base-background-color);
+$sat-b: saturation($base-background-color);
+
+
+$hue-dm: hue($base-dark-main-color);
+$sat-dm: saturation($base-dark-main-color);
+
+$hue-db: hue($base-dark-background-color);
+$sat-db: saturation($base-dark-background-color);
+
+
+// Advanced settings ///////////////////////////////////////////////////////////////////////////////
+
+// Colors, day-mode ////////////////////////////////////////////////////////////////////////////////
+
+// Base
+$text-color: #111;
+$link-color: $base-link-color;
+$link-color-hover: darken($link-color, 20%);
+$link-color-visited: $base-link-visited-color;
+$link-color-visited-hover: darken($link-color-visited, 20%);
+$body-background: $base-background-color;
+$body-background-image: $base-background-image;
+$text-input-border: 1px solid hsla(0, 0%, 0%, 0.2);
+
+$upvoat-color: $base-upvoat-color;
+$downvoat-color: $base-downvoat-color;
+$unvoated-color: #aaa;
+
+$submit-button-text-color: #fff;
+$submit-button-background: $base-submit-button-color;
+$submit-button-background-hover: darken($submit-button-background, 10%);
+
+$text-selection-background: hsla(0, 0%, 0%, 0.6);
+$text-selection-color: #fff !important;
+
+// Header
+$header-link-color: #fff;
+$header-background: hsl($hue-m, $sat-m, 30%);
+$header-background-alt: darken($header-background, 5%);
+$mailbox-alert-background: hsl(40, 100%, 45%);
+
+$dropdown-menu-background: darken($header-background-alt, 5%);
+$dropdown-menu-item-hover: darken($dropdown-menu-background, 5%);
+
+// Content
+$submission-background: $base-content-background;
+$thumbnail-icon-color: $submission-background;
+$thumbnail-background: hsl($hue-b, $sat-b/4, 50%);
+
+$comment-background: $submission-background;
+$comment-background-alt: hsl($hue-b, 10%, 95%);
+
+$code-background: hsl(115, 30%, 33%);
+$code-text-color: #fff;
+$spoiler-background: hsl(30, 80%, 65%);
+$spoiler-text-color: #000;
+$blockquote-border-color: hsl(0, 0%, 50%);
+
+// Sidebar
+$sidebar-text-color: $text-color;
+$sidebar-background: $submission-background;
+$sidebar-title-text-color: $header-link-color;
+$sidebar-title-background: lighten(desaturate($header-background, 15%), 5%);
+
+// Footer
+$footer-text-color: #000;
+$footer-link-color: lighten($link-color, 10%);
+$footer-link-color-hover: transparentize($footer-link-color, .25);
+$footer-background: darken($body-background, 10%);
+
+// Colors, night-mode //////////////////////////////////////////////////////////////////////////////
+
+// Base
+$dark-text-color: #ddd;
+$dark-link-color: $base-dark-link-color;
+$dark-link-color-hover: darken($dark-link-color, 20%);
+$dark-link-color-visited: $base-dark-link-visited-color;
+$dark-link-color-visited-hover: darken($dark-link-color-visited, 20%);
+$dark-body-background: $base-dark-background-color;
+$dark-body-background-image: $base-dark-background-image;
+$dark-text-input-border: 1px solid hsla(0, 0%, 100%, 0.15);
+
+$dark-upvoat-color: $base-dark-upvoat-color;
+$dark-downvoat-color: $base-dark-downvoat-color;
+$dark-unvoated-color: #555;
+
+$dark-submit-button-text-color: #ddd;
+$dark-submit-button-background: $base-dark-submit-button-color;
+$dark-submit-button-background-hover: darken($dark-submit-button-background, 10%);
+
+$dark-text-selection-background: hsla(0, 0%, 100%, 0.6);
+$dark-text-selection-color: #000 !important;
+
+// Header
+$dark-header-link-color: #ddd;
+$dark-header-background: $base-dark-main-color;
+$dark-header-background-alt: darken($dark-header-background, 5%);
+$dark-mailbox-alert-background: hsl(40,100%,45%);
+
+$dark-dropdown-menu-background: darken($dark-header-background-alt, 5%);
+$dark-dropdown-menu-item-hover: darken($dark-dropdown-menu-background, 5%);
+
+// Content
+$dark-submission-background: $base-dark-content-background;
+$dark-thumbnail-icon-color: $dark-submission-background*2.5;
+$dark-thumbnail-background: #000;
+
+$dark-comment-background: $dark-submission-background;
+$dark-comment-background-alt: hsl($hue-db, 10%, 6%);
+
+$dark-code-background: darken($code-background, 8%);
+$dark-code-text-color: #fff;
+$dark-spoiler-background: hsl(30, 70%, 25%);
+$dark-spoiler-text-color: #eee;
+$dark-blockquote-border-color: hsl(0, 0%, 40%);
+
+// Sidebar
+$dark-sidebar-text-color: $dark-text-color;
+$dark-sidebar-background: $dark-submission-background;
+$dark-sidebar-title-text-color: $dark-header-link-color;
+$dark-sidebar-title-background: darken(desaturate($dark-header-background, 15%), 5%);
+
+// Footer
+$dark-footer-text-color: $dark-text-color;
+$dark-footer-link-color: lighten($dark-link-color, 10%);
+$dark-footer-link-color-hover: transparentize($dark-footer-link-color, .25);
+$dark-footer-background: darken($dark-body-background, 5%);
+
+// Other settings //////////////////////////////////////////////////////////////////////////////////
 
 $color-transition: ease .2s;
 $border-radius: 2px;
@@ -180,6 +223,11 @@ $border-radius: 2px;
 
 .btn-whoaverse-paging:active {
 	top: 0 !important;
+}
+
+// Prevent transitions from occuring on page load
+html:not([class*="js"]) * {
+	transition: none !important;
 }
 
 // Layout //////////////////////////////////////////////////////////////////////////////////////////
@@ -384,18 +432,16 @@ input#Password {
 // Typography //////////////////////////////////////////////////////////////////////////////////////
 
 body {
-	background: $body-background;
-	background-image: $body-background-image !important;
-	background-repeat: $body-background-repeat !important;
-	background-attachment: $body-background-attachment !important;
-	background-position: $body-background-position !important;
+	background: $body-background-image !important;
+	background-color: $body-background !important;
 	font: 11px/1.5 "Roboto", Arial, sans-serif !important;
 	color: $text-color;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
 	&.dark {
-		background: $dark-body-background;
+		background: $dark-body-background-image !important;
+		background-color: $dark-body-background !important;
 		color: $dark-text-color !important;
 	}
 }
@@ -504,12 +550,12 @@ div.usertext-buttons > * {
 	blockquote {
 		padding: 0 0 0 10px;
 		margin: 0 0 0 10px;
-		border-left: 5px solid $body-background !important;
+		border-left: 5px solid $blockquote-border-color !important;
 		background: none !important;
 		color: transparentize($text-color, 0.3);
 
 		.dark & {
-			border-left: 5px solid transparentize($dark-link-color, 0.5) !important;
+			border-left: 5px solid $dark-blockquote-border-color !important;
 			color: transparentize($dark-text-color, 0.3);
 		}
 	}
@@ -525,11 +571,42 @@ div.usertext-buttons > * {
 		}
 	}
 
+	// Tables
 	table {
+		width: calc(100% - 10px);
 		background: transparent;
 	}
 
-	//Spoiler tag
+	td,
+	th {
+		padding: 3px 6px;
+	}
+
+	thead {
+		background: hsla(0, 0, 0, 0.2);
+
+		.dark & {
+			background: hsla(0, 0, 100%, 0.2);
+		}
+	}
+
+	tbody > tr {
+		background: hsla(0, 0, 0, 0.05);
+
+		.dark & {
+			background: hsla(0, 0, 100%, 0.05);
+		}
+	}
+
+	tbody > tr:nth-child(even) {
+		background: hsla(0, 0, 0, 0.1);
+
+		.dark & {
+			background: hsla(0, 0, 100%, 0.1);
+		}
+	}
+
+	// Spoiler tag
 	a[href="#s"] {
 		text-decoration: none;
 
@@ -561,6 +638,7 @@ div.usertext-buttons > * {
 
 .tooltipster-base {
 	margin-top: 6px;
+	border-radius: $border-radius !important;
 }
 // Header //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -569,19 +647,19 @@ div.usertext-buttons > * {
 	width: 100%;
 	height: 66px;
 	background: $header-background;
-	
+
 	.dark & {
 		background: $dark-header-background;
 	}
-	
+
 	&:focus {
 		outline: none;
 	}
-	
+
 	a,
 	a:visited {
 		color: $header-link-color !important;
-	
+
 		.dark & {
 			color: $dark-header-link-color !important;
 		}
@@ -597,23 +675,23 @@ div.usertext-buttons > * {
 		margin-left: 0 !important;
 		background: $header-background-alt;
 		text-transform: lowercase;
-	
+
 		.dark & {
 			background: $dark-header-background-alt;
 		}
-	
+
 		a {
 			color: transparentize($header-link-color, 0.4) !important;
 			transition: color $color-transition !important;
-			
+
 			.dark & {
 				color: transparentize($dark-header-link-color, 0.4) !important;
 			}
 		}
-		
+
 		&:hover a {
 			color: transparentize($header-link-color, 0.0) !important;
-			
+
 			.dark & {
 				color: transparentize($dark-header-link-color, 0.0) !important;
 			}
@@ -629,11 +707,11 @@ div.usertext-buttons > * {
 		color: transparentize($header-link-color, 0.4) !important;
 		letter-spacing: 0;
 		background: $header-background-alt;
-	
+
 		.dark & {
 			background: $dark-header-background-alt;
 		}
-	
+
 		&:hover {
 			color: $header-link-color !important;
 		}
@@ -646,13 +724,13 @@ div.usertext-buttons > * {
 
 	a {
 		padding: 0 5px;
-	}	
+	}
 
 	&:hover,
 	&:hover > ul,
 	> ul:hover {
 		background: $dropdown-menu-background;
-		
+
 		.dark & {
 			background: $dark-dropdown-menu-background;
 		}
@@ -665,7 +743,7 @@ div.usertext-buttons > * {
 		max-height: 80vh;
 		overflow-y: auto; // adds scrollbar if necessary
 		border-radius: 0 0 $border-radius $border-radius !important;
-		
+
 		> li > a {
 			padding: 3px 18px 3px 6px !important; // extra padding on right is for scrollbar
 			font-size: 12px;
@@ -675,7 +753,7 @@ div.usertext-buttons > * {
 
 			&:hover {
 				background: $dropdown-menu-item-hover !important;
-				
+
 				.dark & {
 					background: $dark-dropdown-menu-item-hover !important;
 				}
@@ -691,7 +769,7 @@ div.usertext-buttons > * {
 	height: 44px !important;
 	background: transparent;
 }
-	
+
 #header-banner {
 	height: 44px;
 }
@@ -720,7 +798,7 @@ div.usertext-buttons > * {
 		padding: 0;
 	}
 }
-	
+
 #header-banner > .tabmenu {
 	line-height: 44px;
 
@@ -732,21 +810,21 @@ div.usertext-buttons > * {
 	a:hover,
 	.selected > a {
 		background: $header-background-alt !important;
-	
+
 		.dark & {
 			background: $dark-header-background-alt !important;
 		}
 	}
-	
+
 	.submit-link,
 	.submit-text {
 		display: none;
 	}
-	
+
 }
 
 #header-account {
-	
+
 	// .logged-out and .logged-in
 	> div {
 		margin: 0;
@@ -766,7 +844,7 @@ div.usertext-buttons > * {
 	> .logged-out {
 		font-size: 12px;
 		color: transparentize($header-link-color, 0.4);
-	
+
 		a {
 			font-weight: 500;
 		}
@@ -782,35 +860,35 @@ div.usertext-buttons > * {
 	.user:first-child {
 		visibility: hidden; // hide the spacer bars
 		font-size: 1px;
-	
+
 		> .userkarma {
 			margin: 0;
 		}
 
 		// just the username
-		> a { 
+		> a {
 			line-height: 44px !important;
 		}
 
 		// username and vote counts
 		> a,
-		> span > a { 
+		> span > a {
 			visibility: visible;
 			margin: 0 5px;
 			font-size: 12px;
 		}
 
 		// just the vote counts
-		> span > a { 
+		> span > a {
 			padding: 6px;
 			text-align: center;
 			background: $header-background-alt;
 			border-radius: $border-radius !important;
-		
+
 			.dark & {
 				background: $dark-header-background-alt;
 			}
-		}	
+		}
 	}
 }
 
@@ -837,7 +915,7 @@ div.usertext-buttons > * {
 
 	&:hover::before {
 		background: $header-background-alt;
-		
+
 		.dark & {
 			background: $dark-header-background-alt;
 		}
@@ -876,21 +954,20 @@ div.usertext-buttons > * {
 	background: transparent;
 	color: invert($header-link-color);
 	transition: background $color-transition;
-	
+
 	.dark &  {
 		color: invert($dark-header-link-color);
 	}
 }
 
 #header-account > div > a:last-child {
-	visibility: hidden; // hide "log out" text
-		
+	font-size: 0.001px;
+
 	&::before {
 		visibility: visible;
 		content: "\e607";
 	}
 }
-
 // Submissions /////////////////////////////////////////////////////////////////////////////////////
 
 .submission {
@@ -899,7 +976,7 @@ div.usertext-buttons > * {
 	padding: 15px 0;
 	background: $submission-background;
 	border-radius: $border-radius !important;
-	
+
 	.dark & {
 		background: $dark-submission-background;
 	}
@@ -907,7 +984,7 @@ div.usertext-buttons > * {
 	a.thumbnail {
 
 		@if $display-thumbnails == true {
-		
+
 			position: absolute;
 			z-index: 2;
 			top: 15px;
@@ -915,54 +992,35 @@ div.usertext-buttons > * {
 			height: 70px;
 
 		} @else {
-		
+
 			display: none;
-		
+
 		} //endif
 	}
 
 	.entry {
 		padding: 0 15px 0 0;
 		min-height: 70px;
-		
+
 		> p.title,
 		> p.tagline,
 		> ul.flat-list {
 
-			@if $display-thumbnails == true {		
-			
+			@if $display-thumbnails == true {
+
 				padding-left: 78px;
-			
+
 			} @else {
-		
+
 				padding-left: 0px;
-		
+
 			}
 		}
 
 		> p.title {
 			padding-right: 28px; // make space for expando button
-			
-			// Sticky label
-			span.promoted {
-				display: none;
-				
-				// The title of a sticky post
-				+ a.title:after {
-					content: "sticky";
-					float: left;
-					margin-right: 5px;
-					background: $thumbnail-background;
-					color: $thumbnail-icon-color;
-					padding: 0 8px;
-					font-size: 11px;
-					
-					.dark & {
-						background: $dark-thumbnail-background;
-						color: $dark-thumbnail-icon-color;
-					}
-				}
-			}
+			margin-bottom: 2px;
+
 		}
 
 		a.title,
@@ -973,10 +1031,52 @@ div.usertext-buttons > * {
 		p.tagline,
 		span.domain {
 			color: transparentize($text-color, .4);
-		
+
 			.dark & {
 				color: transparentize($dark-text-color, .4);
 			}
+		}
+
+		p.tagline {
+		    visibility: hidden;
+		    font-size: 0.001px;
+		    margin: 0;
+
+		    * {
+		        visibility: visible;
+		        font-size: 12px;
+		    }
+
+		    > a.subverse {
+		        display: none;
+		    }
+
+		    time {
+		        font-weight: 500;
+
+		        &::before {
+		            content: "submitted ";
+		            font-weight: 400;
+		        }
+
+		        &::after {
+		            content: " ago by ";
+		            font-weight: 400;
+		        }
+		    }
+
+		    a.author {
+		        font-weight: 500;
+		    }
+
+		    span.commentvotesratio {
+		        margin-left: 5px;
+		    }
+
+		}
+
+		.entry ul.flat-list {
+		    margin: 0;
 		}
 
 		div.expando {
@@ -992,7 +1092,7 @@ div.usertext-buttons > * {
 	> ul.flat-list {
 		padding-left: 0;
 	}
-	
+
 	// don't show icon thumbnails on comments page
 	a.title::before {
 		display: none !important;
@@ -1008,8 +1108,37 @@ div.usertext-buttons > * {
 			padding-left: 78px;
 		}
 	}
-	
+
 } //endif
+
+// Link flairs /////////////////////////////////////////////////////////////////////////////////////
+
+.promoted,
+.flair {
+	display: inline-block;
+	position: relative;
+	top: -1px;
+	padding: 0px 5px;
+	height: 18px;
+	line-height: 18px;
+	font-size: 11px !important;
+	font-weight: 500;
+	background: #555;
+	color: #fff;
+	border-radius: $border-radius !important;
+
+	.dark & {
+		color: #000;
+	}
+}
+
+.promoted {
+	top: 2px;
+	min-width: 0;
+	background: purple;
+	text-transform: capitalize;
+	letter-spacing: 0;
+}
 
 // Voting //////////////////////////////////////////////////////////////////////////////////////////
 .midcol {
@@ -1022,7 +1151,7 @@ div.usertext-buttons > * {
 		line-height: 16px;
 		font-size: 12px;
 		color: $unvoated-color;
-		
+
 		.dark & {
 			color: $dark-unvoated-color;
 		}
@@ -1080,7 +1209,7 @@ span.post_downvotes {
 .scorebar {
 	height: 70px;
 	width: 4px;
-	
+
 	.scorebar-likes {
 		background: $upvoat-color;
 
@@ -1088,11 +1217,11 @@ span.post_downvotes {
 			background: $dark-upvoat-color;
 		}
 	}
-		
+
 	.scorebar-dislikes {
 		background: $downvoat-color;
 		border-top: 1px solid $submission-background !important;
-		
+
 		.dark & {
 			background: $dark-downvoat-color;
 			border-top: 1px solid $dark-submission-background !important;
@@ -1120,10 +1249,10 @@ span.post_downvotes {
 			color: $dark-link-color;
 		}
 	}
-	
+
 	&:hover::before {
 		color: $link-color-hover;
-		
+
 		.dark & {
 			color: $dark-link-color-hover;
 		}
@@ -1133,7 +1262,7 @@ span.post_downvotes {
 		-webkit-animation: spin 3s linear infinite;
 		   -moz-animation: spin 3s linear infinite;
 		        animation: spin 3s linear infinite;
-		
+
 		&::before {
 			content: "\e60d";
 			font-weight: 700;
@@ -1145,7 +1274,7 @@ span.post_downvotes {
 	}
 }
 
-@-moz-keyframes spin { 
+@-moz-keyframes spin {
 	0%   { -moz-transform: rotate(0deg); }
 	100% { -moz-transform: rotate(359deg); }
 }
@@ -1180,20 +1309,20 @@ span.post_downvotes {
 	font-size: 12px;
 	background: $submission-background;
 	border-radius: $border-radius !important;
-	
+
 	.dark & {
 		background: $dark-submission-background;
 	}
-	
+
 	&::before {
 		content:"Sort by:";
 		margin-right: 5px;
 		font-weight: 500;
 	}
-	
+
 	a:visited {
 		color: $link-color !important;
-		
+
 		.dark & {
 			color: $dark-link-color !important;
 		}
@@ -1215,15 +1344,15 @@ span.post_downvotes {
 		&:hover {
 			background: $submission-background;
 		}
-		
+
 		.dark & {
 			background: $dark-submission-background;
-			
+
 			&:hover {
 				background: $dark-submission-background;
 			}
 		}
-		
+
 		a {
 			display: block !important;
 			height: 100% !important;
@@ -1231,14 +1360,13 @@ span.post_downvotes {
 			font-size: 12px;
 			font-weight: 500;
 			color: $text-color !important;
-			
+
 			.dark &	{
 				color: $dark-text-color !important;
 			}
 		}
 	}
 }
-
 // Icons ///////////////////////////////////////////////////////////////////////////////////////////
 
 @if $display-thumbnails == true {
@@ -1309,7 +1437,7 @@ a.thumbnail + .entry a.title::before {
 
 #firsttimevisitorwelcomemessage {
 	background: $comment-background;
-	
+
 	.dark & {
 		background: $dark-comment-background;
 	}
@@ -1326,7 +1454,7 @@ form[action="/submitcomment"] {
 	padding: 15px 15px 0;
 	background: $comment-background;
 	border-radius: $border-radius !important;
-	
+
 	.dark & {
 		background: $dark-comment-background;
 	}
@@ -1336,21 +1464,21 @@ form[action="/submitcomment"] {
 	background: transparent;
 	border: $text-input-border !important;
 	border-radius: $border-radius !important;
-	
+
 	.dark & {
 		border: $dark-text-input-border !important;
 	}
 }
-	
+
 .menuarea {
 	margin: 0px;
 	padding: 0 15px;
 	background: $comment-background;
-	
+
 	.dark & {
 		background: $dark-comment-background;
 	}
-	
+
 	&:nth-child(8) {
 		padding: 15px 15px 5px;
 		border-radius: $border-radius $border-radius 0 0 !important;
@@ -1373,7 +1501,7 @@ form[action="/submitcomment"] {
 	}
 
 	.arrow-upvote,
-	.arrow-upvoted, 
+	.arrow-upvoted,
 	.arrow-downvote,
 	.arrow-downvoted {
 		width: 20px;
@@ -1381,17 +1509,17 @@ form[action="/submitcomment"] {
 		font-size: 16px;
 		text-align: center;
 	}
-	
+
 	.child {
 		margin-top: 10px;
 		padding: 8px 8px 5px;
 		background: $comment-background;
 		border-radius: $border-radius !important;
-		
+
 		.dark & {
 			background: $dark-comment-background;
 		}
-		
+
 		> .entry {
 			margin-right: 10px;
 		}
@@ -1402,11 +1530,46 @@ form[action="/submitcomment"] {
 	> .child > .child > .child > .child > .child > .child,
 	> .child > .child > .child > .child > .child > .child > .child > .child {
 		background: $comment-background-alt;
-		
+
 		.dark &	{
 			background: $dark-comment-background-alt;
 		}
 	}
+
+	span.userattrs {
+		visibility: hidden;
+
+		a {
+			display: inline-block;
+			visibility: visible;
+			width: 13px;
+			height: 12px;
+			line-height: 12px;
+			text-align: center;
+			font-weight: 500;
+			background: $link-color !important;
+			color: $comment-background !important;
+			border-radius: $border-radius !important;
+
+			&:hover {
+				text-decoration: none;
+			}
+
+			.dark & {
+				background: $dark-link-color !important;
+				color: $dark-comment-background !important;
+			}
+		}
+	}
+}
+
+// Permalink alert /////////////////////////////////////////////////////////////////////////////////
+
+.alert-singlethread {
+	margin: 0;
+	padding: 15px;
+	font-size: 12px;
+	border-radius: $border-radius !important;
 }
 // Markdown editor /////////////////////////////////////////////////////////////////////////////////
 
@@ -1754,15 +1917,15 @@ div.side {
 	}
 
 	// Hide the placeholder text since it now has a title above it
-	.form-control::-moz-placeholder {
+	#q::-moz-placeholder {
 		opacity: 0;
 	}
 
-	.form-control:-ms-input-placeholder {
+	#q:-ms-input-placeholder {
 		opacity: 0;
 	}
 
-	.form-control::-webkit-input-placeholder {
+	#q::-webkit-input-placeholder {
 		opacity: 0;
 	}
 
@@ -1811,27 +1974,14 @@ div.side {
 	// Subscribe and Block buttons
 	.btn-whoaverse-paging:nth-child(2),
 	.btn-whoaverse-paging:nth-child(3) {
-		position: absolute;
-		top: 45px;
+		margin: 9px !important;
 		transition: none;
-
-		&:active {
-			top: 45px !important;
-		}
-	}
-
-	// Subscribe button
-	.btn-whoaverse-paging:nth-child(2) {
-		left: 10px;
-		text-align: left;
 	}
 
 	// Block button
 	.btn-whoaverse-paging:nth-child(3) {
-		right: 10px;
-		text-align: right;
+		float: right;
 	}
-
 
 	.titlebox > .bottom,
 	.titlebox > .usertext {
@@ -1860,7 +2010,6 @@ div.side {
 
 	span.subscribers {
 		display: inline-block;
-		margin-top: 40px !important;
 		width: 270px;
 
 		.word {
@@ -1949,6 +2098,7 @@ div.side {
 // Subverse Chat ///////////////////////////////////////////////////////////////////////////////////
 
 	#chatInputBox {
+		margin-bottom: 0;
 		background: $sidebar-background;
 		border: $text-input-border !important;
 		border-radius: $border-radius !important;
@@ -1957,6 +2107,10 @@ div.side {
 			background: $dark-sidebar-background;
 			border: $dark-text-input-border !important;
 		}
+	}
+
+	#chatInputBox + button {
+		display: none;
 	}
 
 // Announcements ///////////////////////////////////////////////////////////////////////////////////

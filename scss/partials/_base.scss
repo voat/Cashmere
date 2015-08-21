@@ -236,18 +236,16 @@ input#Password {
 // Typography //////////////////////////////////////////////////////////////////////////////////////
 
 body {
-	background: $body-background;
-	background-image: $body-background-image !important;
-	background-repeat: $body-background-repeat !important;
-	background-attachment: $body-background-attachment !important;
-	background-position: $body-background-position !important;
+	background: $body-background-image !important;
+	background-color: $body-background !important;
 	font: 11px/1.5 "Roboto", Arial, sans-serif !important;
 	color: $text-color;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
 	&.dark {
-		background: $dark-body-background;
+		background: $dark-body-background-image !important;
+		background-color: $dark-body-background !important;
 		color: $dark-text-color !important;
 	}
 }
@@ -356,12 +354,12 @@ div.usertext-buttons > * {
 	blockquote {
 		padding: 0 0 0 10px;
 		margin: 0 0 0 10px;
-		border-left: 5px solid $body-background !important;
+		border-left: 5px solid $blockquote-border-color !important;
 		background: none !important;
 		color: transparentize($text-color, 0.3);
 
 		.dark & {
-			border-left: 5px solid transparentize($dark-link-color, 0.5) !important;
+			border-left: 5px solid $dark-blockquote-border-color !important;
 			color: transparentize($dark-text-color, 0.3);
 		}
 	}
