@@ -38,6 +38,8 @@ html:not([class*="js"]) * {
 
 #container {
 	padding: 0;
+	padding-top: $container-top-padding;
+	padding-bottom: $container-bottom-padding;
 	min-height: calc(100vh - 120px); // Force footer to the bottom of short pages
 	background: transparent !important;
 

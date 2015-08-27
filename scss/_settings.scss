@@ -16,6 +16,10 @@ $self-post-label: "Discuss";
 $subscribers: "Subscribers:";
 $users-here-now: "Visiting now:";
 
+// Extra padding
+$container-top-padding: 0px;
+$container-bottom-padding: 0px;
+
 // Set the number of columns in the sidebar "MODERATORS" box.
 // This can reduce white space, but may not work well if any
 // mods have long usernames and/or flairs.
