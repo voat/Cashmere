@@ -281,6 +281,20 @@ div.side {
 		background: transparent;
 	}
 
+	// Sidebar image system
+	.side .usertext {
+
+	    h6:empty {
+	        line-height: 1;
+	    }
+
+	    h6:empty::after {
+	        overflow: hidden;
+	        display: block;
+	    }
+
+	}
+
 
 // Submission Info (on the comments page only) /////////////////////////////////////////////////////
 
