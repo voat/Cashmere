@@ -16,6 +16,10 @@ $self-post-label: "Discuss";
 $subscribers: "Subscribers:";
 $users-here-now: "Visiting now:";
 
+// Extra padding
+$container-top-padding: 0px;
+$container-bottom-padding: 0px;
+
 // Set the number of columns in the sidebar "MODERATORS" box.
 // This can reduce white space, but may not work well if any
 // mods have long usernames and/or flairs.
@@ -234,6 +238,8 @@ html:not([class*="js"]) * {
 
 #container {
 	padding: 0;
+	padding-top: $container-top-padding;
+	padding-bottom: $container-bottom-padding;
 	min-height: calc(100vh - 120px); // Force footer to the bottom of short pages
 	background: transparent !important;
 
@@ -1037,6 +1043,14 @@ div.usertext-buttons > * {
 			}
 		}
 
+		@if $submission-type == self {
+
+			span.domain {
+				display: none;
+			}
+
+		} //endif
+
 		p.tagline {
 		    visibility: hidden;
 		    font-size: 0.001px;
@@ -1114,7 +1128,7 @@ div.usertext-buttons > * {
 // Link flairs /////////////////////////////////////////////////////////////////////////////////////
 
 .promoted,
-.flair {
+.flair:not(:empty) {
 	display: inline-block;
 	position: relative;
 	top: -1px;
@@ -2039,6 +2053,20 @@ div.side {
 	.leavemoderator {
 		margin: 0 15px;
 		background: transparent;
+	}
+
+	// Sidebar image system
+	.side .usertext {
+
+	    h6:empty {
+	        line-height: 1;
+	    }
+
+	    h6:empty::after {
+	        overflow: hidden;
+	        display: block;
+	    }
+
 	}
 
 

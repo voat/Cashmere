@@ -24,6 +24,8 @@ html:not([class*="js"]) * {
 
 #container {
   padding: 0;
+  padding-top: 0px;
+  padding-bottom: 0px;
   min-height: calc(100vh - 120px);
   background: transparent !important;
 }
@@ -748,7 +750,7 @@ div.usertext-buttons > *:hover {
 }
 
 .promoted,
-.flair {
+.flair:not(:empty) {
   display: inline-block;
   position: relative;
   top: -1px;
@@ -762,7 +764,7 @@ div.usertext-buttons > *:hover {
   border-radius: 2px !important;
 }
 .dark .promoted, .dark
-.flair {
+.flair:not(:empty) {
   color: #000;
 }
 
@@ -1543,6 +1545,13 @@ div.side p.users-online > .word::before {
 div.side .leavemoderator {
   margin: 0 15px;
   background: transparent;
+}
+div.side .side .usertext h6:empty {
+  line-height: 1;
+}
+div.side .side .usertext h6:empty::after {
+  overflow: hidden;
+  display: block;
 }
 div.side .submissioninfo {
   padding-bottom: 5px !important;
