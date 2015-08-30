@@ -24,8 +24,6 @@ html:not([class*="js"]) * {
 
 #container {
   padding: 0;
-  padding-top: 0px;
-  padding-bottom: 0px;
   min-height: calc(100vh - 120px);
   background: transparent !important;
 }
@@ -1546,13 +1544,6 @@ div.side .leavemoderator {
   margin: 0 15px;
   background: transparent;
 }
-div.side .side .usertext h6:empty {
-  line-height: 1;
-}
-div.side .side .usertext h6:empty::after {
-  overflow: hidden;
-  display: block;
-}
 div.side .submissioninfo {
   padding-bottom: 5px !important;
 }
@@ -1586,11 +1577,6 @@ div.side .message-moderators-temporary-class::before {
 }
 .dark div.side .message-moderators-temporary-class::before {
   color: #ddd;
-}
-div.side ul.content:not(#moderation_tools li) {
-  -webkit-column-count: 2;
-  -moz-column-count: 2;
-  column-count: 2;
 }
 div.side #chatInputBox {
   margin-bottom: 0;

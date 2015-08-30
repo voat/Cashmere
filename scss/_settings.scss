@@ -16,16 +16,6 @@ $self-post-label: "Discuss";
 $subscribers: "Subscribers:";
 $users-here-now: "Visiting now:";
 
-// Extra padding
-$container-top-padding: 0px;
-$container-bottom-padding: 0px;
-
-// Set the number of columns in the sidebar "MODERATORS" box.
-// This can reduce white space, but may not work well if any
-// mods have long usernames and/or flairs.
-$mod-column-count: 2;
-
-
 // Day-mode colors
 $base-main-color: #3C4D5D;
 $base-background-color: #ccd1d6;
@@ -41,6 +31,7 @@ $base-submit-button-color: #B23F12;
 // Use CSS background shorthand property
 // e.g. url("http://example.com/foo.jpg") no-repeat center top fixed;
 $base-background-image: none;
+
 
 
 // Night-mode colors

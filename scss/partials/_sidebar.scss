@@ -281,21 +281,6 @@ div.side {
 		background: transparent;
 	}
 
-	// Sidebar image system
-	.side .usertext {
-
-	    h6:empty {
-	        line-height: 1;
-	    }
-
-	    h6:empty::after {
-	        overflow: hidden;
-	        display: block;
-	    }
-
-	}
-
-
 // Submission Info (on the comments page only) /////////////////////////////////////////////////////
 
 	.submissioninfo {
@@ -341,12 +326,6 @@ div.side {
 				color: $dark-sidebar-title-text-color;
 			}
 		}
-	}
-
-	ul.content:not(#moderation_tools li) {
-		-webkit-column-count: $mod-column-count;
-		   -moz-column-count: $mod-column-count;
-		        column-count: $mod-column-count;
 	}
 
 // Subverse Chat ///////////////////////////////////////////////////////////////////////////////////
