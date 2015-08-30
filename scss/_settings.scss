@@ -51,6 +51,35 @@ $base-dark-submit-button-color: #3E5974;
 $base-dark-background-image: none;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Advanced settings ///////////////////////////////////////////////////////////////////////////////
+
 // Determine hue and saturation from above colors //////////////////////////////////////////////////
 
 $hue-m: hue($base-main-color);
@@ -65,9 +94,6 @@ $sat-dm: saturation($base-dark-main-color);
 
 $hue-db: hue($base-dark-background-color);
 $sat-db: saturation($base-dark-background-color);
-
-
-// Advanced settings ///////////////////////////////////////////////////////////////////////////////
 
 // Colors, day-mode ////////////////////////////////////////////////////////////////////////////////
 
