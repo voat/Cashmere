@@ -29,6 +29,11 @@
 	top: 0 !important;
 }
 
+// Prevent transitions from occuring on page load
+html:not([class*="js"]) * {
+	transition: none !important;
+}
+
 // Layout //////////////////////////////////////////////////////////////////////////////////////////
 
 #container {
@@ -231,18 +236,16 @@ input#Password {
 // Typography //////////////////////////////////////////////////////////////////////////////////////
 
 body {
-	background: $body-background;
-	background-image: $body-background-image !important;
-	background-repeat: $body-background-repeat !important;
-	background-attachment: $body-background-attachment !important;
-	background-position: $body-background-position !important;
+	background: $body-background-image !important;
+	background-color: $body-background !important;
 	font: 11px/1.5 "Roboto", Arial, sans-serif !important;
 	color: $text-color;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
 	&.dark {
-		background: $dark-body-background;
+		background: $dark-body-background-image !important;
+		background-color: $dark-body-background !important;
 		color: $dark-text-color !important;
 	}
 }
@@ -351,12 +354,12 @@ div.usertext-buttons > * {
 	blockquote {
 		padding: 0 0 0 10px;
 		margin: 0 0 0 10px;
-		border-left: 5px solid $body-background !important;
+		border-left: 5px solid $blockquote-border-color !important;
 		background: none !important;
 		color: transparentize($text-color, 0.3);
 
 		.dark & {
-			border-left: 5px solid transparentize($dark-link-color, 0.5) !important;
+			border-left: 5px solid $dark-blockquote-border-color !important;
 			color: transparentize($dark-text-color, 0.3);
 		}
 	}
@@ -372,11 +375,42 @@ div.usertext-buttons > * {
 		}
 	}
 
+	// Tables
 	table {
+		width: calc(100% - 10px);
 		background: transparent;
 	}
 
-	//Spoiler tag
+	td,
+	th {
+		padding: 3px 6px;
+	}
+
+	thead {
+		background: hsla(0, 0, 0, 0.2);
+
+		.dark & {
+			background: hsla(0, 0, 100%, 0.2);
+		}
+	}
+
+	tbody > tr {
+		background: hsla(0, 0, 0, 0.05);
+
+		.dark & {
+			background: hsla(0, 0, 100%, 0.05);
+		}
+	}
+
+	tbody > tr:nth-child(even) {
+		background: hsla(0, 0, 0, 0.1);
+
+		.dark & {
+			background: hsla(0, 0, 100%, 0.1);
+		}
+	}
+
+	// Spoiler tag
 	a[href="#s"] {
 		text-decoration: none;
 
@@ -408,4 +442,5 @@ div.usertext-buttons > * {
 
 .tooltipster-base {
 	margin-top: 6px;
+	border-radius: $border-radius !important;
 }

@@ -2,7 +2,7 @@
 
 #firsttimevisitorwelcomemessage {
 	background: $comment-background;
-	
+
 	.dark & {
 		background: $dark-comment-background;
 	}
@@ -19,7 +19,7 @@ form[action="/submitcomment"] {
 	padding: 15px 15px 0;
 	background: $comment-background;
 	border-radius: $border-radius !important;
-	
+
 	.dark & {
 		background: $dark-comment-background;
 	}
@@ -29,21 +29,21 @@ form[action="/submitcomment"] {
 	background: transparent;
 	border: $text-input-border !important;
 	border-radius: $border-radius !important;
-	
+
 	.dark & {
 		border: $dark-text-input-border !important;
 	}
 }
-	
+
 .menuarea {
 	margin: 0px;
 	padding: 0 15px;
 	background: $comment-background;
-	
+
 	.dark & {
 		background: $dark-comment-background;
 	}
-	
+
 	&:nth-child(8) {
 		padding: 15px 15px 5px;
 		border-radius: $border-radius $border-radius 0 0 !important;
@@ -66,7 +66,7 @@ form[action="/submitcomment"] {
 	}
 
 	.arrow-upvote,
-	.arrow-upvoted, 
+	.arrow-upvoted,
 	.arrow-downvote,
 	.arrow-downvoted {
 		width: 20px;
@@ -74,17 +74,17 @@ form[action="/submitcomment"] {
 		font-size: 16px;
 		text-align: center;
 	}
-	
+
 	.child {
 		margin-top: 10px;
 		padding: 8px 8px 5px;
 		background: $comment-background;
 		border-radius: $border-radius !important;
-		
+
 		.dark & {
 			background: $dark-comment-background;
 		}
-		
+
 		> .entry {
 			margin-right: 10px;
 		}
@@ -95,9 +95,44 @@ form[action="/submitcomment"] {
 	> .child > .child > .child > .child > .child > .child,
 	> .child > .child > .child > .child > .child > .child > .child > .child {
 		background: $comment-background-alt;
-		
+
 		.dark &	{
 			background: $dark-comment-background-alt;
 		}
 	}
+
+	span.userattrs {
+		visibility: hidden;
+
+		a {
+			display: inline-block;
+			visibility: visible;
+			width: 13px;
+			height: 12px;
+			line-height: 12px;
+			text-align: center;
+			font-weight: 500;
+			background: $link-color !important;
+			color: $comment-background !important;
+			border-radius: $border-radius !important;
+
+			&:hover {
+				text-decoration: none;
+			}
+
+			.dark & {
+				background: $dark-link-color !important;
+				color: $dark-comment-background !important;
+			}
+		}
+	}
+}
+
+// Permalink alert /////////////////////////////////////////////////////////////////////////////////
+
+.alert-singlethread {
+	margin: 0;
+	padding: 15px;
+	font-size: 12px;
+	border-radius: $border-radius !important;
 }

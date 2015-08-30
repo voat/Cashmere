@@ -6,7 +6,7 @@
 	padding: 15px 0;
 	background: $submission-background;
 	border-radius: $border-radius !important;
-	
+
 	.dark & {
 		background: $dark-submission-background;
 	}
@@ -14,7 +14,7 @@
 	a.thumbnail {
 
 		@if $display-thumbnails == true {
-		
+
 			position: absolute;
 			z-index: 2;
 			top: 15px;
@@ -22,54 +22,35 @@
 			height: 70px;
 
 		} @else {
-		
+
 			display: none;
-		
+
 		} //endif
 	}
 
 	.entry {
 		padding: 0 15px 0 0;
 		min-height: 70px;
-		
+
 		> p.title,
 		> p.tagline,
 		> ul.flat-list {
 
-			@if $display-thumbnails == true {		
-			
+			@if $display-thumbnails == true {
+
 				padding-left: 78px;
-			
+
 			} @else {
-		
+
 				padding-left: 0px;
-		
+
 			}
 		}
 
 		> p.title {
 			padding-right: 28px; // make space for expando button
-			
-			// Sticky label
-			span.promoted {
-				display: none;
-				
-				// The title of a sticky post
-				+ a.title:after {
-					content: "sticky";
-					float: left;
-					margin-right: 5px;
-					background: $thumbnail-background;
-					color: $thumbnail-icon-color;
-					padding: 0 8px;
-					font-size: 11px;
-					
-					.dark & {
-						background: $dark-thumbnail-background;
-						color: $dark-thumbnail-icon-color;
-					}
-				}
-			}
+			margin-bottom: 2px;
+
 		}
 
 		a.title,
@@ -80,10 +61,60 @@
 		p.tagline,
 		span.domain {
 			color: transparentize($text-color, .4);
-		
+
 			.dark & {
 				color: transparentize($dark-text-color, .4);
 			}
+		}
+
+		@if $submission-type == self {
+
+			span.domain {
+				display: none;
+			}
+
+		} //endif
+
+		p.tagline {
+		    visibility: hidden;
+		    font-size: 0.001px;
+		    margin: 0;
+
+		    * {
+		        visibility: visible;
+		        font-size: 12px;
+		    }
+
+		    > a.subverse {
+		        display: none;
+		    }
+
+		    time {
+		        font-weight: 500;
+
+		        &::before {
+		            content: "submitted ";
+		            font-weight: 400;
+		        }
+
+		        &::after {
+		            content: " ago by ";
+		            font-weight: 400;
+		        }
+		    }
+
+		    a.author {
+		        font-weight: 500;
+		    }
+
+		    span.commentvotesratio {
+		        margin-left: 5px;
+		    }
+
+		}
+
+		.entry ul.flat-list {
+		    margin: 0;
 		}
 
 		div.expando {
@@ -99,7 +130,7 @@
 	> ul.flat-list {
 		padding-left: 0;
 	}
-	
+
 	// don't show icon thumbnails on comments page
 	a.title::before {
 		display: none !important;
@@ -115,8 +146,37 @@
 			padding-left: 78px;
 		}
 	}
-	
+
 } //endif
+
+// Link flairs /////////////////////////////////////////////////////////////////////////////////////
+
+.promoted,
+.flair:not(:empty) {
+	display: inline-block;
+	position: relative;
+	top: -1px;
+	padding: 0px 5px;
+	height: 18px;
+	line-height: 18px;
+	font-size: 11px !important;
+	font-weight: 500;
+	background: #555;
+	color: #fff;
+	border-radius: $border-radius !important;
+
+	.dark & {
+		color: #000;
+	}
+}
+
+.promoted {
+	top: 2px;
+	min-width: 0;
+	background: purple;
+	text-transform: capitalize;
+	letter-spacing: 0;
+}
 
 // Voting //////////////////////////////////////////////////////////////////////////////////////////
 .midcol {
@@ -129,7 +189,7 @@
 		line-height: 16px;
 		font-size: 12px;
 		color: $unvoated-color;
-		
+
 		.dark & {
 			color: $dark-unvoated-color;
 		}
@@ -187,7 +247,7 @@ span.post_downvotes {
 .scorebar {
 	height: 70px;
 	width: 4px;
-	
+
 	.scorebar-likes {
 		background: $upvoat-color;
 
@@ -195,11 +255,11 @@ span.post_downvotes {
 			background: $dark-upvoat-color;
 		}
 	}
-		
+
 	.scorebar-dislikes {
 		background: $downvoat-color;
 		border-top: 1px solid $submission-background !important;
-		
+
 		.dark & {
 			background: $dark-downvoat-color;
 			border-top: 1px solid $dark-submission-background !important;
@@ -227,10 +287,10 @@ span.post_downvotes {
 			color: $dark-link-color;
 		}
 	}
-	
+
 	&:hover::before {
 		color: $link-color-hover;
-		
+
 		.dark & {
 			color: $dark-link-color-hover;
 		}
@@ -240,7 +300,7 @@ span.post_downvotes {
 		-webkit-animation: spin 3s linear infinite;
 		   -moz-animation: spin 3s linear infinite;
 		        animation: spin 3s linear infinite;
-		
+
 		&::before {
 			content: "\e60d";
 			font-weight: 700;
@@ -252,7 +312,7 @@ span.post_downvotes {
 	}
 }
 
-@-moz-keyframes spin { 
+@-moz-keyframes spin {
 	0%   { -moz-transform: rotate(0deg); }
 	100% { -moz-transform: rotate(359deg); }
 }
@@ -287,20 +347,20 @@ span.post_downvotes {
 	font-size: 12px;
 	background: $submission-background;
 	border-radius: $border-radius !important;
-	
+
 	.dark & {
 		background: $dark-submission-background;
 	}
-	
+
 	&::before {
 		content:"Sort by:";
 		margin-right: 5px;
 		font-weight: 500;
 	}
-	
+
 	a:visited {
 		color: $link-color !important;
-		
+
 		.dark & {
 			color: $dark-link-color !important;
 		}
@@ -322,15 +382,15 @@ span.post_downvotes {
 		&:hover {
 			background: $submission-background;
 		}
-		
+
 		.dark & {
 			background: $dark-submission-background;
-			
+
 			&:hover {
 				background: $dark-submission-background;
 			}
 		}
-		
+
 		a {
 			display: block !important;
 			height: 100% !important;
@@ -338,11 +398,10 @@ span.post_downvotes {
 			font-size: 12px;
 			font-weight: 500;
 			color: $text-color !important;
-			
+
 			.dark &	{
 				color: $dark-text-color !important;
 			}
 		}
 	}
 }
-
