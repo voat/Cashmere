@@ -13,4 +13,5 @@ scss/partials/_markdowneditor.scss \
 scss/partials/_sidebar.scss \
 scss/partials/_footer.scss \
 scss/partials/_mediaqueries.scss \
+scss/partials/_borderfix.scss \
 > scss/cashmere.cat.scss

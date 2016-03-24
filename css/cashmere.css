@@ -1796,3 +1796,12 @@ div.side .spacer:last-child .sidecontentbox.content {
     display: none;
   }
 }
+.light:not(#foo) #container input[type="text"],
+.light:not(#foo) #container textarea {
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+.dark:not(#foo) #container input[type="text"],
+.dark:not(#foo) #container textarea {
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}

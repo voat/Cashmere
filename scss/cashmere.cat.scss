@@ -2388,3 +2388,13 @@ div.side {
 	
 }
 
+// Border fix
+.light:not(#foo) #container input[type="text"],
+.light:not(#foo) #container textarea {
+    border: $text-input-border !important;
+}
+
+.dark:not(#foo) #container input[type="text"],
+.dark:not(#foo) #container textarea {
+    border: $dark-text-input-border !important;
+}
