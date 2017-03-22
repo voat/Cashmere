@@ -1,15 +1,17 @@
-// Fonts ///////////////////////////////////////////////////////////////////////////////////////////
+//$base-resource-location: "https://mijowa.github.io/Cashmere/";
+$base-resource-location: "";
 
+// Fonts ///////////////////////////////////////////////////////////////////////////////////////////
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,700,700italic');
 
 @font-face {
 	font-family: 'Cashmere icons';
-	src:url('https://mijowa.github.io/Cashmere/fonts/Cashmere-icons.eot');
-	src:url('https://mijowa.github.io/Cashmere/fonts/Cashmere-icons.eot?#iefix')
+	src:url($base-resource-location + 'fonts/Cashmere-icons.eot');
+	src:url($base-resource-location + 'fonts/Cashmere-icons.eot?#iefix')
 			format('embedded-opentype'),
-		url('https://mijowa.github.io/Cashmere/fonts/Cashmere-icons.ttf')
+		url($base-resource-location + 'fonts/Cashmere-icons.ttf')
 			format('truetype'),
-		url('https://mijowa.github.io/Cashmere/fonts/Cashmere-icons.woff')
+		url($base-resource-location + 'fonts/Cashmere-icons.woff')
 			format('woff');
 	font-weight: normal;
 	font-style: normal;

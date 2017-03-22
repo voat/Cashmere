@@ -326,3 +326,14 @@
 		content: "\e607";
 	}
 }
+
+#dashboard-menu {
+    a,
+    a:visited {
+        color: $base-dashboard-link-color !important;
+
+        .dark & {
+            color: $base-dark-dashboard-link-color !important;
+        }
+    }
+}
